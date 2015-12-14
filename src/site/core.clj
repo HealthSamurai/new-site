@@ -90,7 +90,7 @@
   [:div
    (navigation :inverse)
    [:div {:style (style [container [pull-down 50] [push-down 100] [bg :inverted-main]] )}
-    [:h1 {:style (style [txt-center])} "Projects"]]
+    [:h1 {:style (style [txt-center])} (:project strings)]]
    [:div.projects {:style (style [container [pull-down 50]])}
     [:h4 "Projects"]]])
 
