@@ -3,6 +3,7 @@
             [hiccup.core :refer [html]]
             [garden.core :refer [css]]
             [garden.units :as u]
+            [ring.middleware.resource :as rmr]
             [garden.color :as c]
             [garden.stylesheet :as ss]
             [org.httpkit.server :as srv]
@@ -86,13 +87,11 @@
     [:div [:h1  "Products"]]
     [:div.projects [:h4 "Projects"]]]])
 
+(defn index [req]
+  [:div (navigation :main)])
+
 (defn projects [req]
-  [:div
-   (navigation :inverse)
-   [:div {:style (style [container [pull-down 50] [push-down 100] [bg :inverted-main]] )}
-    [:h1 {:style (style [txt-center])} (:project strings)]]
-   [:div.projects {:style (style [container [pull-down 50]])}
-    [:h4 "Projects"]]])
+  [:div])
 
 (defn page [{{id :id} :params}]
   (http [:h3 "Page" (str id)]))
@@ -110,8 +109,11 @@
     (http (layout ((:match mtch) (update req :params merge (:params mtch)))))
     {:body "ups" :method 404}))
 
+(def app (-> #'dispatch
+             (rmr/wrap-resource "public")))
+
 (defn start []
-  (def stop (srv/run-server #'dispatch {:port 8080})))
+  (def stop (srv/run-server #'app {:port 8081})))
 
 (comment
   (stop)

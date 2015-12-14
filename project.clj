@@ -8,4 +8,6 @@
                  [hiccup "1.0.5"]
                  [http-kit "2.2.0-SNAPSHOT"]
                  [route-map "0.0.2"]
-                 [garden "1.3.0"]])
+                 [garden "1.3.0"]
+                 [ring "1.4.0"]
+                 [ring/ring-defaults "0.1.5"]])
