@@ -7,18 +7,41 @@
           :education "Обучение"
           :projects "Проекты"
           :services "Услуги"
+          :trainings "Тренинги"
           :contacts "Контакты"}
 
-   :contacts [{:href "/" :text "USA: +1 (818) 731-12-79"}
-              {:href "/" :text "Russia: +7 (812) 919-00-25"}
+   :contacts [{:href "/" :title "USA: +1 (818) 731-12-79"}
+              {:href "/" :title "Russia: +7 (812) 919-00-25"}
               {:href "mailto:hello@health-samurai.io" :text "mailto:hello@health-samurai.io"}]
 
-   :services [{:href "/services" :text "Запуск и обучение"}
-              {:href "/services" :text "Запуск и разработка"}
-              {:href "/services" :text "Коммерческая поддержка"}]
+   :services [{:id "start"
+               :title "Запуск и обучение"}
+              {:id "dev"
+               :title "Разработка"}
+              {:id "support"
+               :title "Коммерческая поддержка"}]
 
-   :education [{:href "/education" :text "Введение в HL7 FHIR"}
-               {:href "/education" :text "HL7 FHIR для продвинутых"}]
+   :trainings [{:id "start"
+                :title "Основы FHIR"
+                :desc "Восьмичасовой семинар по основным особенностям стандарта HL7 FHIR и экосистеме вокруг стандарта."}
+               {:id "fhirbase"
+                :title "Анатомия fhirbase"
+                :desc "Тренинг по архитектуре и использованию Fhirbase в разработке решений для здравоохранения."}
+               {:id "devops"
+                :title "Введение в DevOps"
+                :desc "Двухдневный тренинг по подходам и инструментам построения Continuouse Delivery Pipline"}]
+
+   :education [{:href "/education" :title "Введение в HL7 FHIR"}
+               {:href "/education" :title "HL7 FHIR для продвинутых"}]
+
+   :projects [{:id "medclient" :title "MedClient EHR"
+               :desc "Разработка, сертификация и внедрение в 3-х американских клиниках облачной EHR"}
+              {:id "kainos" :title "Kainos"
+               :desc "Доработка Fhirbase под нужды проекта Kainos"}
+              {:id "netrika" :title "Netrika"
+               :desc "Консультирование и обучение по HL7 FHIR и внедрение Fhirbase в рамках региональной шины"}
+              {:id "miac" :title "MIAC"
+               :desc "Консультирование и обучение по HL7 FHIR и внедрение Fhirbase в рамках региональной шины"}]
 
    :products [{:id "fhirbase"
                :labels ["PostgreSQL" "plv8" "HL7 FHIR"]
@@ -46,4 +69,17 @@
                           "Aidbox предоставляет хостинг для базы и несложных single page applications"
                           "Aidbox имеет SDK и вы можете интегрироваться с решениями на ваших технологиях (Java, .Net etc...)"]
                :links [{:type :direct
-                        :link "https://aidbox.io/landing.html#/"}]}]})
+                        :link "https://aidbox.io/landing.html#/"}]}
+              {:id "aidbox"
+               :labels ["Amazon AWS" "Fhirbase" "Clojure" "AngularJS"]
+               :title "HL7 mapper"
+               :slogan "Реляционное хранилище медицинских данных на основе стандарта HL7 FHIR."
+               :description "Aidbox - это платформа \"как сервис\" (PaaS) для разработки медицинских решений на основе HL7 FHIR. Aidbox подходит для построения мобильных и web-решений оперирующих медицинскими данными: электронные карты (EHR), интеграционные ”шины”, репозитории медицинских данных (реестры), госпитальные системы (HIS), порталы для пациентов и телемедицины."
+               :features ["Aidbox использует Fhirbase для хранения данных"
+                          "Aidbox реализует REST API на основе стандарта HL7 FHIR"
+                          "Aidbox решает вопросы Security с использование OAuth"
+                          "Aidbox предоставляет хостинг для базы и несложных single page applications"
+                          "Aidbox имеет SDK и вы можете интегрироваться с решениями на ваших технологиях (Java, .Net etc...)"]
+               :links [{:type :direct
+                        :link "https://aidbox.io/landing.html#/"}]}
+              ]})

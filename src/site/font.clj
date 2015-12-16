@@ -10,7 +10,7 @@
    :choice     "\\e804"
    :samurai    "\\e805"})
 
-(defn fontello-icon-name [k] (str "icon-" (name k)))
+(defn fontello-icon-name [k] (str "icon-" (name (or k "ups"))))
 
 (def font-face
   {:font-family "fontello"

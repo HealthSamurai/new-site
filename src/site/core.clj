@@ -13,20 +13,19 @@
   (get-in strings ks))
 
 (def MENU
-  [{:href "/products" :text  (get-in strings [:text :products])}
-   {:href "/projects" :text  (get-in strings [:text :projects])}
-   {:href "/contacts" :text (get-in strings [:text :contacts])}])
+  [{:href "/products" :title  (get-in strings [:text :products])}
+   {:href "/projects" :title  (get-in strings [:text :projects])}
+   {:href "/trainings" :title  (get-in strings [:text :trainings])}
+   {:href "/contacts" :title (get-in strings [:text :contacts])}])
 
 
 (def PRODUCTS
-  [{:href "/products/fhirbase" :text "Fhirbase"}
-   {:href "/products/aidbox" :text "Aidbox"}
-   {:href "/products/hl7mapper" :text "HL7 Mapper"}
-   {:href "/products/formstamp" :text "FormStamp"}
-   {:href "/products/foodtaster" :text "FoodTaster"}])
+  [{:href "/products/fhirbase" :title "Fhirbase"}
+   {:href "/products/aidbox" :title "Aidbox"}
+   {:href "/products/hl7mapper" :title "HL7 Mapper"}
+   {:href "/products/formstamp" :title "FormStamp"}
+   {:href "/products/foodtaster" :title "FoodTaster"}])
 
-(def CONTACTS
-  )
 
 (defn style [cnt]
   [:style {:type "text/css"} (css cnt)])
@@ -34,10 +33,12 @@
 (def vh 18)
 
 (def style-vars
-  {:color {:main       {:text {:color "#333356"
-                               :background-color "white"}
-                        :em   {:color "#a23835"
-                               :background-color "white"}}
+  {:color {:main       {:text      {:color "#333356"}
+                        :selection {:color "#a23835"
+                                    :border-color "#a23835"
+                                    :cursor "pointer"
+                                    :background-color "#f5f5f5"}
+                        :em   {:color "#a23835"}}
            :inverse    {:text {:color "white"
                                :background-color "#a23835"} 
                         :em   {:color "white"
@@ -64,6 +65,11 @@
 (defn undecorate []
   [:& {:text-decoration "none"}
    [:&:hover {:text-decoration "none"}]])
+
+(defn grid [& columns]
+  (let [cnt (/ 12 (count columns))]
+    (into [:div.row]
+          (for [c columns] (into [:div {:class (str "col-md-" cnt)}] c)))))
 
 (defn navigation [opts]
   (let [props (merge {:color :inverse :items MENU} opts)
@@ -105,24 +111,20 @@
       [:a {:href "/"} [:i.hs-icon.icon-samurai]]]
      [:ul.list-inline
       (for [x (:items props)]
-        [:li [:a {:href (:href x)} (:text x)]])]]]))
+        [:li [:a {:href (:href x)} (:title x)]])]]]))
 
-(defn grid [& columns]
-  (let [cnt (/ 12 (count columns))]
-    (into [:div.row]
-          (for [c columns] (into [:div {:class (str "col-md-" cnt)}] c)))))
 
 (defn footer []
   (let [palette (s-var :color :inverse-ex)]
     [:div#footer
     (style
-     [:div#footer (merge (:text palette) {:padding {:top "80px" :bottom "80x"}})
+     [:div#footer (merge (:text palette) {:padding {:top (u/px* 4 vh) :bottom (u/px* 4 vh)}})
       [:a {:color "#ddd"}]])
     [:div.container
      (grid [[:h4 (data :text :services)]
             [:ul.list-unstyled
              (for [x (:services strings)]
-               [:li [:a {:href (:href x)} (:text x)]])]]
+               [:li [:a {:href (:href x)} (:title x)]])]]
 
            [[:h4 (data :text  :products)]
             [:ul.list-unstyled
@@ -132,13 +134,13 @@
            [[:h4 (data :text  :education)]
             [:ul.list-unstyled
              (for [x (:education strings)]
-               [:li [:a {:href (:href x)} (:text x)]])]]
+               [:li [:a {:href (:href x)} (:title x)]])]]
 
            [[:h4 (data :text  :contacts)]
             [:ul.list-unstyled
              (for [x (data :contacts)]
                [:li
-                [:a {:href (:href x)} (:text x)]])]])]]))
+                [:a {:href (:href x)} (:title x)]])]])]]))
 
 (defn layout [cnt]
   [:html
@@ -152,7 +154,7 @@
     [:title (:title strings)]
 
     (hp/include-css
-        "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+        "/bootstrap.min.css"
         "https://fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,900italic,500italic,600,600italic,700,700italic,800,800italic,900"
         "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
 
@@ -245,7 +247,9 @@
      (navigation {:color (:color props)})
      (style
       [:#splash
-       (merge (:text palette) {:padding-top (u/px* 6 vh) :padding-bottom (u/px* 5 vh)})
+       (merge (:text palette)
+              {:padding-top (u/px* 6 vh)
+               :padding-bottom (u/px* 5 vh)})
        [:.splash-header     (merge (:h1 typescale) {:text-align "center"})
         [:em (merge {:font-style "normal"} (:em palette))]]
        [:.splash-sub-header (merge (:h4 typescale)
@@ -264,22 +268,124 @@
 (defn product-list [opts]
   (let [defaults {:color :inverse :typescale :medium}
         props (merge defaults opts)
+        palette (s-var :color :main)
         typescale (s-var :typescale (:typescale props))]
     [:div#product-list
      (style [:#product-list
-             [:h1 (:h1 typescale)]])
-     [:hr]
+             {:border-top "1px solid #ddd"
+              :padding {:top    (u/px* 2 vh)
+                        :bottom (u/px* 3 vh)}}
+             [:.block-header {:margin-bottom (u/px* 2 vh)}]
+             [:h1 (:h1 typescale)]
+             [:.logo {:display "block"
+                      :position "relative" 
+                      :overflow "hidden"
+                      :padding  (u/px vh)
+                      :margin   {:right (u/px 10) :bottom (u/px vh)}
+                      :color    (get-in palette [:text :color])
+                      :border   "1px solid #ddd"}
+              (undecorate)
+              [:&:hover (:selection palette)]
+              [:.hs-icon {:font-size (u/px* 8 vh)
+                          :text-align "right"
+                          :display "block"
+                          :position "relative"
+                          :right "-64px"}]
+              [:h2 (merge (:h1 typescale)
+                          {:text-align "left"
+                           :line-height (u/px* 1 vh)})]]])
      [:div.container
-      [:h3 "Продукты"]]]))
+      [:div.row.block-header
+       [:h3 "Продукты " [:small "Все продукты (5)"]]]
+      (apply grid
+             (for [p (take 3 (data :products))]
+               [[:a.logo {:href (str "/products#" (:id p))}
+                 [:i.hs-icon {:class (font/fontello-icon-name (:id p))}]
+                 [:h2 (:title p)]]
+                 [:p  (:slogan p)]]))]]))
+
+(defn project-list [opts]
+  (let [defaults {:color :inverse :typescale :medium}
+        props (merge defaults opts)
+        palette (s-var :color :main)
+        typescale (s-var :typescale (:typescale props))]
+    [:div#project-list
+     (style [:#project-list
+             {:border-top "1px solid #ddd"
+              :padding {:top    (u/px* 2 vh)
+                        :bottom (u/px* 3 vh)}}
+             [:.block-header {:margin-bottom (u/px* 2 vh)}]
+             [:h1 (:h1 typescale)]
+             [:.list-item (merge (:text palette)
+                                 {:display "block"
+                                  :padding {:left "40px" :right "40px"}
+                                  :margin  {:bottom (u/px vh)}
+                                  :border  {:left  {:width (u/px 6)
+                                                    :style "solid"
+                                                    :color "#ddd"}}})
+              (undecorate)
+              [:&:hover (:selection palette)
+               [:p (:text palette)]]]])
+     [:div.container
+      [:div.row.block-header
+       [:h3 (data :text :projects) [:small " (5)"]]]
+      (for [p (data :projects)]
+        [:a.list-item.row
+         [:h3 (:title p)]
+         [:p  (:desc p)]])]]))
+
+(defn training-list [opts]
+  (let [defaults {:color :inverse :typescale :medium}
+        props (merge defaults opts)
+        palette (s-var :color :main)
+        typescale (s-var :typescale (:typescale props))]
+    [:div#training-list
+     (style [:#training-list
+             {:border-top "1px solid #ddd"
+              :padding {:top    (u/px* 2 vh)
+                        :bottom (u/px* 3 vh)}}
+             [:.block-header {:margin-bottom (u/px* 2 vh)}]
+             [:h1 (:h1 typescale)]
+             [:.logo {:display "block"
+                      :position "relative" 
+                      :overflow "hidden"
+                      :min-height (u/px* 12 vh)
+                      :padding  (u/px vh)
+                      :margin   {:right (u/px 10) :bottom (u/px vh)}
+                      :color    (get-in palette [:text :color])
+                      :border   "1px solid #ddd"}
+              (undecorate)
+              [:&:hover (:selection palette)]
+              [:.hs-icon {:font-size (u/px* 8 vh)
+                          :text-align "right"
+                          :display "block"
+                          :position "relative"
+                          :right "-64px"}]
+              [:h2 (merge (:h3 typescale)
+                          {:text-align "left"
+                           :line-height (u/px* 1 vh)})]]
+             [:p.desc {:margin {:right (u/px 10)}}]])
+     [:div.container
+      [:div.row.block-header
+       [:h3 "Тренинги " [:small " (5)"]]]
+      (apply grid
+             (for [p (take 3 (data :trainings))]
+               [[:a.logo {:href (str "/trainings#" (:id p))}
+                 [:i.hs-icon {:class (font/fontello-icon-name :fhirbase)}]
+                 [:h2 (:title p)]]
+                 [:p.desc  (:desc p)]]))]]))
 
 (defn index [req]
   [:div
+   (style
+    [:.meta {:height (u/px* 16 vh)}])
    (splash {:title  [:span "Мы " [:em  "знаем как"] " создавать медицинские информационные системы будущего"]
             :moto   [:span {:style "opacity:0.8;"} "Эксперты в Health IT. Разрабатываем для клиентов на основе наших технологичных продуктов и стандарта HL7 FHIR."]
             :color :main
             :typescale :large})
    (product-list  {})
-   (dumn-block {})])
+   (project-list  {})
+   (training-list  {})])
 
 (defn products [req]
   [:div#products
