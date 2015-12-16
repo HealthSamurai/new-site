@@ -8,6 +8,11 @@
           :projects "Проекты"
           :services "Услуги"
           :contacts "Контакты"}
+
+   :contacts [{:href "/" :text "USA: +1 (818) 731-12-79"}
+              {:href "/" :text "Russia: +7 (812) 919-00-25"}
+              {:href "mailto:hello@health-samurai.io" :text "mailto:hello@health-samurai.io"}]
+
    :services [{:href "/services" :text "Запуск и обучение"}
               {:href "/services" :text "Запуск и разработка"}
               {:href "/services" :text "Коммерческая поддержка"}]

@@ -2,26 +2,20 @@
   (:require [clojure.string :as str]
             [hiccup.core :refer [html]]
             [hiccup.page :as hp]
-            [ring.middleware.resource :as rmr]
             [site.font :as font]
             [garden.color :as c]
             [garden.core :refer [css]]
             [garden.units :as u]
             [garden.stylesheet :as ss]
-            [site.data :refer [strings]]
-            [org.httpkit.server :as srv]
-            [route-map.core :as rt]))
+            [site.data :refer [strings]]))
 
-(defn http [hic]
-  {:body    (html hic)
-   :headers {"Content-Type" "text/html; charset=utf-8"}
-   :status  200})
-
+(defn data [& ks]
+  (get-in strings ks))
 
 (def MENU
   [{:href "/products" :text  (get-in strings [:text :products])}
    {:href "/projects" :text  (get-in strings [:text :projects])}
-   {:href "/contancts" :text (get-in strings [:text :contacts])}])
+   {:href "/contacts" :text (get-in strings [:text :contacts])}])
 
 
 (def PRODUCTS
@@ -32,99 +26,119 @@
    {:href "/products/foodtaster" :text "FoodTaster"}])
 
 (def CONTACTS
-  [{:href "/" :text "USA: +1 (818) 731-12-79"}
-   {:href "/" :text "Russia: +7 (812) 919-00-25"}
-   {:href "mailto:hello@health-samurai.io" :text "mailto:hello@health-samurai.io"}])
+  )
 
 (defn style [cnt]
   [:style {:type "text/css"} (css cnt)])
 
+(def vh 18)
 
 (def style-vars
-  {:color {
-           :main "#a23835"
-           :inverse "white"
-           :normal "#444"}
-   :background-color {:inverse "#a23835"
-                      :main "white"}})
+  {:color {:main       {:text {:color "#333356"
+                               :background-color "white"}
+                        :em   {:color "#a23835"
+                               :background-color "white"}}
+           :inverse    {:text {:color "white"
+                               :background-color "#a23835"} 
+                        :em   {:color "white"
+                               :background-color "#a23835"}}
+           :inverse-ex {:text {:color "white"
+                               :background-color "rgba(46,48,58,0.96)"}
+                        :em   {:color "white"
+                               :background-color "rgba(46,48,58,0.96)"}}}
+   :typescale {:large {:h1 {:font-size "41px"  :font-weight "600"  :line-height (u/px* vh 3)}
+                       :h2 {:font-size "24px"  :font-weight "bold" :line-height "1.5em"}
+                       :h3 {:font-size  "21px" :font-weight "300"  :line-height "1.5em"}
+                       :h4 {:font-size  "21px" :font-weight "600" :line-height (u/px* 1.5 vh)}
+                       :p  {:font-size "18px"  :line-height (u/px* vh 1.5)}
+                       :small {:font-size "16px"}}
+               :medium {:h1 {:font-size "41px"  :line-height "1.3em" :font-weight "normal"}
+                        :h2 {:font-size "24px"  :font-weight "bold"  :line-height "1.5em"}
+                        :h3 {:font-size  "18px" :font-weight "bold"  :line-height "1.5em"}
+                        :h4 {:font-size  "18px"}
+                        :p  {:font-size "18px"}
+                        :small {:font-size "16px"}}}})
 
-(defn s-var [& ks]
-  (get-in style-vars ks))
+(defn s-var [& ks] (get-in style-vars ks))
 
 (defn undecorate []
   [:& {:text-decoration "none"}
    [:&:hover {:text-decoration "none"}]])
 
-(defn navigation [color]
-  [:div#navigation
-   (style
-    [:#navigation
-     {:background {:color (s-var :background-color color)}
-      :padding "15px 0 20px"
-      :color (s-var :background-color color)}
-     [:span.nav-title {:text-align "center"
-                       :width "80px"
-                       :height "68px"
-                       :color (s-var :color color)
-                       :background-color (s-var :background-color color)}
-      [:i {:padding-top "15px"
-           :text-align "center"
-           :color "white"
-           :text-decoration "none"
-           :font-size "32px"
-           :margin {:left "auto" :right "auto"}}]]
-     [:ul {:display "inline-block" :margin-bottom 0 :float "right"}
-      [:li {:margin-left "20px" :margin-top "8px"}
-       [:a {:color (s-var :color color)
-            :padding "10px 20px"
-            :border "1px solid transparent"}
-        (undecorate)
-        [:&:hover {:color (s-var :color color)
-                   :text-decoration "none"
-                   :border-color (s-var :color color)}]]]]])
-   [:div.container
-    [:span.nav-title
-     [:a {:href "/"} [:i.hs-icon.icon-samurai]]]
-    [:ul.list-inline
-     (for [x MENU]
-       [:li [:a {:href (:href x)} (:text x)]])]]])
+(defn navigation [opts]
+  (let [props (merge {:color :inverse :items MENU} opts)
+        palette (s-var :color (:color props))]
+   [:div#navigation
+    (style
+     [:#navigation
+      (merge (:em palette) {:padding "0 0 20px"})
+      [:span.brand
+       [:a
+        (merge (s-var :color :inverse :em)
+               {:text-align "center"
+                :width "80px"
+                :height "72px"
+                :display "inline-block"})
+        [:i (merge (s-var :color :inverse :em)
+                   {:padding-top "15px"
+                    :text-align "center"
+                    :text-decoration "none"
+                    :font-size (u/px* 2 vh)
+                    :line-height "1em"
+                    :margin {:left "auto" :right "auto"}})]]]
+      [:ul {:margin-top "18px"
+            :display "inline-block"
+            :height (u/px* 2 vh)
+            :margin-bottom 0
+            :float "right"}
+       [:li {:display "inline-block"
+             :margin-left "20px"}
+        [:a {:display "inline-block"
+             :color (get-in palette [:em :color])
+             :padding "9px 20px"
+             :border "1px solid transparent"}
+         (undecorate)
+         [:&:hover {:color (get-in palette [:em :color])
+                    :border-color (get-in palette [:em :color])}]]]]])
+    [:div.container
+     [:span.brand
+      [:a {:href "/"} [:i.hs-icon.icon-samurai]]]
+     [:ul.list-inline
+      (for [x (:items props)]
+        [:li [:a {:href (:href x)} (:text x)]])]]]))
+
+(defn grid [& columns]
+  (let [cnt (/ 12 (count columns))]
+    (into [:div.row]
+          (for [c columns] (into [:div {:class (str "col-md-" cnt)}] c)))))
 
 (defn footer []
-  [:div#footer
-   (style
-    [:div#footer {:padding {:top "80px" :bottom "80x"}
-                  :background-color "rgba(46,48,58,0.96)"
-                  :color "white"}
-     [:a {:color "#ddd"}]])
+  (let [palette (s-var :color :inverse-ex)]
+    [:div#footer
+    (style
+     [:div#footer (merge (:text palette) {:padding {:top "80px" :bottom "80x"}})
+      [:a {:color "#ddd"}]])
+    [:div.container
+     (grid [[:h4 (data :text :services)]
+            [:ul.list-unstyled
+             (for [x (:services strings)]
+               [:li [:a {:href (:href x)} (:text x)]])]]
 
-   [:div.container.footer
-    [:div.row
-     [:div.col-md-3
-      [:h4 (get-in strings [:text :services])]
-      [:ul.list-unstyled
-       (for [x (:services strings)]
-         [:li [:a {:href (:href x)} (:text x)]])]]
-     [:div.col-md-3
-      [:h4 (get-in strings [:text  :products])]
-      [:ul.list-unstyled
-       (for [x (:products strings)]
-         [:li
-          [:a {:href (get-in x [:links 0 :link])} (:title x)]])]]
-     [:div.col-md-3
-      [:h4 (get-in strings [:text  :education])]
-      [:ul.list-unstyled
-       (for [x (:education strings)]
-         [:li [:a {:href (:href x)} (:text x)]])]]
-     [:div.col-md-3
-      [:h4 (get-in strings [:text  :contacts])]
-      [:ul.list-unstyled
-       (for [x CONTACTS]
-         [:li
-          [:a {:href (:href x)} (:text x)]])]]]]])
+           [[:h4 (data :text  :products)]
+            [:ul.list-unstyled
+             (for [x (data :products)]
+               [:li
+                [:a {:href (get-in x [:links 0 :link])} (:title x)]])]]
+           [[:h4 (data :text  :education)]
+            [:ul.list-unstyled
+             (for [x (:education strings)]
+               [:li [:a {:href (:href x)} (:text x)]])]]
 
-
-(defn inversed []
-  [:& {:background-color "#a23835" :color "white"}])
+           [[:h4 (data :text  :contacts)]
+            [:ul.list-unstyled
+             (for [x (data :contacts)]
+               [:li
+                [:a {:href (:href x)} (:text x)]])]])]]))
 
 (defn layout [cnt]
   [:html
@@ -153,18 +167,7 @@
              :letter-spacing "1px"}
       font/garden-font
       [:.col-md-4 {:padding-left 0 :padding-right 0}]
-      [:.sub-title {:padding-top "160px"
-                    :padding-bottom "100px"}
-       (inversed)
-       [:span.sub-moto {:font-size "41px"
-                        :line-height "1.3em"
-                        :display "block"}]
-       [:span.sub-desc {:font-size "18px"
-                        :padding-top "24px"
-                        :margin-left "auto"
-                        :margin-right "auto"
-                        :line-height "1.5em"
-                        :display "block"}]]])]
+      ])]
    [:body [:div cnt] (footer)]])
 
 
@@ -225,25 +228,61 @@
                          [:i.fa.fa-comments-o.add_links]]
           "")))]])
 
-(defn splash [title moto]
+(defn dumn-block [opts]
+  (let [props (merge {} opts)
+        palette (s-var :color (:color props))]
+    [:div.dumn
+     (style [:.dumn {:min-height "300px"}])
+     [:div.container
+      [:div.dumn-block [:h3 "Dumn"]]]]))
+
+(defn splash [opts]
+  (let [defaults {:color :inverse :typescale :medium}
+        props (merge defaults opts)
+        typescale (s-var :typescale (:typescale props))
+        palette (s-var :color (:color props))]
+    [:div
+     (navigation {:color (:color props)})
+     (style
+      [:#splash
+       (merge (:text palette) {:padding-top (u/px* 6 vh) :padding-bottom (u/px* 5 vh)})
+       [:.splash-header     (merge (:h1 typescale) {:text-align "center"})
+        [:em (merge {:font-style "normal"} (:em palette))]]
+       [:.splash-sub-header (merge (:h4 typescale)
+                                   {:padding-top (u/px* 0.5  vh) 
+                                    :margin-left "auto"
+                                    :max-width "40em"
+                                    :text-align "center"
+                                    :margin-right "auto"})]])
+    [:div#splash
+     [:div.container-fluid
+      [:h1.splash-header    (:title opts)]
+      [:p.splash-sub-header (:moto opts)]]]]))
+
+
+
+(defn product-list [opts]
+  (let [defaults {:color :inverse :typescale :medium}
+        props (merge defaults opts)
+        typescale (s-var :typescale (:typescale props))]
+    [:div#product-list
+     (style [:#product-list
+             [:h1 (:h1 typescale)]])
+     [:hr]
+     [:div.container
+      [:h3 "Продукты"]]]))
+
+(defn index [req]
   [:div
-   (navigation :inverse)
-   (style
-    [:#splash
-     [:a.item-product {:margin-right "10px"
-                       :border "1px solid transparent"
-                       :text-decoration "none"
-                       :color "#333356"
-                       :display "block"}]
-     [:h1 {:text-align "center" :color "white"}]])
-   [:div#splash
-    [:div.container-fluid.sub-title.text-center
-     [:span.sub-moto title]
-     [:span.sub-desc moto]]]])
+   (splash {:title  [:span "Мы " [:em  "знаем как"] " создавать медицинские информационные системы будущего"]
+            :moto   [:span {:style "opacity:0.8;"} "Эксперты в Health IT. Разрабатываем для клиентов на основе наших технологичных продуктов и стандарта HL7 FHIR."]
+            :color :main
+            :typescale :large})
+   (product-list  {})
+   (dumn-block {})])
 
 (defn products [req]
-  [:div
-   (navigation :inverse)
+  [:div#products
    (style
     [:#products
      [:a.item-product {:margin-right "10px"
@@ -252,45 +291,17 @@
                        :color "#333356"
                        :display "block"}]
      [:h1 {:text-align "center" :color "white"}]])
-
-   [:div#products
-    [:div.container-fluid.sub-title.text-center
-     [:span.sub-moto "Наши продукты"]
-     [:span.sub-desc "Мы разрабатываем технологичные продукты на основе HL7 FHIR."]]
-    [:div.container
-     (for [prod (:products strings)]
-       [:div (product prod) [:hr]])]
-    [:div [:h1 (get-in strings [:text :products])]]]])
-
-(defn index [req]
-  [:div (splash "Health Samurai" "looking for")])
+   (splash {:title  "Наши продукты" :moto "Мы разрабатываем технологичные продукты на основе HL7 FHIR."})
+   [:div.container
+    (for [prod (:products strings)] [:div (product prod) [:hr]])]
+   [:div [:h1 (get-in strings [:text :products])]]])
 
 (defn projects [req]
-  [:div (splash "Projects" "looking for")])
+  [:div
+   (splash {:title  "Projects" :moto "looking for"})
+   (dumn-block {})])
 
-(defn page [{{id :id} :params}]
-  (http [:h3 "Page" (str id)]))
-
-(def routes
-  {:GET #'index
-   "about"    {:GET  #'index}
-   "products" {:GET #'products}
-   "projects" {:GET #'projects}
-   "pages"    {:id #(range 10)
-               [:id] {:GET #'page}}})
-
-(defn dispatch [{uri :uri meth :request-method :as req}]
-  (if-let [mtch (rt/match [meth uri] routes)]
-    (http (layout ((:match mtch) (update req :params merge (:params mtch)))))
-    {:body "ups" :method 404}))
-
-(def app (-> #'dispatch
-             (rmr/wrap-resource "public")))
-
-(defn start []
-  (def stop (srv/run-server #'app {:port 8081})))
-
-(comment
-  (stop)
-  (start))
-
+(defn contacts [req]
+  [:div
+   (splash {:title  "Contacts" :moto "contacts"})
+   (dumn-block {})])
