@@ -40,7 +40,7 @@
                                     :background-color "#f5f5f5"}
                         :em   {:color "#a23835"}}
            :inverse    {:text {:color "white"
-                               :background-color "#a23835"} 
+                               :background-color "#a23835"}
                         :em   {:color "white"
                                :background-color "#a23835"}}
            :inverse-ex {:text {:color "white"
@@ -71,47 +71,47 @@
     (into [:div.row]
           (for [c columns] (into [:div {:class (str "col-md-" cnt)}] c)))))
 
+
 (defn navigation [opts]
   (let [props (merge {:color :inverse :items MENU} opts)
         palette (s-var :color (:color props))]
-   [:div#navigation
-    (style
-     [:#navigation
-      (merge (:em palette) {:padding "0 0 20px"})
+    [:div#navigation
+     (style
+      [:#navigation
+       (merge (:em palette) {:padding "0 0 20px"})
+       [:span.brand
+        [:a (merge (s-var :color :inverse :em)
+                {:text-align "center"
+                 :width "80px"
+                 :height "72px"
+                 :display "inline-block"})
+         [:i (merge (s-var :color :inverse :em)
+                    {:padding-top "15px"
+                     :text-align "center"
+                     :text-decoration "none"
+                     :font-size (u/px* 2 vh)
+                     :line-height "1em"
+                     :margin {:left "auto" :right "auto"}})]]]
+       [:ul {:margin-top (u/px* vh) 
+             :display "inline-block"
+             :height (u/px* 2 vh)
+             :margin-bottom 0
+             :float "right"}
+        [:li {:display "inline-block"
+              :margin-left "20px"}
+         [:a {:display "inline-block"
+              :color (get-in palette [:em :color])
+              :padding "9px 20px"
+              :border "1px solid transparent"}
+          (undecorate)
+          [:&:hover {:color (get-in palette [:em :color])
+                     :border-color (get-in palette [:em :color])}]]]]])
+     [:div.container
       [:span.brand
-       [:a
-        (merge (s-var :color :inverse :em)
-               {:text-align "center"
-                :width "80px"
-                :height "72px"
-                :display "inline-block"})
-        [:i (merge (s-var :color :inverse :em)
-                   {:padding-top "15px"
-                    :text-align "center"
-                    :text-decoration "none"
-                    :font-size (u/px* 2 vh)
-                    :line-height "1em"
-                    :margin {:left "auto" :right "auto"}})]]]
-      [:ul {:margin-top "18px"
-            :display "inline-block"
-            :height (u/px* 2 vh)
-            :margin-bottom 0
-            :float "right"}
-       [:li {:display "inline-block"
-             :margin-left "20px"}
-        [:a {:display "inline-block"
-             :color (get-in palette [:em :color])
-             :padding "9px 20px"
-             :border "1px solid transparent"}
-         (undecorate)
-         [:&:hover {:color (get-in palette [:em :color])
-                    :border-color (get-in palette [:em :color])}]]]]])
-    [:div.container
-     [:span.brand
-      [:a {:href "/"} [:i.hs-icon.icon-samurai]]]
-     [:ul.list-inline
-      (for [x (:items props)]
-        [:li [:a {:href (:href x)} (:title x)]])]]]))
+       [:a {:href "/"} [:i.hs-icon.icon-samurai]]]
+      [:ul.list-inline
+       (for [x (:items props)]
+         [:li [:a {:href (:href x)} (:title x)]])]]]))
 
 
 (defn footer []
@@ -172,63 +172,67 @@
       ])]
    [:body [:div cnt] (footer)]])
 
-
 (defn product [data]
-  [:div.product.row.list-item
-   (style
-    [:.product  {:padding-top "80px"
-                 :padding-bottom "80px"}
-     [:.hs-icon {:font-size "144px"
-                 :text-align "center"}]
-     [:.custom-label {:font-weight "300"
-                      :margin-right "4px"
-                      :margin-bottom "4px"
-                      :padding "10px"
-                      :display "inline-block"
-                      :border "1px solid #ddd"
-                      :color "#888"
-                      :background-color "#fafafa"}]
-     [:i.add_links {:font-size "36px"
-                    :padding-left "20px"
-                    :vertical-align "middle"
-                    :color "#888"}
-      [:&:hover {:color (s-var :color :main)}]]
-     [:a.btn.gotosite {:border "1px solid #a23835"
-                       :border-radius "none !important"
-                       :color (s-var :color :main)}
-      [:&:hover {:background-color (s-var :color :main)
-                 :color "white"}]]
-     [:a.item-product {:margin-right "10px"
-                       :border "1px solid transparent"
-                       :text-decoration "none"
-                       :color "#333356"
-                       :display "block"}]
-     [:h1 {:text-align "center" :color "white"}]])
-   [:div.col-md-3
-    [:i.hs-icon {:class (font/fontello-icon-name (:id data))}]
-    [:br]
-    (for [label (:labels data)] [:span [:br] [:span.label.custom-label label]])]
-   [:div.col-md-8
-    [:h3 (str (:title data) " ")
-     (when (:open-source data) [:small "Open Source"])]
-    [:span.product-slogan (:slogan data) [:br]]
-    [:br]
-    [:p (:description data)]
-    [:br]
-    [:strong "Особенности Fhirbase"]
-    [:ul
-     (for [feature (:features data)]
-       [:li feature])]
-    [:br]
-    (when (:links data)
-      (for [link (:links data)]
-        (case (:type link)
-          :direct [:a.btn.btn-default.gotosite {:href (:link link) :target "_blank"} "Сайт продукта"]
-          :github [:a {:href (:link link) :target "_blank"}
-                   [:i.fa.fa-github.add_links]]
-          :google-group [:a {:href (:link link) :target "_blank"}
-                         [:i.fa.fa-comments-o.add_links]]
-          "")))]])
+  (let [props {:lightestgray "#fafafa"
+               :lightgray "#ddd"
+               :gray "#888"
+               :red (s-var :color :main :em :color)
+               :white (s-var :color :main :em :background-color)
+               :dark (s-var :color :main :text :color)
+               :icon-links-size (u/px* vh 2)}]
+    [:div.product.row.list-item
+     (style
+      [:.product  {:padding-top (u/px* vh 4.5)
+                   :padding-bottom (u/px* vh 4.5)}
+       [:.hs-icon {:font-size (u/px* vh 8)
+                   :text-align "left"
+                   :margin-left 0}]
+       [:.custom-label {:font-weight "300"
+                        :margin-right (u/px* vh 1/6)
+                        :margin-bottom (u/px* vh 1/6)
+                        :padding (u/px* vh 0.5)
+                        :display "inline-block"
+                        :border (str "1px solid " (:lightgray props))
+                        :color (:gray props)
+                        :background-color (:lightestgray props)}]
+       [:i.add_links {:font-size (:icon-links-size props)
+                      :padding-left (u/px* vh 1)
+                      :vertical-align "middle"
+                      :color (:gray props)}
+        [:&:hover {:color (:dark props)}]]
+       [:a.btn.gotosite {:border (str "1px solid " (:red props))
+                         :border-radius "none !important"
+                         :color (:red props)}
+        [:&:hover {:background-color (:red props)
+                   :color (:white props)}]]
+       [:h1 {:text-align "center"
+             :color (:white props)}]])
+     ;; Markup
+     [:div.col-md-3
+      [:i.hs-icon {:class (font/fontello-icon-name (:id data))}]
+      [:br]
+      (for [label (:labels data)] [:span [:br] [:span.label.custom-label label]])]
+     [:div.col-md-8
+      [:h3 (str (:title data) " ")
+       (when (:open-source data) [:small "Open Source"])]
+      [:span.product-slogan (:slogan data) [:br]]
+      [:br]
+      [:p (:description data)]
+      [:br]
+      [:strong (str "Особенности " (:title data))]
+      [:ul
+       (for [feature (:features data)]
+         [:li feature])]
+      [:br]
+      (when (:links data)
+        (for [link (:links data)]
+          (case (:type link)
+            :direct [:a.btn.btn-default.gotosite {:href (:link link) :target "_blank"} "Сайт продукта"]
+            :github [:a {:href (:link link) :target "_blank"}
+                     [:i.fa.fa-github.add_links]]
+            :google-group [:a {:href (:link link) :target "_blank"}
+                           [:i.fa.fa-comments-o.add_links]]
+            "")))]]))
 
 (defn dumn-block [opts]
   (let [props (merge {} opts)
@@ -250,18 +254,21 @@
        (merge (:text palette)
               {:padding-top (u/px* 6 vh)
                :padding-bottom (u/px* 5 vh)})
-       [:.splash-header     (merge (:h1 typescale) {:text-align "center"})
+       [:.splash-header     (merge (:h1 typescale)
+                                   {:text-align "center"
+                                    :margin "0 auto"
+                                    :max-width "20em"})
         [:em (merge {:font-style "normal"} (:em palette))]]
        [:.splash-sub-header (merge (:h4 typescale)
-                                   {:padding-top (u/px* 0.5  vh) 
+                                   {:padding-top (u/px* 0.5  vh)
                                     :margin-left "auto"
                                     :max-width "40em"
                                     :text-align "center"
                                     :margin-right "auto"})]])
-    [:div#splash
-     [:div.container-fluid
-      [:h1.splash-header    (:title opts)]
-      [:p.splash-sub-header (:moto opts)]]]]))
+     [:div#splash
+      [:div.container-fluid
+       [:h1.splash-header    (:title opts)]
+       [:p.splash-sub-header (:moto opts)]]]]))
 
 
 
@@ -278,7 +285,7 @@
              [:.block-header {:margin-bottom (u/px* 2 vh)}]
              [:h1 (:h1 typescale)]
              [:.logo {:display "block"
-                      :position "relative" 
+                      :position "relative"
                       :overflow "hidden"
                       :padding  (u/px vh)
                       :margin   {:right (u/px 10) :bottom (u/px vh)}
@@ -347,7 +354,7 @@
              [:.block-header {:margin-bottom (u/px* 2 vh)}]
              [:h1 (:h1 typescale)]
              [:.logo {:display "block"
-                      :position "relative" 
+                      :position "relative"
                       :overflow "hidden"
                       :min-height (u/px* 12 vh)
                       :padding  (u/px vh)
@@ -391,15 +398,13 @@
   [:div#products
    (style
     [:#products
-     [:a.item-product {:margin-right "10px"
-                       :border "1px solid transparent"
-                       :text-decoration "none"
-                       :color "#333356"
-                       :display "block"}]
+
      [:h1 {:text-align "center" :color "white"}]])
    (splash {:title  "Наши продукты" :moto "Мы разрабатываем технологичные продукты на основе HL7 FHIR."})
    [:div.container
     (for [prod (:products strings)] [:div (product prod) [:hr]])]
+   (splash {:title  "Готовы к сотрудничеству?"
+            :moto "Если у вас остались какие либо вопросы, хотите увидеть демо наших решений или обсудить с нами ваш проект - оставьте запрос и мы свяжемся с вами."})
    [:div [:h1 (get-in strings [:text :products])]]])
 
 (defn projects [req]
