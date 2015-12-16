@@ -118,7 +118,10 @@
   (let [palette (s-var :color :inverse-ex)]
     [:div#footer
     (style
-     [:div#footer (merge (:text palette) {:padding {:top (u/px* 4 vh) :bottom (u/px* 4 vh)}})
+     [:div#footer
+      (merge (:text palette)
+             {:padding {:top    (u/px* 4 vh)
+                        :bottom (u/px* 6 vh)}})
       [:a {:color "#ddd"}]])
     [:div.container
      (grid [[:h4 (data :text :services)]
@@ -248,7 +251,6 @@
         typescale (s-var :typescale (:typescale props))
         palette (s-var :color (:color props))]
     [:div
-     (navigation {:color (:color props)})
      (style
       [:#splash
        (merge (:text palette)
@@ -384,6 +386,7 @@
 
 (defn index [req]
   [:div
+   (navigation {:color :main})
    (style
     [:.meta {:height (u/px* 16 vh)}])
    (splash {:title  [:span "Мы " [:em  "знаем как"] " создавать медицинские информационные системы будущего"]
@@ -400,6 +403,7 @@
     [:#products
 
      [:h1 {:text-align "center" :color "white"}]])
+   (navigation {:color :inverse})
    (splash {:title  "Наши продукты" :moto "Мы разрабатываем технологичные продукты на основе HL7 FHIR."})
    [:div.container
     (for [prod (:products strings)] [:div (product prod) [:hr]])]
@@ -409,10 +413,18 @@
 
 (defn projects [req]
   [:div
+   (navigation {:color :inverse})
    (splash {:title  "Projects" :moto "looking for"})
+   (dumn-block {})])
+
+(defn trainings [req]
+  [:div
+   (navigation {:color :inverse})
+   (splash {:title  "Trainins" :moto "looking for"})
    (dumn-block {})])
 
 (defn contacts [req]
   [:div
+   (navigation {:color :inverse})
    (splash {:title  "Contacts" :moto "contacts"})
    (dumn-block {})])

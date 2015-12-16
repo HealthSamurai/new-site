@@ -5,7 +5,7 @@
             [ring.middleware.resource :as rmr]
             [site.data :refer [strings]]
             [org.httpkit.server :as srv]
-            [site.core :refer [index products projects layout contacts]]
+            [site.core :refer [index products projects layout contacts trainings]]
             [route-map.core :as rt]))
 
 (defn http [hic]
@@ -19,6 +19,7 @@
    "about"    {:GET  #'index}
    "products" {:GET #'products}
    "contacts" {:GET #'contacts}
+   "trainings" {:GET #'trainings}
    "projects" {:GET #'projects}})
 
 (defn dispatch [{uri :uri meth :request-method :as req}]
