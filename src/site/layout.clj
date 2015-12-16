@@ -10,8 +10,7 @@
   [:html
    [:head
     [:meta {:charset "utf-8"}]
-    [:meta {:http-equiv "X-UA-Compatible"
-            :content "IE=edge"}]
+    [:meta {:http-equiv "X-UA-Compatible" :content "IE=edge"}]
     [:title "Health Samurai"]
     [:meta {:name "desription" :content ""}]
     [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
@@ -23,6 +22,7 @@
        "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
 
     (style (at-font-face font/font-face))
+
     (style
      [:body {:padding "0"
              :margin "0"
@@ -32,9 +32,11 @@
              :color "#333356"
              :letter-spacing "1px"}
       font/garden-font
-      [:.col-md-4 {:padding-left 0 :padding-right 0}]
-      ])]
-   [:body [:div cnt] (footer)]])
+      [:.col-md-4 {:padding-left 0 :padding-right 0}]])]
+
+   [:body
+    [:div cnt]
+    (footer)]])
 
 
 

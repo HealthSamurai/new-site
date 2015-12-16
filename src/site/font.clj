@@ -39,3 +39,4 @@
 
 
 
+(defn icon [x] [:i.hs-icon {:class (fontello-icon-name x)}])
