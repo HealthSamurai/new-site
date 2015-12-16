@@ -6,6 +6,11 @@
             [site.font :as font]
             [site.navigation :refer [navigation]]))
 
+(defn block-header [href key]
+  [:div.row.block-header
+   (style [:.block-header {:margin-bottom (px* 2 vh)}])
+   [:a {:href href} [:h3 (data :text key) "..."]]])
+
 (defn product-list [opts]
   (let [defaults {:color :inverse :typescale :medium}
         props (merge defaults opts)
@@ -16,7 +21,6 @@
              {:border-top "1px solid #ddd"
               :padding {:top    (px* 2 vh)
                         :bottom (px* 3 vh)}}
-             [:.block-header {:margin-bottom (px* 2 vh)}]
              [:h1 (:h1 typescale)]
              [:.logo {:display "block"
                       :position "relative"
@@ -36,8 +40,7 @@
                           {:text-align "left"
                            :line-height (px* 1 vh)})]]])
      [:div.container
-      [:div.row.block-header
-       [:h3 "Продукты " [:small "Все продукты (5)"]]]
+      (block-header "/products" :products)
       (apply grid
              (for [p (take 3 (data :products))]
                [[:a.logo {:href (str "/products#" (:id p))}
@@ -63,15 +66,14 @@
                                  {:display "block"
                                   :padding {:left "40px" :right "40px"}
                                   :margin  {:bottom (px vh)}
-                                  :border  {:left  {:width (px 6)
+                                  :border  {:left  {:width (px 3)
                                                     :style "solid"
                                                     :color "#ddd"}}})
               (undecorate)
               [:&:hover (:selection palette)
                [:p (:text palette)]]]])
      [:div.container
-      [:div.row.block-header
-       [:h3 (data :text :projects) [:small " (5)"]]]
+      (block-header "/projects" :projects)
       (for [p (data :projects)]
         [:a.list-item.row
          [:h3 (:title p)]
@@ -109,8 +111,7 @@
                            :line-height (px* 1 vh)})]]
              [:p.desc {:margin {:right (px 10)}}]])
      [:div.container
-      [:div.row.block-header
-       [:h3 "Тренинги " [:small " (5)"]]]
+      (block-header "/trainings" :trainings)
       (apply grid
              (for [p (take 3 (data :trainings))]
                [[:a.logo {:href (str "/trainings#" (:id p))}

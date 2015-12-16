@@ -41,3 +41,15 @@
 (defn undecorate []
   [:& {:text-decoration "none"}
    [:&:hover {:text-decoration "none"}]])
+
+(defn box [& [t r b l]]
+  (->> {:top t :right r :bottom b :left l}
+       (filter second )
+       (map (fn [[k v]] [k (px* v vh)]))
+       (into {})))
+
+(defn mbox [& xs]
+  [:& {:margin (apply box xs)}])
+
+(defn pbox [& xs]
+  [:& {:padding (apply box xs)}])

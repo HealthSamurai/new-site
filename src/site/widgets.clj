@@ -33,3 +33,14 @@
       [:div.container-fluid
        [:h1.splash-header    (:title opts)]
        [:p.splash-sub-header (:moto opts)]]]]))
+
+(defn paralax [height layer-1 layer-2]
+  [:div.paralax
+   (style [:.paralax
+           {:position "relative"}
+           [:.paralaxed {:top 0 :position "fixed" :width "100%" :z-index -5}]
+           [:.push {:margin {:top (px* height vh)}}]
+           [:.paralaxing {:background {:color "white"}}]])
+   [:div.paralaxed layer-1]
+   [:div.push]
+   [:div.paralaxing layer-2]])

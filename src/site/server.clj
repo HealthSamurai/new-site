@@ -2,6 +2,7 @@
   (:require [clojure.string :as str]
             [hiccup.page :as hp]
             [ring.middleware.resource :as rmr]
+            [ring.middleware.defaults :as rmd]
             [hiccup.core :refer [html]]
             [site.data :refer [strings]]
             [org.httpkit.server :as srv]
@@ -32,10 +33,11 @@
     {:body "ups" :method 404}))
 
 (def app (-> #'dispatch
-             (rmr/wrap-resource "public")))
+             (rmr/wrap-resource "public")
+             (rmd/wrap-defaults rmd/site-defaults)))
 
 (defn start []
-  (def stop (srv/run-server #'app {:port 8081})))
+  (def stop (srv/run-server #'app {:port 8080})))
 
 (comment
   (stop)

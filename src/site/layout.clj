@@ -19,7 +19,7 @@
     (include-css
        "/bootstrap.min.css"
        "https://fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,900italic,500italic,600,600italic,700,700italic,800,800italic,900"
-       "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+       "/font-awesome/css/font-awesome.min.css")
 
     (style (at-font-face font/font-face))
 
@@ -35,8 +35,10 @@
       [:.col-md-4 {:padding-left 0 :padding-right 0}]])]
 
    [:body
-    [:div cnt]
-    (footer)]])
+    [:div#main [:div#wrap cnt]]
+    (footer)
+    [:script {:type "text/javascript" :src "/jquery.min.js"}]
+    [:script {:type "text/javascript" :src "/instant.js"}]]])
 
 
 

@@ -1,7 +1,7 @@
 (ns site.products
-  (:require [site.styles :refer [s-var vh style undecorate]]
+  (:require [site.styles :refer [s-var vh style undecorate pbox mbox]]
             [site.navigation :refer [navigation]]
-            [site.widgets :refer [grid  splash]]
+            [site.widgets :refer [grid  splash paralax]]
             [site.data :refer [data]]
             [garden.units :refer [px px*]]
             [site.font :as font]))
@@ -10,45 +10,50 @@
   [:a {:href href :target "_blank"}
    [:i.fa {:class (str "fa-" (name icon))}]])
 
+
 (defn product [product]
-  (let [props {:lightestgray "#fafafa"
-               :lightgray "#ddd"
-               :gray "#888"
-               :red (s-var :color :main :em :color)
-               :white (s-var :color :main :em :background-color)
-               :dark (s-var :color :main :text :color)
-               :icon-links-size (px* vh 2)}]
+  (let [typescale (s-var :typescale :medium)
+        palette (s-var :color :main)]
     [:div.product.row
      (style
-      [:.product  {:padding {:top (px* vh 4.5) :bottom (px* vh 4)}}
+      [:.product 
+       [:.header (undecorate)]
        [:.hs-icon {:font-size (px* vh 8)
-                   :text {:align "center"}
-                   :display "block"
-                   :margin {:bottom (px vh) :top (px* 2 vh)}}]
+                   :text {:align "right"}
+                   :position "relative"
+                   :right "-61px"
+                   :color "gray"
+                   :display "block"}
+        (mbox 4 nil 1 nil)]
 
-       [:.tag {:font-weight "300"
-               :color (:gray props)
-               :text {:align "center"}}]
+       [:.tag (merge (:small typescale)
+                     {:text {:align "right"}
+                      :color "gray"
+                      :font {:weight "bold"}})]
+       [:.left
+        {:positoin "relative" :overflow "hidden"}
+        (pbox 2 nil 2 nil)]
+       [:.column {:border {:left {:color "#ddd" :style "solid" :width "1px"}}
+                  :padding {:left (px 40)}}
+        (pbox 2 nil 2 nil)]
 
-       [:.fa {:font-size (px* 2 vh) 
-              :line-height (px* 2 vh)
-              :padding-left (px* 1 vh)
-              :vertical-align "middle"
-              :color (:gray props)}
-        [:&:hover {:color (:dark props)}]]
-       [:h1 {:text-align "center"
-             :color (:white props)}]])
+       [:.fa (merge  (:h2 typescale)
+              {:font-size (px* 2 vh)
+               :padding-left (px* 1 vh)
+               :vertical-align "middle"})]
+       [:h1 {:text-align "center"}]])
 
-     [:div.col-md-3
+     [:div.col-md-3.left
       (font/icon (:id product))
       (for [label (product :labels)]
         [:div.tag label])]
 
-     [:div.col-md-9
-      [:a {:id (:id product) :href (str "#" (:id product))}
-       [:h3 (str (product :title) " ")
+     [:div.col-md-8.column
+      [:a.header {:id (:id product) :href (str "#" (:id product))}
+       [:h2 (str (product :title) " ")
         (when (:open-source product) [:small "Open Source"])]]
       [:p (:slogan product)]
+      [:br]
       [:p (:description product)]
       [:h4 (str "Особенности " (:title product))]
       [:ul (for [f (product :features)] [:li f])]
@@ -61,14 +66,13 @@
 
 
 (defn products [req]
-  [:div#products
-   (navigation {:color :inverse})
-   (splash {:title  "Наши продукты"
-            :moto "Мы разрабатываем технологичные продукты на основе HL7 FHIR."})
-
-   [:div.container
-    (for [prod (data :products)]
-      [:div (product prod) [:hr]])]
-
-   (splash {:title "Готовы к сотрудничеству?"
-            :moto  "Если у вас остались какие либо вопросы, хотите увидеть демо наших решений или обсудить с нами ваш проект - оставьте запрос и мы свяжемся с вами."})])
+  [:div
+   (paralax 20
+    [:div
+     (navigation {:color :inverse})
+     (splash {:title  "Наши продукты"
+              :moto "Мы разрабатываем технологичные продукты на основе HL7 FHIR."})]
+    [:div#products
+     [:div.container (map product (data :products))]
+     (splash {:title "Готовы к сотрудничеству?"
+              :moto  "Если у вас остались какие либо вопросы, хотите увидеть демо наших решений или обсудить с нами ваш проект - оставьте запрос и мы свяжемся с вами."})])])

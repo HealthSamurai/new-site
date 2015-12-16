@@ -5,13 +5,26 @@
    :text {:products "Продукты"
           :education "Обучение"
           :projects "Проекты"
+          :projects-subtitle "Вместе с нашими клиентам мы создаем медицинские системы нового поколения, которые используются в разных частях мира."
           :services "Услуги"
           :trainings "Тренинги"
-          :contacts "Контакты"}
+          :contacts "Контакты"
+          :contacts-subtitle "У нас есть представительства в двух странах и мы всегда готовы встретитсья и обсудить ваш проект."
+          }
 
-   :contacts [{:href "/" :title "USA: +1 (818) 731-12-79"}
-              {:href "/" :title "Russia: +7 (812) 919-00-25"}
-              {:href "mailto:hello@health-samurai.io" :text "mailto:hello@health-samurai.io"}]
+   :contacts {:offices [{:id "us"
+                         :phone "+1 (818) 731-12-79"
+                         :country "США"
+                         :city "Лос Анджелес"
+                         :gmap "https://www.google.com/maps/embed/v1/place?q=USA%20832%20Hermosa%20Ave%20Hermosa%20Beach%2C%20CA%2090254&key=AIzaSyD2dOMXHt6-O_u74nXCdiUetJbAuSFC4Dc" 
+                         :address "USA 832 Hermosa Ave Hermosa Beach, CA 90254"}
+                        {:id "russia"
+                         :phone "+7 (812) 919-00-25"
+                         :country "Россия"
+                         :gmap "https://www.google.com/maps/embed/v1/place?q=%D0%91%D0%BE%D0%BB%D1%8C%D1%88%D0%B0%D1%8F%20%D0%9C%D0%BE%D1%80%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%20%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%20%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F%2019&key=AIzaSyAdd1qhkePB-cBamLcFQPmIBCp6QCjEkoo" 
+                         :city "Санкт-Перербурr"
+                         :address "Россия, Санкт-Петербург, ул. Большая морская 19"}]
+              :mailto "hello@health-samurai.io"}
 
    :services [{:id "start"
                :title "Запуск и обучение"}
@@ -33,13 +46,17 @@
    :education [{:href "/education" :title "Введение в HL7 FHIR"}
                {:href "/education" :title "HL7 FHIR для продвинутых"}]
 
-   :projects [{:id "medclient" :title "MedClient EHR"
+   :projects [{:id "medclient"
+               :title "MedClient EHR"
                :desc "Разработка, сертификация и внедрение в 3-х американских клиниках облачной EHR"}
-              {:id "kainos" :title "Kainos"
+              {:id "kainos"
+               :title "Kainos"
                :desc "Доработка Fhirbase под нужды проекта Kainos"}
-              {:id "netrika" :title "Netrika"
+              {:id "netrika"
+               :title "Netrika"
                :desc "Консультирование и обучение по HL7 FHIR и внедрение Fhirbase в рамках региональной шины"}
-              {:id "miac" :title "MIAC"
+              {:id "miac"
+               :title "MIAC"
                :desc "Консультирование и обучение по HL7 FHIR и внедрение Fhirbase в рамках региональной шины"}]
 
    :products [{:id "fhirbase"
@@ -69,7 +86,7 @@
                           "Aidbox имеет SDK и вы можете интегрироваться с решениями на ваших технологиях (Java, .Net etc...)"]
                :links [{:type :direct
                         :link "https://aidbox.io/landing.html#/"}]}
-              {:id "aidbox"
+              {:id "mapper"
                :labels ["Amazon AWS" "Fhirbase" "Clojure" "AngularJS"]
                :title "HL7 mapper"
                :slogan "Реляционное хранилище медицинских данных на основе стандарта HL7 FHIR."
@@ -81,7 +98,7 @@
                           "Aidbox имеет SDK и вы можете интегрироваться с решениями на ваших технологиях (Java, .Net etc...)"]
                :links [{:type :direct
                         :link "https://aidbox.io/landing.html#/"}]}
-              {:id "formstamp"
+              {:id "aidbox"
                :open-source true
                :labels ["AngularJS"]
                :title "FormStamp"

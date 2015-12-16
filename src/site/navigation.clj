@@ -1,6 +1,6 @@
 (ns site.navigation
   (:require [site.data :refer [data]]
-            [site.styles :refer [s-var style vh undecorate]]
+            [site.styles :refer [s-var style vh undecorate pbox mbox]]
             [site.widgets :refer [grid]]
             [garden.units :refer [px px*]]))
 
@@ -16,7 +16,8 @@
         palette (s-var :color (:color props))]
     [:div#navigation
      (style
-      [:#navigation (:em palette)
+      [:#navigation
+       (:em palette)
        [:span.brand
         [:a (merge (s-var :color :inverse :em)
                 {:text-align "center"
@@ -35,8 +36,7 @@
              :height (px* 2 vh)
              :margin-bottom 0
              :float "right"}
-        [:li {:display "inline-block"
-              :margin-left "20px"}
+        [:li {:display "inline-block"}
          [:a {:display "inline-block"
               :color (get-in palette [:em :color])
               :padding "9px 20px"
@@ -57,9 +57,8 @@
     [:div#footer
     (style
      [:div#footer
-      (merge (:text palette)
-             {:padding {:top    (px* 4 vh)
-                        :bottom (px* 6 vh)}})
+      (:text palette)
+      (pbox 4 nil 6 nil)
       [:a {:color "#ddd"}]])
     [:div.container
      (grid [[:h4 (data :text :services)]
@@ -77,8 +76,10 @@
              (for [x (data :education)]
                [:li [:a {:href (:href x)} (:title x)]])]]
 
-           [[:h4 (data :text  :contacts)]
+           [[:a {:href "/contacts"} [:h4 (data :text  :contacts)]]
             [:ul.list-unstyled
-             (for [x (data :contacts)]
+             [:li [:a {:href (str "mailto:" (data :contacts :mailto))}
+                   (data :contacts :mailto)]]
+             (for [x (data :contacts :offices)]
                [:li
-                [:a {:href (:href x)} (:title x)]])]])]]))
+                [:a (:country x) ": " (:phone x)]])]])]]))
