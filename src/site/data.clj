@@ -1,6 +1,5 @@
 (ns site.data)
 
-
 (def strings
   {:title "Health Samurai"
    :text {:products "Продукты"
@@ -94,3 +93,6 @@
                           "FormStamp имеет минималистичный codebase "]
                :links [{:type :direct
                         :link "http://formstamp.github.io/#/"}]}]})
+
+(defn data [& ks]
+  (get-in strings ks))

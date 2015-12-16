@@ -1,18 +1,22 @@
 (ns site.server
   (:require [clojure.string :as str]
-            [hiccup.core :refer [html]]
             [hiccup.page :as hp]
             [ring.middleware.resource :as rmr]
+            [hiccup.core :refer [html]]
             [site.data :refer [strings]]
             [org.httpkit.server :as srv]
-            [site.core :refer [index products projects layout contacts trainings]]
+            [site.index :refer [index]]
+            [site.products :refer [products]]
+            [site.projects :refer [projects]]
+            [site.contacts :refer [contacts]]
+            [site.trainings :refer [trainings]]
+            [site.layout :refer [layout]]
             [route-map.core :as rt]))
 
 (defn http [hic]
   {:body    (html hic)
    :headers {"Content-Type" "text/html; charset=utf-8"}
    :status  200})
-
 
 (def routes
   {:GET #'index
