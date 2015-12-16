@@ -46,4 +46,16 @@
                           "Aidbox предоставляет хостинг для базы и несложных single page applications"
                           "Aidbox имеет SDK и вы можете интегрироваться с решениями на ваших технологиях (Java, .Net etc...)"]
                :links [{:type :direct
-                        :link "https://aidbox.io/landing.html#/"}]}]})
+                        :link "https://aidbox.io/landing.html#/"}]}
+              {:id "formstamp"
+               :open-source true
+               :labels ["AngularJS"]
+               :title "FormStamp"
+               :slogan "Библиотека виджетов на \"чистом\" AngularJS"
+               :description "FormStamp - это библиотека виджетов на AngularJS для разработки web-приложений с \"богатым\" клиентом. "
+               :features ["FormStamp написан на \"чистом\" AngularJS"
+                          "FormStamp имеет встроеный FormBuilder"
+                          "FormStamp стилизован на Twitter Bootstrap"
+                          "FormStamp имеет минималистичный codebase "]
+               :links [{:type :direct
+                        :link "http://formstamp.github.io/#/"}]}]})
