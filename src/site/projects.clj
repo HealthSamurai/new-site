@@ -1,7 +1,7 @@
 (ns site.projects
   (:require [site.navigation :refer [navigation]]
-            [site.data :refer [data]]
-            [markdown.core :as md]
+            [site.data :refer [data find-by-id]]
+            [site.formats :refer [load-text]]
             [garden.units :refer [px px*]]
             [site.styles :refer [style pbox s-var vh]]
             [site.widgets :refer [grid  splash paralax]]))
@@ -49,13 +49,6 @@
 
             (map project-view (data :projects)))])
 
-(defn find-by-id [id coll]
-  (first (filter #(= id (:id %)) coll)))
-
-(find-by-id "medclient" (data :projects))
-
-(defn load-text [f]
-  (md/md-to-html-string (slurp (str "resources/texts/" f))))
 
 (defn project [{{id :id} :params :as req}]
   (let [project (find-by-id id (data :projects))
@@ -77,4 +70,4 @@
        [:h3 "Used technologies"]
        [:div.tags (for [tag (:tags project)] [:span.btn.btn-default.tag tag])]
        [:br]
-       [:p (when (:post project) (load-text (:post project)))]]]]))
+       [:p (when (:post project) (load-text (str "texts/"(:post project))))]]]]))

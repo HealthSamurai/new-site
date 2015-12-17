@@ -10,7 +10,8 @@
                  [route-map "0.0.2"]
                  [garden "1.3.0"]
                  [ring "1.4.0"]
-                 [ring/ring-defaults "0.1.5"]]
+                 [ring/ring-defaults "0.1.5"]
+                 [circleci/clj-yaml "0.5.5"]]
   :plugins [[lein-ring "0.9.7"]]
   :ring {:handler site.server/app :auto-refresh? true}
   :profiles {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]]}})

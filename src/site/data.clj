@@ -1,4 +1,6 @@
-(ns site.data)
+(ns site.data
+  (:require [site.formats :refer [yaml]]))
+
 
 (def strings
   {:title "Health Samurai"
@@ -25,23 +27,12 @@
                          :address "Россия, Санкт-Петербург, ул. Большая морская 19"}]
               :mailto "hello@health-samurai.io"}
 
-   :services [{:id "start"
-               :title "Запуск и обучение"}
-              {:id "dev"
-               :title "Разработка"}
-              {:id "support"
-               :title "Коммерческая поддержка"}]
+   :services [{:id "start"   :title "Запуск и обучение"}
+              {:id "dev"     :title "Разработка"}
+              {:id "support" :title "Коммерческая поддержка"}]
 
-   :trainings [{:id "start"
-                :title "Основы FHIR"
-                :desc "Восьмичасовой семинар по основным особенностям стандарта HL7 FHIR и экосистеме вокруг стандарта."}
-               {:id "fhirbase"
-                :title "Анатомия fhirbase"
-                :desc "Тренинг по архитектуре и использованию Fhirbase в разработке решений для здравоохранения."}
-               {:id "devops"
-                :title "Введение в DevOps"
-                :desc "Двухдневный тренинг по подходам и инструментам построения Continuouse Delivery Pipline"}]
-
+   :trainings (:ru (yaml "trainings/index.yaml"))
+   
    :education [{:href "/education" :title "Введение в HL7 FHIR"}
                {:href "/education" :title "HL7 FHIR для продвинутых"}]
 
@@ -119,3 +110,6 @@
 
 (defn data [& ks]
   (get-in strings ks))
+
+(defn find-by-id [id & ks]
+  (first (filter #(= id (:id %)) (get-in strings ks))))
