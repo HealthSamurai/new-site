@@ -14,10 +14,10 @@
 
 (def font-face
   {:font-family "fontello"
-   :src (str/join "," ["url('./fonts/fontello.eot') format('embedded-opentype')"
-                       "url('./fonts/fontello.woff') format('woff')"
-                       "url('./fonts/fontello.ttf') format('truetype')"
-                       "url('./fonts/fontello.svg') format('svg')"])})
+   :src (str/join "," ["url('/fonts/fontello.eot') format('embedded-opentype')"
+                       "url('/fonts/fontello.woff') format('woff')"
+                       "url('/fonts/fontello.ttf') format('truetype')"
+                       "url('/fonts/fontello.svg') format('svg')"])})
 
 (def garden-font
   (into [:.hs-icon {:font-family "fontello"

@@ -1,0 +1,13 @@
+ru:
+  - id: fhir-intro
+    title:  Введение в HL7 FHIR 
+    abstract: История стандартов HL7 начиная с версии 2 и заканчивая современным стандартом FHIR. 
+    plan: fhir-intro.ru.md
+  - id: fhirbase
+    title:  Анатомия fhirbase
+    abstract: Внутреннее устройство открытой медицинской базы данных - fhirbase.
+    plan: fhir-intro.ru.md
+  - id: devops
+    title: Культура непрерываной поставки
+    abstract:  Тренинг построен вокруг принципов и практик LEAN, DevOps  & Continuous Delivery, позволяющих выстроить в организации надежную и непрерывную поставку результатов труда программистов.
+    plan: devops.ru.md

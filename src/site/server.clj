@@ -8,7 +8,7 @@
             [org.httpkit.server :as srv]
             [site.index :refer [index]]
             [site.products :refer [products]]
-            [site.projects :refer [projects]]
+            [site.projects :refer [projects project]]
             [site.contacts :refer [contacts]]
             [site.trainings :refer [trainings]]
             [site.layout :refer [layout]]
@@ -25,7 +25,8 @@
    "products" {:GET #'products}
    "contacts" {:GET #'contacts}
    "trainings" {:GET #'trainings}
-   "projects" {:GET #'projects}})
+   "projects" {:GET #'projects
+               [:id] {:GET #'project}}})
 
 (defn dispatch [{uri :uri meth :request-method :as req}]
   (if-let [mtch (rt/match [meth uri] routes)]

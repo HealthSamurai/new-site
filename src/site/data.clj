@@ -9,8 +9,7 @@
           :services "Услуги"
           :trainings "Тренинги"
           :contacts "Контакты"
-          :contacts-subtitle "У нас есть представительства в двух странах и мы всегда готовы встретитсья и обсудить ваш проект."
-          }
+          :contacts-subtitle "У нас есть представительства в двух странах и мы всегда готовы встретитсья и обсудить ваш проект."}
 
    :contacts {:offices [{:id "us"
                          :phone "+1 (818) 731-12-79"
@@ -48,12 +47,19 @@
 
    :projects [{:id "medclient"
                :title "MedClient EHR"
-               :desc "Разработка, сертификация и внедрение в 3-х американских клиниках облачной EHR"}
+               :post "medclient.md"
+               :href "http://choice-hs.com/#ehr"
+               :client {:title "Choice Hospital Systems" :href "http://choice-hs.com"}
+               :tags ["Cloud EHR", "Ruby on Rails" "Amazon EC2" "PostgreSQL"]
+               :desc "Разработка, сертификация и внедрение в 3-х американских клиниках облачной EHR"
+               }
               {:id "kainos"
                :title "Kainos"
+               :tags ["PostgreSQL" "plv8" "consulting"]
                :desc "Доработка Fhirbase под нужды проекта Kainos"}
               {:id "netrika"
                :title "Netrika"
+               :tags ["PostgreSQL" "plv8" "consulting"]
                :desc "Консультирование и обучение по HL7 FHIR и внедрение Fhirbase в рамках региональной шины"}
               {:id "miac"
                :title "MIAC"
