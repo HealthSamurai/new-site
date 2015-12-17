@@ -1,13 +1,28 @@
 ru:
   - id: fhir-intro
     title: Основы FHIR
-    abstract: Восьмичасовой семинар по основным особенностям стандарта HL7 FHIR и экосистеме вокруг стандарта.
+    img: /imgs/fhir.png
+    desc: Восьмичасовой семинар по основным особенностям стандарта HL7 FHIR и экосистеме вокруг стандарта.
     plan: fhir-intro.ru.md
   - id: fhirbase
     title:  Анатомия fhirbase
-    abstract: Тренинг по архитектуре и использованию Fhirbase в разработке решений для здравоохранения.
+    desc: Тренинг по архитектуре и использованию Fhirbase в разработке решений для здравоохранения.
+    img: /imgs/fhirbase.png
     plan: fhirbase.ru.md
+    tags:
+      - FHIR
+      - HL7
+      - fhirbase
+      - Postgresql
   - id: devops
     title: Культура непрерываной поставки
-    abstract: Двухдневный тренинг по подходам и инструментам построения Continuouse Delivery Pipline
+    tags:
+      - DevOps
+      - ContinuousDelivery
+      - LEAN
+    desc: >
+      Двухдневный тренинг по подходам и инструментам построения
+      Continuouse Delivery Pipline. Мы познакомимся с движением DevOps,
+      принципами бережливого производства и их применением к разработке
+      софта, сделаем обзор и попробуем практики и интсрументы для непрерывной поставки (CD)
     plan: devops.ru.md
