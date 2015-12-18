@@ -56,7 +56,8 @@
                :title "MIAC"
                :desc "Консультирование и обучение по HL7 FHIR и внедрение Fhirbase в рамках региональной шины"}]
 
-   :products [{:id "fhirbase"
+   :products (:ru (yaml "products/index.yaml"))
+   :products-old [{:id "fhirbase"
                :labels ["PostgreSQL" "plv8" "HL7 FHIR"]
                :open-source true
                :title "Fhirbase"

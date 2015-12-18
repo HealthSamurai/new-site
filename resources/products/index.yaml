@@ -4,7 +4,7 @@ ru:
     title: Aidbox
     type: commercial
     motto: Облачная платформа для создания медицинских систем на основе HL7 FHIR.
-    decription: >-
+    description: >-
       Aidbox - это платформа «как сервис» (PaaS) для разработки медицинских
       решений на основе HL7 FHIR.
       Aidbox подходит для построения мобильных и web-решений оперирующих
@@ -17,7 +17,7 @@ ru:
       - Решает вопросы Security с использование OAuth
       - Предоставляет хостинг для базы и несложных одностраничных приложений (SPA)
       - Предоставляет SDK и возможность интегрироваться с решениями на ваших технологиях (Java, .Net и т.д.)
-    links:
+    links: 
       direct: https://aidbox.io/landing.html#/
     tags:
       - Amazon AWS
@@ -48,6 +48,27 @@ ru:
       - PostgreSQL
       - plv8
       - HL7 FHIR
+  - id: formstamp
+    logo: formstamp
+    title: FormStamp
+    type: opensource
+    motto: FormStamp - это библиотека виджетов на AngularJS для разработки веб-приложений с «богатым» клиентом.
+    description: >-
+      FormStamp - набор директив AngularJS для быстрого описания и связывания
+      форм с данными приложения. Упрощает прототипирование, стилизацию,
+      валидацию данных и вывод ошибок.
+    features:
+      - Написан на «чистом» AngularJS
+      - Имеет встроенный FormBuilder
+      - Стилизован на Twitter Bootstrap
+      - Имеет минималистичный codebase
+    links:
+      direct: http://formstamp.github.io/
+      github: https://github.com/formstamp/formstamp
+      chat: https://gitter.im/formstamp/formstamp
+    tags:
+      - JavaScript
+      - AngularJS
   - id: fhir-js
     logo: 
     title: FHIR.js
@@ -109,24 +130,3 @@ ru:
       - Vagrant
       - RSpec
       - TDD
-  - id: formstamp
-    logo: formstamp
-    title: FormStamp
-    type: opensource
-    motto: FormStamp - это библиотека виджетов на AngularJS для разработки веб-приложений с «богатым» клиентом.
-    description: >-
-      FormStamp - набор директив AngularJS для быстрого описания и связывания
-      форм с данными приложения. Упрощает прототипирование, стилизацию,
-      валидацию данных и вывод ошибок.
-    features:
-      - Написан на «чистом» AngularJS
-      - Имеет встроенный FormBuilder
-      - Стилизован на Twitter Bootstrap
-      - Имеет минималистичный codebase
-    links:
-      - direct: http://formstamp.github.io/
-      - github: https://github.com/formstamp/formstamp
-      - gitter: https://gitter.im/formstamp/formstamp
-    tags:
-      - JavaScript
-      - AngularJS
