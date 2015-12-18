@@ -1,34 +1,34 @@
 (ns site.widgets
   (:require [garden.units :refer [px px*]]
-            [site.styles :refer [s-var style vh]]))
+            [site.styles :refer [s-var style vh &pbox &center-block &center-text &mbox]]))
 
 (defn grid [& columns]
   (let [cnt (/ 12 (count columns))]
     (into [:div.row]
           (for [c columns] (into [:div {:class (str "col-md-" cnt)}] c)))))
 
-(defn splash [opts]
-  (let [defaults {:color :inverse :typescale :medium}
-        props (merge defaults opts)
-        typescale (s-var :typescale (:typescale props))
-        palette (s-var :color (:color props))]
+
+(defn splash [{ts :typescale pl :color :as opts}]
+  (let [typescale (s-var :typescale (or ts :medium))
+        palette   (s-var :color (or pl :inverse))]
     [:div
      (style
       [:#splash
-       (merge (:text palette)
-              {:padding-top (px* 6 vh)
-               :padding-bottom (px* 5 vh)})
-       [:.splash-header     (merge (:h1 typescale)
-                                   {:text-align "center"
-                                    :margin "0 auto"
-                                    :max-width "20em"})
-        [:em (merge {:font-style "normal"} (:em palette))]]
-       [:.splash-sub-header (merge (:h4 typescale)
-                                   {:padding-top (px* 0.5  vh)
-                                    :margin-left "auto"
-                                    :max-width "40em"
-                                    :text-align "center"
-                                    :margin-right "auto"})]])
+       (palette :text)
+       (&pbox 4 0 4 0)
+       
+       [:.splash-header
+        (typescale :h1)
+        (&center-text)
+        (&center-block "20em")
+        [:em (palette :em)]]
+
+       [:.splash-sub-header
+        (typescale :h4)
+        (&pbox 0.5 nil nil nil)
+        (&center-block "40em")
+        (&center-text)]])
+
      [:div#splash
       [:div.container-fluid
        [:h1.splash-header    (:title opts)]
@@ -39,7 +39,7 @@
    (style [:.paralax
            {:position "relative"}
            [:.paralaxed {:top 0 :position "fixed" :width "100%" :z-index -5}]
-           [:.push {:margin {:top (px* height vh)}}]
+           [:.push (&mbox height nil nil nil)]
            [:.paralaxing {:background {:color "white"}}]])
    [:div.paralaxed layer-1]
    [:div.push]

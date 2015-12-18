@@ -10,7 +10,7 @@
             [site.products :refer [products]]
             [site.projects :refer [projects project]]
             [site.contacts :refer [contacts]]
-            [site.trainings :refer [trainings]]
+            [site.trainings :refer [trainings training]]
             [site.layout :refer [layout]]
             [route-map.core :as rt]))
 
@@ -24,7 +24,8 @@
    "about"    {:GET  #'index}
    "products" {:GET #'products}
    "contacts" {:GET #'contacts}
-   "trainings" {:GET #'trainings}
+   "trainings" {:GET #'trainings
+                [:id] {:GET #'training}}
    "projects" {:GET #'projects
                [:id] {:GET #'project}}})
 

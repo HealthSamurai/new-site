@@ -117,7 +117,7 @@
                [[:a.logo {:href (str "/trainings#" (:id p))}
                  [:i.hs-icon {:class (font/fontello-icon-name :fhirbase)}]
                  [:h2 (:title p)]]
-                 [:p.desc  (:desc p)]]))]]))
+                 [:p.desc  (:abstract p)]]))]]))
 
 (defn index [req]
   [:div

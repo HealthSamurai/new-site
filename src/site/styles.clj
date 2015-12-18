@@ -3,8 +3,8 @@
    [garden.core :refer [css]]
    [garden.units :refer [px px*]]))
 
-(defn style [cnt]
-  [:style {:type "text/css"} (css cnt)])
+(defn style [cnt] [:style {:type "text/css"} (css cnt)])
+
 
 (def vh 18)
 
@@ -51,5 +51,16 @@
 (defn mbox [& xs]
   [:& {:margin (apply box xs)}])
 
+(defn &mbox [& xs]
+  [:& {:margin (apply box xs)}])
+
 (defn pbox [& xs]
   [:& {:padding (apply box xs)}])
+
+(defn &pbox [& xs]
+  [:& {:padding (apply box xs)}])
+
+(defn &center-block [width]
+  [:& {:margin "0 auto" :max-width width}])
+
+(defn &center-text [] [:& {:text-align "center"}])

@@ -1,8 +1,9 @@
 (ns site.trainings
   (:require [site.styles :refer [s-var vh style undecorate mbox pbox]]
             [site.navigation :refer [navigation]]
-            [site.widgets :refer [grid  splash]]
-            [site.data :refer [data]]
+            [site.widgets :refer [grid  splash paralax]]
+            [site.data :refer [data find-by-id]]
+            [site.formats :refer [load-text]]
             [garden.units :refer [px px*]]
             [site.font :as font]))
 
@@ -38,7 +39,7 @@
                                       :vertical-align "middle"})]
        [:h1 {:text-align "center"}]])
 
-     [:div.col-md-3.left
+     [:div.col-md-2.left
       (when-let [img (:img training)] [:img.logo {:src img}])
       
       (for [label (or (training :tags) [])] [:div.tag label])]
@@ -52,7 +53,23 @@
 
 (defn trainings [req]
   [:div
-   (navigation {:color :inverse})
-   (splash {:title  "Trainins" :moto "looking for"})
+   (paralax
+    20
+    [:div
+     (navigation {:color :inverse})
+     (splash {:title (data :text :trainings)
+              :moto  (data :text :trainings-subtitle)})]
+    [:div.container
+     (map training-view (data :trainings))])])
 
-   (map training-view (data :trainings))])
+(defn training [{{id :id} :params :as req}]
+  (let [training (find-by-id id :trainings)]
+    [:div
+     (navigation {})
+     [:br]
+     [:div.container
+      [:h1 (:title training)]
+      [:br]
+      [:p (str "resources/trainings/" (:plan training))]
+      [:p (load-text (str "trainings/" (:plan training)))]
+      [:br][:br][:br]]]))

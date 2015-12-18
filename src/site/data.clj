@@ -10,6 +10,7 @@
           :projects-subtitle "Вместе с нашими клиентам мы создаем медицинские системы нового поколения, которые используются в разных частях мира."
           :services "Услуги"
           :trainings "Тренинги"
+          :trainings-subtitle "Мы проводим консультации и тренинги"
           :contacts "Контакты"
           :contacts-subtitle "У нас есть представительства в двух странах и мы всегда готовы встретитсья и обсудить ваш проект."}
 
@@ -42,8 +43,7 @@
                :href "http://choice-hs.com/#ehr"
                :client {:title "Choice Hospital Systems" :href "http://choice-hs.com"}
                :tags ["Cloud EHR", "Ruby on Rails" "Amazon EC2" "PostgreSQL"]
-               :desc "Разработка, сертификация и внедрение в 3-х американских клиниках облачной EHR"
-               }
+               :desc "Разработка, сертификация и внедрение в 3-х американских клиниках облачной EHR"}
               {:id "kainos"
                :title "Kainos"
                :tags ["PostgreSQL" "plv8" "consulting"]
