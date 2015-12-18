@@ -1,0 +1,132 @@
+ru:
+  - id: aidbox
+    logo: aidbox
+    title: Aidbox
+    type: commercial
+    motto: Облачная платформа для создания медицинских систем на основе HL7 FHIR.
+    decription: >-
+      Aidbox - это платформа «как сервис» (PaaS) для разработки медицинских
+      решений на основе HL7 FHIR.
+      Aidbox подходит для построения мобильных и web-решений оперирующих
+      медицинскими данными: электронные карты (EHR), интеграционные ”шины”,
+      репозитории медицинских данных (реестры), госпитальные системы (HIS),
+      порталы для пациентов и телемедицины.
+    features: 
+      - Использует Fhirbase для хранения данных
+      - Реализует REST API на основе стандарта HL7 FHIR
+      - Решает вопросы Security с использование OAuth
+      - Предоставляет хостинг для базы и несложных одностраничных приложений (SPA)
+      - Предоставляет SDK и возможность интегрироваться с решениями на ваших технологиях (Java, .Net и т.д.)
+    links:
+      direct: https://aidbox.io/landing.html#/
+    tags:
+      - Amazon AWS
+      - Fhirbase
+      - Clojure
+      - AngularJS
+  - id: fhirbase
+    logo: fhirbase
+    title: Fhirbase
+    type: opensource
+    motto: Реляционное хранилище медицинских данных на основе стандарта HL7 FHIR.
+    description: >-
+      Fhirbase - это реляционное хранилище с встроенной моделью данных,
+      соответствующей международному стандарту HL7 FHIR. Fhirbase подходит для
+      построения медицинских информационных системы разных классов: электронные
+      карты (EHR), интеграционные ”шины”, репозитории медицинских данных
+      (реестры), госпитальные системы (HIS), порталы для пациентов и
+      телемедицины.
+    features:
+      - Построен на PostgreSQL с использованием языка plv8
+      - Реализует модель данных соответствующую стандарту HL7 FHIR
+      - Имеет простой REST-like API для обращения к данным
+    links:
+      direct: http://fhirbase.github.io/
+      github: https://github.com/fhirbase
+      chat: https://groups.google.com/forum/#!forum/fhirbase
+    tags:
+      - PostgreSQL
+      - plv8
+      - HL7 FHIR
+  - id: fhir-js
+    logo: 
+    title: FHIR.js
+    type: opensource
+    motto: JavaScript клиент для HL7 FHIR.
+    description: >-
+      Упрощает получение FHIR данных в JavaScript приложениях, написанных на
+      Node.js, AngularJS, jQuery или YUI. Реализует привычный синтаксис и
+      архитектуру. FHIR.js - библиотека универсальных JavaScript адаптеров для
+      получения данных FHIR сервера.
+    features:
+      - Простой и выразительный синтаксис запросов
+      - Поддерживает CRUD операции по стандарту HL7 FHIR
+      - Поддерживает базовую HTTP авторизацию
+      - Поддерживает OAuth2 авторизацию
+    links:
+      github: https://github.com/FHIR/fhir.js
+    tags:
+      - JavaScript
+      - Node.js
+      - YUI
+      - jQuery
+      - AngularJS
+  - id: fhir-schema
+    logo: 
+    title: FHIR-schema
+    type: opensource
+    motto: 
+    description: >-
+      Библиотека для описания StructureDefinition FHIR ресурсов с помощь JSON
+      Schema. Привносит лучшие практики для описания и валидации структур данных
+      из мира JavaScript в мир FHIR.
+    features:
+    links:
+      github: https://github.com/fhir-js/fhir-schema
+      chat: https://github.com/fhir-js/fhir-schema/blob/master/zulip.fhir.me
+    tags:
+      - JavaScript
+      - JSON
+      - HL7 FHIR
+  - id: foodtaster
+    logo: foodtaster
+    title: Foodtaster
+    type: opensource
+    motto: Библиотека для тестирования Chef конфигурации с помощью RSpec
+    description: >-
+      Foodtaster позволяет разрабатывать сложную серверную инфраструктуру в
+      лучших традициях гибких методологий. Помогает системным администраторам и
+      DevOps-специалистам автоматизировать проверки межсерверного
+      взаимодействия. Foodtaster сближает разработчиков и системных
+      администраторов.
+    features:
+      - Использует Vagrant и виртуальные машины
+      - Привносит TDD подход в конфигурирование инфраструктуры
+    links:
+      github: https://github.com/mlapshin/foodtaster
+    tags:
+      - Chef
+      - Vagrant
+      - RSpec
+      - TDD
+  - id: formstamp
+    logo: formstamp
+    title: FormStamp
+    type: opensource
+    motto: FormStamp - это библиотека виджетов на AngularJS для разработки веб-приложений с «богатым» клиентом.
+    description: >-
+      FormStamp - набор директив AngularJS для быстрого описания и связывания
+      форм с данными приложения. Упрощает прототипирование, стилизацию,
+      валидацию данных и вывод ошибок.
+    features:
+      - Написан на «чистом» AngularJS
+      - Имеет встроенный FormBuilder
+      - Стилизован на Twitter Bootstrap
+      - Имеет минималистичный codebase
+    links:
+      - direct: http://formstamp.github.io/
+      - github: https://github.com/formstamp/formstamp
+      - gitter: https://gitter.im/formstamp/formstamp
+    tags:
+      - JavaScript
+      - AngularJS
