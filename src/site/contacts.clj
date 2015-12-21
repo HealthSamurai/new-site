@@ -1,5 +1,5 @@
 (ns site.contacts
-  (:require [site.styles :refer [s-var vh style undecorate mbox pbox]]
+  (:require [site.styles :refer [s-var vh style undecorate mbox pbox] :as s]
             [site.navigation :refer [navigation]]
             [site.widgets :refer [grid  splash paralax]]
             [site.data :refer [data]]
@@ -9,8 +9,7 @@
 (defn contacts [req]
   [:div
    (style
-    [:#contacts (pbox 4 nil 6 nil)])
-
+    [:#contacts (s/&padding 2 nil 8 nil)])
    (paralax
     28
     [:div
@@ -30,7 +29,14 @@
     [:div#contacts.container
      (apply grid
             (for [office (data :contacts :offices)]
-              [[:h3 (:city office)]
-               [:iframe {:width (px* 8 vh) :height (px* 8 vh) :frameborder "0" :style "border:0" :src (:gmap office) :allowfullscreen true}]
+              [[:h2 (:city office)]
+               [:p (:address office)]
+               [:iframe {:width (str (* s/vh 30) "px")
+                         :height (str (* s/vh 15) "px")
+                         :frameborder "0"
+                         :style "border:0"
+                         :src (:gmap office)
+                         :allowfullscreen true}]
+               [:br]
                [:p (:country office) ": " (:phone office)]
-               [:p (:address office)]]))])])
+               ]))])])

@@ -1,7 +1,7 @@
 ru:
   - id: fhir-intro
     title: Основы FHIR
-    img: /imgs/fhir.png
+    img: /imgs/fhir-intro.svg
     abstract: >
       Восьмичасовой семинар по основным особенностям стандарта
       HL7 FHIR и экосистеме вокруг стандарта.
@@ -32,7 +32,7 @@ ru:
       вам возможность воспользоваться всей мощью PostgreSQL и эффективно расширять fhirbase под ваши
       конкретные нужды. Так же мы затронем вопросы практической эксплуатации fhirbase в боевых условиях,
       такие как настройка производительности, репликация и бэкапы.
-    img: /imgs/fhirbase.png
+    img: /imgs/fhirbase.svg
     plan: fhirbase.ru.md
     tags:
       - FHIR
@@ -40,7 +40,7 @@ ru:
       - PostgreSQL
   - id: devops
     title: Непрерываная поставка
-    img: /imgs/devops.png
+    img: /imgs/devops.svg
     tags:
       - DevOps
       - ContinuousDelivery

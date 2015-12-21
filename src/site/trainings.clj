@@ -1,5 +1,5 @@
 (ns site.trainings
-  (:require [site.styles :refer [s-var vh style undecorate &margin &padding &border &text &middle]]
+  (:require [site.styles :refer [s-var vh style undecorate &margin &padding &border &text &middle] :as s]
             [site.navigation :refer [navigation]]
             [site.widgets :refer [grid  splash paralax tags]]
             [site.data :refer [data find-by-id]]
@@ -8,22 +8,24 @@
             [site.font :as font]))
 
 (defn training-view [training]
-  [:div.training.row
-   (style
-    [:.training (&margin 1 nil) (&padding 1 nil 2 nil) (&border :bottom)
-     [:.header (undecorate) (&margin 0.5 nil)]
-     [:.left   (&text :right)]
-     [:.logo {:max-height (vh* 8)} (&text :right) (&margin 1 nil)]
-     [:h1 (&text :center)]])
+  [:div.training.container
+   [:div.row
+    (style
+     [:.training (&margin 1 nil) (&padding 1 nil 3 nil)
+      [:.header (s/&unstyle-links)]
+      [:.left   (&text :right)]
+      [:.logo {:width (vh* 10)} (&text :right) (&margin 1 nil)]
+      [:h1 (&text :center)]])
 
-   [:div.col-md-3.left
-    (when-let [img (:img training)] [:img.logo {:src img}])
-    (tags (or (training :tags) []))]
-
-   [:div.col-md-8.column
-    [:a.header {:href (str "/trainings/" (:id training))} [:h2 (training :title)]]
-    [:p (:desc training)]
-    [:a {:href (str "/trainings/" (:id training))} "Узнать подробнее..."]]])
+    [:div.col-md-2.left
+     (when-let [img (:img training)] [:img.logo {:src img}])
+     (tags (or (training :tags) []))]
+    [:div.col-md-8.column
+     [:a.header {:href (str "/trainings/" (:id training))}
+      [:h2 (training :title)]]
+     [:br]
+     [:p (:desc training)]
+     [:a {:href (str "/trainings/" (:id training))} "Узнать подробнее..."]]]])
 
 (defn trainings [req]
   [:div
@@ -33,8 +35,7 @@
      (navigation {:color :inverse})
      (splash {:title (data :text :trainings)
               :moto  (data :text :trainings-subtitle)})]
-    [:div.container
-     (map training-view (data :trainings))])])
+    (interpose [:hr] (map training-view (data :trainings))))])
 
 (defn training [{{id :id} :params :as req}]
   (let [training (find-by-id id :trainings)]

@@ -1,7 +1,7 @@
 (ns site.index
   (:require [site.styles :refer [style vh s-var undecorate] :as s]
             [garden.units :refer [px px*]]
-            [site.widgets :refer [splash grid]]
+            [site.widgets :refer [splash grid] :as w]
             [site.data :refer [data]]
             [site.font :as font]
             [site.navigation :refer [navigation]]))
@@ -132,7 +132,9 @@
              (s/&border :top)
              [:&:hover
               (s-var :color :main :selection)
-              [:p {:color (s-var :color :main :text :color)}]]
+              [:p {:color (s-var :color :main :text :color)}]
+              [:.fa {:color (s-var :color :main :selection :color)}]
+              ]
              [:.fa {:float "left"
                     :display "inline-block"
                     :color "#888" 
@@ -145,11 +147,11 @@
               {:display "inline-block"
                :vertical-align "middle"}]]]])
    [:div.container
-    (block-header "/partnership" :partnership)
+    (block-header "/services" :partnership)
     [:div.items-list
      (for [i (data :services)]
        [:a.row.list-item {:href (str "/services#" (:id i))}
-        [:i.fa {:class (str "fa-" (name (or (:icon i) "rocket")))}]
+        (w/fa-icon (or (:icon i) "rocket"))
         [:div.desc
          [:h4 (:title i)]
          [:p  (:description i)]]])]]])

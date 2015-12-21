@@ -49,19 +49,21 @@
   [:div.tags
    (style
     [:.tag
-     (merge
-      {:font {:weight "300" :size "75%"}
-       :border-radius ".25em"
-       :display "inline-block"
-       :line-height (s/vh* 1)
-       :padding (s/vh* 0.5)
-       :margin-bottom "4px"
-       :margin-right "4px"
-       :text-align "center"
-       :vertical-align "baseline"
-       :white-space "nowrap"})
+     {:font-weight "300"
+      :border-radius ".25em"
+      :display "inline-block"
+      :line-height (s/vh* 0.5)
+      :font-size (s/vh* 0.5)
+      :padding (s/vh* 0.5)
+      :margin-bottom (s/vh* 0.25)
+      :margin-right "4px"
+      :text-align "center"
+      :vertical-align "baseline"
+      :white-space "nowrap"}
      (s/&text :right)
      [:& (s-var :typescale :medium :small)]
      [:& (s-var :color :main :muted-selection)]
      (s/&border)])
    (interpose [:br] (for [label tags] [:div.tag label]))])
+
+(defn fa-icon [x] [:i.fa {:class (str "fa-" (name (or x "ups")))}])

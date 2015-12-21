@@ -1,13 +1,14 @@
 (ns site.navigation
   (:require [site.data :refer [data]]
-            [site.styles :refer [s-var style vh undecorate pbox mbox]]
+            [site.styles :refer [s-var style vh undecorate pbox mbox] :as s]
             [site.widgets :refer [grid]]
             [garden.units :refer [px px*]]))
 
 (def MENU
   [{:href "/products" :title  (data :text :products)}
-   {:href "/projects" :title  (data :text :projects)}
+   {:href "/services" :title (data :text :development)}
    {:href "/trainings" :title (data :text :trainings)}
+   {:href "/projects" :title  (data :text :projects)}
    {:href "/contacts" :title  (data :text :contacts)}])
 
 
@@ -58,28 +59,30 @@
     (style
      [:div#footer
       (:text palette)
-      (pbox 4 nil 6 nil)
+      (s/&padding 4 nil 6 nil)
       [:a {:color "#ddd"}]])
     [:div.container
-     (grid [[:h4 (data :text :services)]
-            [:ul.list-unstyled
-             (for [x (data :services)]
-               [:li [:a {:href (:href x)} (:title x)]])]]
+     (grid
+      [[:h4 (data :text  :products)]
+       [:ul.list-unstyled
+        (for [x (data :products)]
+          [:li [:a {:href (str "/products#" (:id x))} (:title x)]])]]
 
-           [[:h4 (data :text  :products)]
-            [:ul.list-unstyled
-             (for [x (data :products)]
-               [:li
-                [:a {:href (get-in x [:links 0 :link])} (:title x)]])]]
-           [[:h4 (data :text  :education)]
-            [:ul.list-unstyled
-             (for [x (data :education)]
-               [:li [:a {:href (:href x)} (:title x)]])]]
+      [[:a {:href "/services"} [:h4 (data :text  :development)]]
+       [:ul.list-unstyled
+        (for [x (data :services)]
+          [:li [:a {:href (:href x)} (:title x)]])]]
 
-           [[:a {:href "/contacts"} [:h4 (data :text  :contacts)]]
-            [:ul.list-unstyled
-             [:li [:a {:href (str "mailto:" (data :contacts :mailto))}
-                   (data :contacts :mailto)]]
-             (for [x (data :contacts :offices)]
-               [:li
-                [:a (:country x) ": " (:phone x)]])]])]]))
+      
+      [[:a {:href "/trainings"} [:h4 (data :text  :education)]]
+       [:ul.list-unstyled
+        (for [x (data :trainings)]
+          [:li [:a {:href (:href x)} (:title x)]])]]
+
+      [[:a {:href "/contacts"} [:h4 (data :text  :contacts)]]
+       [:ul.list-unstyled
+        [:li [:a {:href (str "mailto:" (data :contacts :mailto))}
+              (data :contacts :mailto)]]
+        (for [x (data :contacts :offices)]
+          [:li
+           [:a (:country x) ": " (:phone x)]])]])]]))
