@@ -1,5 +1,5 @@
 (ns site.data
-  (:require [site.formats :refer [yaml]]))
+  (:require [site.formats :refer [yaml] :as fmt]))
 
 
 (def strings
@@ -12,7 +12,9 @@
           :trainings "Тренинги"
           :trainings-subtitle "Мы проводим консультации и тренинги"
           :contacts "Контакты"
-          :contacts-subtitle "У нас есть представительства в двух странах и мы всегда готовы встретитсья и обсудить ваш проект."}
+          :contacts-subtitle "У нас есть представительства в двух странах и мы всегда готовы встретитсья и обсудить ваш проект."
+          :partnership "Cотрудничествo"
+          :partnership-subtitle "Консалтинг и разработка"}
 
    :contacts {:offices [{:id "us"
                          :phone "+1 (818) 731-12-79"
@@ -28,9 +30,9 @@
                          :address "Россия, Санкт-Петербург, ул. Большая морская 19"}]
               :mailto "hello@health-samurai.io"}
 
-   :services [{:id "start"   :title "Запуск и обучение"}
-              {:id "dev"     :title "Разработка"}
-              {:id "support" :title "Коммерческая поддержка"}]
+   :services (map
+              (fn [s] (assoc s :post (fmt/load-text (str "services/" (:id s) ".ru.md"))))
+              (:ru (yaml "services/index.yaml")))
 
    :trainings (:ru (yaml "trainings/index.yaml"))
    
@@ -114,3 +116,4 @@
 
 (defn find-by-id [id & ks]
   (first (filter #(= id (:id %)) (get-in strings ks))))
+

@@ -1,7 +1,7 @@
 (ns site.products
-  (:require [site.styles :refer [s-var vh style undecorate pbox mbox]]
+  (:require [site.styles :refer [s-var vh style undecorate pbox mbox] :as s]
             [site.navigation :refer [navigation]]
-            [site.widgets :refer [grid  splash paralax]]
+            [site.widgets :refer [grid  splash paralax] :as w]
             [site.data :refer [data]]
             [garden.units :refer [px px*]]
             [site.font :as font]))
@@ -23,38 +23,15 @@
      (style
       [:.product
        [:.header (undecorate)]
-       [:.hs-icon {:font-size (px* vh 8)
+       [:.hs-icon {:font-size (s/vh* 8)
                    :text {:align "left"}
-                   ;; :position "initial"
-                   ;; :right "-61px"
-                   :color (get-in palette [:text :color])
+                   :color (s-var :color :main :muted :color)
                    :display "block"
                    :margin-left 0}
-        (mbox 1.5 nil 1 nil)]
+        (s/&margin 1.5 nil 1 nil)]
 
-       [:.tag
-        (merge
-         (:small typescale)
-         {:font {:weight "300"
-                 :size "75%"}
-          :background-color (get-in palette [:selection :background-color])
-          :border-radius ".25em"
-          :border "1px solid #ddd"
-          :color "#888"
-          :display "inline-block"
-          :line-height "1"
-          :margin-bottom "4px"
-          :margin-right "4px"
-          :padding "10px"
-          :text-align "center"
-          :vertical-align "baseline"
-          :white-space "nowrap"})]
-       [:.left
-        {:position "relative" :overflow "hidden"}
-        (pbox 2 nil 2 nil)]
-       [:.column {
-                  :padding {:left (px 40)}}
-        (pbox 2 nil 2 nil)]
+       [:.left {:position "relative" :overflow "hidden"} (pbox 2 nil 2 nil)]
+       [:.column {:padding {:left (px 40)}} (s/&margin 2 nil 2 nil)]
 
        [:.fa (merge  (:h2 typescale)
                      {:font-size (px* 2 vh)
@@ -77,10 +54,7 @@
 
      [:div.col-md-2.left
       (font/icon (:logo product))
-      (for [label (product :tags)]
-        [:div
-         [:span.tag.label label]
-         [:br]])]
+      (w/tags (product :tags))]
 
      [:div.col-md-8.column
       [:a.header {:id (:id product) :href (str "#" (:id product))}
@@ -102,7 +76,7 @@
 
 (defn products [req]
   [:div
-   (paralax 20
+   (paralax 28
             [:div
              (navigation {:color :inverse})
              (splash {:title  "Наши продукты"

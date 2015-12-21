@@ -9,6 +9,7 @@
             [site.index :refer [index]]
             [site.products :refer [products]]
             [site.projects :refer [projects project]]
+            [site.services :refer [services service]]
             [site.contacts :refer [contacts]]
             [site.trainings :refer [trainings training]]
             [site.layout :refer [layout]]
@@ -24,6 +25,7 @@
    "about"    {:GET  #'index}
    "products" {:GET #'products}
    "contacts" {:GET #'contacts}
+   "services" {:GET #'services}
    "trainings" {:GET #'trainings
                 [:id] {:GET #'training}}
    "projects" {:GET #'projects

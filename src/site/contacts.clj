@@ -12,7 +12,7 @@
     [:#contacts (pbox 4 nil 6 nil)])
 
    (paralax
-    26
+    28
     [:div
      (navigation {:color :inverse})
      (splash {:title  (data :text :contacts)

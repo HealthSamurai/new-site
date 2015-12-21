@@ -1,4 +1,5 @@
-(ns site.component)
+(ns site.component
+  (:require [clojure.walk :as w]))
 
 (defmacro defcomp [& x])
 
@@ -10,7 +11,7 @@
        [:a (style (&link :opts))
         {:href (url "item" x)} x]])]])
 
-(defcomp splash [{ts :typescale pl :color :as data}]
+(defcomp splash [{ts :typescale pl :color :as opts}]
   (let [typescale (s-var :typescale (or ts :medium))
         palette (s-var :color (or pl :normal))]
     [:div (style (palette :text)

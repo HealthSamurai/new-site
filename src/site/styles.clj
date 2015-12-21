@@ -10,10 +10,17 @@
 
 (def style-vars
   {:color {:main       {:text      {:color "#333356"}
+                        :muted     {:color "#ddd"}
+
                         :selection {:color "#a23835"
                                     :border-color "#a23835"
                                     :cursor "pointer"
                                     :background-color "#f5f5f5"}
+
+                        :muted-selection {:color "#888"
+                                          :border-color "#a23835"
+                                          :cursor "pointer"
+                                          :background-color "#f5f5f5"}
                         :em   {:color "#a23835"}}
            :inverse    {:text {:color "white"
                                :background-color "#a23835"}
@@ -54,13 +61,49 @@
 (defn &mbox [& xs]
   [:& {:margin (apply box xs)}])
 
+(defn &margin
+  ([x]
+   [:& {:margin (box x x x x)}])
+  ([tb rl]
+   [:& {:margin (box tb rl tb rl)}])
+  ([t r b l]
+   [:& {:margin (box t r b l)}]))
+
 (defn pbox [& xs]
   [:& {:padding (apply box xs)}])
 
 (defn &pbox [& xs]
   [:& {:padding (apply box xs)}])
 
+(defn &padding
+  ([x]   [:& {:padding (box x x x x)}])
+  ([tb rl]   [:& {:padding (box tb rl tb rl)}])
+  ([t r b l] [:& {:padding (box t r b l)}]))
+
+(defn &border
+  ([] [:& {:border {:color "#ddd" :style "solid" :width "1px"}}])
+  ([side] [:& {:border (assoc {} side {:color "#ddd"
+                                       :style "solid"
+                                       :width "1px"})}]))
+
+(def text-keys
+  {:right {:text-align "right"}
+   :center {:text-align "center"}
+   :bold {:font-weight "bold"}})
+
+(defn &text [& ks]
+  [:& (reduce (fn [acc k] (merge acc (k text-keys))) {} ks)])
+
 (defn &center-block [width]
   [:& {:margin "0 auto" :max-width width}])
 
 (defn &center-text [] [:& {:text-align "center"}])
+(defn &middle [] [:& {:vertical-align "middle"}])
+
+(defn vh* [num] (px* vh num))
+
+(defn &unstyle-links []
+  [:& {:text-decoration "none"
+       :color "inherit"}
+   [:&:hover {:text-decoration "none"
+              :color "inherit"}]])

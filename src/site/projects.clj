@@ -3,12 +3,22 @@
             [site.data :refer [data find-by-id]]
             [site.formats :refer [load-text]]
             [garden.units :refer [px px*]]
-            [site.styles :refer [style pbox s-var vh]]
+            [site.styles :refer [style pbox s-var vh] :as s]
             [site.widgets :refer [grid  splash paralax]]))
 
 
 (defn project-view [project]
   [:div.project
+   (style
+    [:.images {:width  (px 200)
+               :height (px 200)}
+     [:.image {:display "inline-block"
+               :background-color "#eee"
+               :cursor "pointer"
+               :margin (px 2)
+               :width (px 96)
+               :height (px 96)}
+      [:&:hover (s-var :color :main :selection)]]])
    [:div.container
     [:div.row
      [:div.col-md-9
@@ -24,24 +34,10 @@
 
 (defn projects [req]
   [:div#projects
-
    (style
     [:#projects
-     [:.project
-      {:border {:bottom {:color "#ddd" :style "solid" :width "1px"}}}
-      (pbox 2 nil 4 nil)]
-     [:.images {:width  (px 200)
-                :height (px 200)}
-      [:.image {:display "inline-block"
-                :background-color "#eee"
-                :cursor "pointer"
-                :margin (px 2)
-                :width (px 96)
-                :height (px 96)}
-       [:&:hover
-        {:background-color (s-var :color :inverse :text :background-color)}]]]])
-
-   (paralax 20
+     [:.project (s/&border :bottom) (s/&padding 2 nil 4 nil)]])
+   (paralax 28
             [:div
              (navigation {:color :inverse})
              (splash {:title (data :text :projects)

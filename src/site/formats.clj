@@ -10,3 +10,6 @@
 
 (defn yaml [f]
   (yaml/parse-string (slurp (str "resources/" f))))
+
+(defn to-yaml [data]
+  (yaml/generate-string data))

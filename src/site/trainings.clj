@@ -1,60 +1,34 @@
 (ns site.trainings
-  (:require [site.styles :refer [s-var vh style undecorate mbox pbox]]
+  (:require [site.styles :refer [s-var vh style undecorate &margin &padding &border &text &middle]]
             [site.navigation :refer [navigation]]
-            [site.widgets :refer [grid  splash paralax]]
+            [site.widgets :refer [grid  splash paralax tags]]
             [site.data :refer [data find-by-id]]
             [site.formats :refer [load-text]]
-            [garden.units :refer [px px*]]
+            [garden.units :refer [px px* vh*]]
             [site.font :as font]))
 
 (defn training-view [training]
-  (let [typescale (s-var :typescale :medium)
-        palette (s-var :color :main)]
-    [:div.training.row
-     (style
-      [:.training 
-       [:.header (undecorate)]
-       [:.left {:text {:align "right"}}]
+  [:div.training.row
+   (style
+    [:.training (&margin 1 nil) (&padding 1 nil 2 nil) (&border :bottom)
+     [:.header (undecorate) (&margin 0.5 nil)]
+     [:.left   (&text :right)]
+     [:.logo {:max-height (vh* 8)} (&text :right) (&margin 1 nil)]
+     [:h1 (&text :center)]])
 
-       [:.logo {:font-size (px* vh 8)
-                :text {:align "right"}
-                :max-height (px* 8 vh)}
-        (mbox 1 nil 1 nil)]
+   [:div.col-md-3.left
+    (when-let [img (:img training)] [:img.logo {:src img}])
+    (tags (or (training :tags) []))]
 
-       [:.tag (merge (:small typescale) {:text {:align "right"}
-                                         :color "gray"
-                                         :font {:weight "bold"}})]
-       [:.left {:positoin "relative"
-                :overflow "hidden"}
-        (pbox 2 nil 2 nil)]
-
-       [:.column {:border {:left {:color "#ddd"
-                                  :style "solid"
-                                  :width "1px"}}
-                  :padding {:left (px 40)}}
-        (pbox 2 nil 2 nil)]
-
-       [:.fa (merge  (:h2 typescale) {:font-size (px* 2 vh)
-                                      :padding-left (px* 1 vh)
-                                      :vertical-align "middle"})]
-       [:h1 {:text-align "center"}]])
-
-     [:div.col-md-2.left
-      (when-let [img (:img training)] [:img.logo {:src img}])
-      
-      (for [label (or (training :tags) [])] [:div.tag label])]
-
-     [:div.col-md-8.column
-      [:a.header {:href (str "/trainings/" (:id training))}
-       [:h2 (training :title)]]
-      [:br]
-      [:p (:desc training)]
-      [:a {:href (str "/trainings/" (:id training))} "Узнать подробнее..."]]]))
+   [:div.col-md-8.column
+    [:a.header {:href (str "/trainings/" (:id training))} [:h2 (training :title)]]
+    [:p (:desc training)]
+    [:a {:href (str "/trainings/" (:id training))} "Узнать подробнее..."]]])
 
 (defn trainings [req]
   [:div
    (paralax
-    20
+    28
     [:div
      (navigation {:color :inverse})
      (splash {:title (data :text :trainings)
