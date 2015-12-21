@@ -6,6 +6,7 @@
             [hiccup.core :refer [html]]
             [org.httpkit.server :as srv]
             [site.index :refer [index]]
+            [site.data :as data]
             [site.products :refer [products]]
             [site.projects :refer [projects project]]
             [site.services :refer [services service]]
@@ -19,7 +20,7 @@
    :headers {"Content-Type" "text/html; charset=utf-8"}
    :status  200})
 
-(def routes
+(def *routes
   {:GET #'index
    "about"    {:GET  #'index}
    "products" {:GET #'products}
@@ -29,10 +30,17 @@
                 [:id] {:GET #'training}}
    "projects" {:GET #'projects
                [:id] {:GET #'project}}})
+(def routes
+  (merge *routes {[:lang] *routes}))
 
-(defn dispatch [{uri :uri meth :request-method :as req}]
+(defn dispatch [{params :params uri :uri meth :request-method :as req}]
   (if-let [mtch (rt/match [meth uri] routes)]
-    (http (layout ((:match mtch) (update req :params merge (:params mtch)))))
+    (let [req (update req :params merge (:params mtch))
+          lang (get-in mtch [:params :lang])]
+      (if (contains? #{"ru" "en"} lang)
+        (data/with-lang (keyword lang)
+          (http (layout ((:match mtch) req))))
+        (http (layout ((:match mtch) req)))))
     {:body "ups" :method 404}))
 
 (def app (-> #'dispatch
@@ -44,6 +52,5 @@
 
 (comment
   (stop)
-  (start)
-  )
+  (start))
 

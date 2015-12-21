@@ -2,7 +2,7 @@
   (:require [site.styles :refer [s-var vh style undecorate &margin &padding &border &text &middle] :as s]
             [site.navigation :refer [navigation]]
             [site.widgets :refer [grid  splash paralax tags] :as w]
-            [site.data :refer [data find-by-id]]
+            [site.data :refer [data find-by-id i idata]]
             [site.formats :refer [load-text]]
             [garden.units :refer [px px* vh*]]
             [site.font :as font]))
@@ -24,13 +24,13 @@
       [:.list-desc {:margin-left (s/vh* 3.1)
                     :padding-top (s/vh* 0.5)}]]])
    [:a.header {:id (str "#" (:id service))}
-    [:h1 (w/fa-icon (:icon service)) "&nbsp;" (service :title)]]
+    [:h1 (w/fa-icon (:icon service)) "&nbsp;" (i service :title)]]
    [:br]
-   [:p (:post service)]
+   [:p (i service :post)]
    [:br]
-   [:h4 (:steps-statement service)]
+   [:h4 (i service :steps-statement)]
    [:br]
-   (for [[num step] (map (fn [x y] [x y]) (range 1 10) (service :steps))]
+   (for [[num step] (map (fn [x y] [x y]) (range 1 10) (i service :steps))]
      [:div.list-row
       [:div.list-item num]
       [:p.list-desc step]])])
@@ -43,10 +43,10 @@
     28
     [:div
      (navigation {:color :inverse})
-     (splash {:title (data :text :partnership)
-              :moto  (data :text :partnership-subtitle)})]
+     (splash {:title (idata :text :partnership)
+              :moto  (idata :text :partnership-subtitle)})]
     [:div
      (interpose [:hr] (map service-view (data :services)))
-     (splash {:title (data :text :partnership-target)
-              :moto  (data :text :partnership-subtitle)})])])
+     (splash {:title (idata :text :partnership-target)
+              :moto  (idata :text :partnership-subtitle)})])])
 

@@ -38,7 +38,7 @@
     [:div#main [:div#wrap cnt]]
     (footer)
     [:script {:type "text/javascript" :src "/jquery.min.js"}]
-    [:script {:type "text/javascript" :src "/instant.js"}]]])
+    #_[:script {:type "text/javascript" :src "/instant.js"}]]])
 
 
 

@@ -2,7 +2,7 @@
   (:require [site.styles :refer [s-var vh style undecorate pbox mbox] :as s]
             [site.navigation :refer [navigation]]
             [site.widgets :refer [grid  splash paralax] :as w]
-            [site.data :refer [data]]
+            [site.data :refer [data i idata]]
             [garden.units :refer [px px*]]
             [site.font :as font]))
 
@@ -58,18 +58,19 @@
 
      [:div.col-md-8.column
       [:a.header {:id (:id product) :href (str "#" (:id product))}
-       [:h2 (str (:title product) " ")
-        (when (= (:type product) "opensource") [:small "Open Source"])]]
-      [:p (:motto product)]
+       [:h2 (str (i product :title) " ")
+        [:small (i product :type)]]]
+      [:p (i product :motto)]
       [:br]
-      [:p (:description product)]
-      [:h4.features (str "Особенности " (:title product))]
-      [:ul.features-list (for [f (product :features)] [:li f])]
+      [:p (i product :description)]
+      [:h4.features (str (i product :title))]
+      [:ul.features-list (for [f (i product :features)] [:li f])]
       (for [link (:links product)]
         (let [key (first link)
               link (last link)]
           (case key
-            :direct       [:a.btn.btn-default.direct-link {:href link :target "_blank"} "Сайт продукта"]
+            :direct       [:a.btn.btn-default.direct-link {:href link :target "_blank"}
+                           (pr-str "TODO" link)]
             :github       (fa-link link :github)
             :chat (fa-link link :comments-o)
             "")))]]))
@@ -79,9 +80,9 @@
    (paralax 28
             [:div
              (navigation {:color :inverse})
-             (splash {:title  "Наши продукты"
-                      :moto "Мы разрабатываем технологичные продукты на основе HL7 FHIR."})]
+             (splash {:title  (idata :text :products)
+                      :moto   (idata :text :products-subtitle)})]
             [:div#products
              [:div.container (map product-view (data :products))]
-             (splash {:title "Готовы к сотрудничеству?"
-                      :moto  "Если у вас остались какие либо вопросы, хотите увидеть демо наших решений или обсудить с нами ваш проект - оставьте запрос и мы свяжемся с вами."})])])
+             (splash {:title (idata :text :products-target) 
+                      :moto (idata :text :products-subtarget)})])])

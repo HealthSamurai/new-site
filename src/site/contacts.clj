@@ -2,7 +2,7 @@
   (:require [site.styles :refer [s-var vh style undecorate mbox pbox] :as s]
             [site.navigation :refer [navigation]]
             [site.widgets :refer [grid  splash paralax]]
-            [site.data :refer [data]]
+            [site.data :refer [data i idata]]
             [garden.units :refer [px px*]]
             [site.font :as font]))
 
@@ -14,8 +14,8 @@
     28
     [:div
      (navigation {:color :inverse})
-     (splash {:title  (data :text :contacts)
-              :moto [:span (data :text :contacts-subtitle)
+     (splash {:title  (idata :text :contacts)
+              :moto [:span (idata :text :contacts-subtitle)
                      [:br]
                      [:br]
                      "email:"
@@ -24,13 +24,13 @@
                      (for [office (data :contacts :offices)]
                        [:span
                         [:br]
-                        "phone: " (:phone office)])]})]
+                        "phone: " (i office :phone)])]})]
 
     [:div#contacts.container
      (apply grid
             (for [office (data :contacts :offices)]
-              [[:h2 (:city office)]
-               [:p (:address office)]
+              [[:h2 (i office :city)]
+               [:p (i office :address)]
                [:iframe {:width (str (* s/vh 30) "px")
                          :height (str (* s/vh 15) "px")
                          :frameborder "0"
@@ -38,5 +38,5 @@
                          :src (:gmap office)
                          :allowfullscreen true}]
                [:br]
-               [:p (:country office) ": " (:phone office)]
+               [:p (i office :country) ": " (i office :address)]
                ]))])])

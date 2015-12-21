@@ -1,19 +1,13 @@
 (ns site.navigation
-  (:require [site.data :refer [data]]
+  (:require [site.data :refer [data i idata]]
             [site.styles :refer [s-var style vh undecorate pbox mbox] :as s]
             [site.widgets :refer [grid]]
+            [site.font :refer [icon]]
             [garden.units :refer [px px*]]))
-
-(def MENU
-  [{:href "/products" :title  (data :text :products)}
-   {:href "/services" :title (data :text :development)}
-   {:href "/trainings" :title (data :text :trainings)}
-   {:href "/projects" :title  (data :text :projects)}
-   {:href "/contacts" :title  (data :text :contacts)}])
 
 
 (defn navigation [opts]
-  (let [props (merge {:color :inverse :items MENU} opts)
+  (let [props (merge {:color :inverse} opts)
         palette (s-var :color (:color props))]
     [:div#navigation
      (style
@@ -49,8 +43,8 @@
       [:span.brand
        [:a {:href "/"} [:i.hs-icon.icon-samurai]]]
       [:ul.list-inline
-       (for [x (:items props)]
-         [:li [:a {:href (:href x)} (:title x)]])]]]))
+       (for [x (data :menu)]
+         [:li [:a {:href (:href x)} (i x :title)]])]]]))
 
 
 (defn footer []
@@ -59,30 +53,37 @@
     (style
      [:div#footer
       (:text palette)
-      (s/&padding 4 nil 6 nil)
-      [:a {:color "#ddd"}]])
+      (s/&padding 4 nil 0 nil)
+      [:a {:color "#ddd"}]
+      [:.footer-line {:background "rgba(46,48,58,1)"}
+       (s/&text :center)
+       (s/&margin 2 0 0 0)
+       (s/&padding 1 0)]])
     [:div.container
      (grid
-      [[:h4 (data :text  :products)]
+      [[:a {:href "/products"} [:h4 (idata :text  :products)]]
        [:ul.list-unstyled
         (for [x (data :products)]
-          [:li [:a {:href (str "/products#" (:id x))} (:title x)]])]]
+          [:li [:a {:href (str "/products#" (:id x))} (i x :title)]])]]
 
-      [[:a {:href "/services"} [:h4 (data :text  :development)]]
+      [[:a {:href "/services"} [:h4 (idata :text  :development)]]
        [:ul.list-unstyled
         (for [x (data :services)]
-          [:li [:a {:href (:href x)} (:title x)]])]]
+          [:li [:a {:href (:href x)} (i x :title)]])]]
 
       
-      [[:a {:href "/trainings"} [:h4 (data :text  :education)]]
+      [[:a {:href "/trainings"} [:h4 (idata :text  :education)]]
        [:ul.list-unstyled
         (for [x (data :trainings)]
-          [:li [:a {:href (:href x)} (:title x)]])]]
+          [:li [:a {:href (:href x)} (i x :title)]])]]
 
-      [[:a {:href "/contacts"} [:h4 (data :text  :contacts)]]
+      [[:a {:href "/contacts"} [:h4 (idata :text  :contacts)]]
        [:ul.list-unstyled
         [:li [:a {:href (str "mailto:" (data :contacts :mailto))}
               (data :contacts :mailto)]]
         (for [x (data :contacts :offices)]
           [:li
-           [:a (:country x) ": " (:phone x)]])]])]]))
+           [:a (i x :country) ": " (i x :phone)]])]])]
+     [:div.footer-line
+      [:div.container-fluid
+       [:b  " © 2015 HealthSamurai" (icon :samurai)]]]]))

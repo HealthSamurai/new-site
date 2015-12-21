@@ -1,19 +1,26 @@
-ru:
-  - id: medclient
-    title: MedClient EHR
-    post: medclient.md
-    href: http://choice-hs.com/#ehr
-    client: {title: Choice Hospital Systems, href: 'http://choice-hs.com'}
-    tags: [Cloud EHR, Ruby on Rails, Amazon EC2, PostgreSQL]
-    desc: Разработка, сертификация и внедрение в 3-х американских клиниках облачной EHR
-  - id: kainos
-    title: Kainos
-    tags: [PostgreSQL, plv8, consulting]
-    desc: Доработка Fhirbase под нужды проекта Kainos
-  - id: netrika
-    title: Netrika
-    tags: [PostgreSQL, plv8, consulting]
-    desc: Консультирование и обучение по HL7 FHIR и внедрение Fhirbase в рамках региональной шины
-  - id: miac
-    title: MIAC
-    desc: Консультирование и обучение по HL7 FHIR и внедрение Fhirbase в рамках региональной шины
+- id: medclient
+  title: MedClient EHR
+  post: medclient.md
+  href: http://choice-hs.com/#ehr
+  client: {title: Choice Hospital Systems, href: 'http://choice-hs.com'}
+  tags: [Cloud EHR, Ruby on Rails, Amazon EC2, PostgreSQL]
+  desc:
+    ru: Разработка, сертификация и внедрение в 3-х американских клиниках облачной EHR
+    en: Developmpent, certification ...
+- id: kainos
+  title: Kainos
+  tags: [PostgreSQL, plv8, consulting]
+  desc:
+    ru: Доработка Fhirbase под нужды проекта Kainos
+    en: Custom dev for fhirbase ....
+- id: netrika
+  title: Netrika
+  tags: [PostgreSQL, plv8, consulting]
+  desc:
+    ru: Консультирование и обучение по HL7 FHIR и внедрение Fhirbase в рамках региональной шины
+    en: ?????
+- id: miac
+  title: MIAC
+  desc:
+    ru: Консультирование и обучение по HL7 FHIR и внедрение Fhirbase в рамках региональной шины
+    en: ?????

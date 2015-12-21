@@ -3,28 +3,33 @@
             [site.formats :refer [yaml] :as fmt]))
 
 
-(def strings
-  {:title "Health Samurai"
-   :text (:ru (yaml "text.yaml"))
-   :contacts  (:ru (yaml "contacts.yaml"))
-   :services  (:ru (yaml "services.yaml"))
-   :trainings (:ru (yaml "trainings.yaml"))
-   :products  (:ru (yaml "products.yaml"))
-   :projects  (:ru (yaml "projects.yaml"))})
+(def ^:dynamic *lang* :en)
 
-(fs/glob "resources/*.yaml")
+(defmacro with-lang [lang & body]
+  `(binding [*lang* ~lang]
+     ~@body))
 
-(defn load []
+(defn reload []
   (reduce
    (fn [acc fl]
-     (assoc acc (keyword (fs/base-name fl ".yaml"))  (:ru (fmt/from-yaml (slurp fl)))))
+     (assoc acc (keyword (fs/base-name fl ".yaml"))  (fmt/from-yaml (slurp fl))))
    {}
    (fs/glob "resources/*.yaml")))
 
 
-(defn data [& ks]
-  (get-in (load) ks))
+(defn data [& ks] (get-in (reload) ks))
+
+(defn i [data & ks]
+  (let [item (get-in data ks)]
+    (if (map? item)
+      (or (get item *lang*) item)
+      item)))
+
+(defn idata [& ks]
+  (apply i (reload) ks))
+
+
+(data :text :services)
 
 (defn find-by-id [id & ks]
   (first (filter #(= id (:id %)) (apply data ks))))
-

@@ -1,15 +1,22 @@
-ru:
-  mailto: "hello@health-samurai.io"
-  offices:
-    - id: "us"
-      phone: "+1 (818) 731-12-79"
-      country: "США"
-      city: "Лос Анджелес"
-      gmap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.1596514942753!2d-118.40129898425377!3d33.859776180658834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b37bfeede083%3A0x1dbc71562c4f8579!2zODMyIEhlcm1vc2EgQXZlLCBIZXJtb3NhIEJlYWNoLCBDQSA5MDI1NCwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1450713554652"
-      address: "USA 832 Hermosa Ave Hermosa Beach, CA 90254"
-    - id: "russia"
-      phone: "+7 (812) 919-00-25"
-      country: "Россия"
-      gmap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.808727812435!2d30.31225731642036!3d59.93531598187492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696311ad13e5405%3A0xef361e39d3d9d657!2z0JHQvtC70YzRiNCw0Y8g0JzQvtGA0YHQutCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1450713654801"
-      city: "Санкт-Перербурr"
-      address: "Россия, Санкт-Петербург, ул. Большая морская 19"
+mailto: "hello@health-samurai.io"
+offices:
+  - id: "us"
+    phone: "+1 (818) 731-12-79"
+    country:
+      en: "USA"
+      ru: "США"
+    city:
+      ru: "Лос Анджелес"
+      en: Los Angeles
+    gmap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.1596514942753!2d-118.40129898425377!3d33.859776180658834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b37bfeede083%3A0x1dbc71562c4f8579!2zODMyIEhlcm1vc2EgQXZlLCBIZXJtb3NhIEJlYWNoLCBDQSA5MDI1NCwg0KHQqNCQ!5e0!3m2!1sru!2sru!4v1450713554652"
+    address: "USA 832 Hermosa Ave Hermosa Beach, CA 90254"
+  - id: "russia"
+    phone: "+7 (812) 919-00-25"
+    country:
+      ru: "Россия"
+      en: Russia
+    gmap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.808727812435!2d30.31225731642036!3d59.93531598187492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696311ad13e5405%3A0xef361e39d3d9d657!2z0JHQvtC70YzRiNCw0Y8g0JzQvtGA0YHQutCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1450713654801"
+    city:
+      ru: "Санкт-Перербурr"
+      en: Sankt-Peterburg
+    address: "Россия, Санкт-Петербург, ул. Большая морская 19"

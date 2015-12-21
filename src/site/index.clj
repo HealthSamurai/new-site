@@ -2,7 +2,7 @@
   (:require [site.styles :refer [style vh s-var undecorate] :as s]
             [garden.units :refer [px px*]]
             [site.widgets :refer [splash grid] :as w]
-            [site.data :refer [data]]
+            [site.data :refer [data i idata]]
             [site.font :as font]
             [site.navigation :refer [navigation]]))
 
@@ -10,7 +10,7 @@
   [:div.row.block-header
    (style [:.block-header {:margin-bottom (px* 2 vh)}
            [:a {:color "inherit"}]])
-   [:a {:href href} [:h3 (data :text key) "..."]]])
+   [:a {:href href} [:h3 (idata :text key) "..."]]])
 
 (defn product-list [opts]
   (let [defaults {:color :inverse :typescale :medium}
@@ -45,10 +45,10 @@
       (block-header "/products" :products)
       (apply grid
              (for [p (take 3 (data :products))]
-               [[:a.logo {:href (str "/products#" (:id p))}
-                 [:i.hs-icon {:class (font/fontello-icon-name (:id p))}]
-                 [:h2 (:title p)]]
-                 [:p  (:motto p)]]))]]))
+               [[:a.logo {:href (str "/products#" (p :id))}
+                 [:i.hs-icon {:class (font/fontello-icon-name (p :id))}]
+                 [:h2 (i p :title)]]
+                [:p  (i p :motto)]]))]]))
 
 
 
@@ -74,8 +74,8 @@
       (block-header "/projects" :projects)
       (for [p (data :projects)]
         [:a.list-item.row {:href (str "/projects#" (:id p))}
-         [:h3 (:title p)]
-         [:p  (:desc p)]])]]))
+         [:h3 (i p :title)]
+         [:p  (i p :desc)]])]]))
 
 (defn training-list [opts]
   (let [defaults {:color :inverse :typescale :medium}
@@ -113,8 +113,8 @@
              (for [p (take 3 (data :trainings))]
                [[:a.logo {:href (str "/trainings#" (:id p))}
                  [:i.hs-icon {:class (font/fontello-icon-name :fhirbase)}]
-                 [:h2 (:title p)]]
-                 [:p.desc  (:abstract p)]]))]]))
+                 [:h2 (i p :title)]]
+                [:p.desc  (i p :abstract)]]))]]))
 
 
 (defn partnerhsip-list [opts]
@@ -133,8 +133,7 @@
              [:&:hover
               (s-var :color :main :selection)
               [:p {:color (s-var :color :main :text :color)}]
-              [:.fa {:color (s-var :color :main :selection :color)}]
-              ]
+              [:.fa {:color (s-var :color :main :selection :color)}]]
              [:.fa {:float "left"
                     :display "inline-block"
                     :color "#888" 
@@ -149,12 +148,12 @@
    [:div.container
     (block-header "/services" :partnership)
     [:div.items-list
-     (for [i (data :services)]
-       [:a.row.list-item {:href (str "/services#" (:id i))}
-        (w/fa-icon (or (:icon i) "rocket"))
+     (for [x (data :services)]
+       [:a.row.list-item {:href (str "/services#" (:id x))}
+        (w/fa-icon (or (:icon x) "rocket"))
         [:div.desc
-         [:h4 (:title i)]
-         [:p  (:description i)]]])]]])
+         [:h4 (i x :title)]
+         [:p  (i x :description)]]])]]])
 
 (defn index [req]
   [:div#index
@@ -167,5 +166,4 @@
    (product-list  {})
    (project-list  {})
    (training-list  {})
-   (partnerhsip-list {})
-   ])
+   (partnerhsip-list {})])
