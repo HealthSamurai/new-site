@@ -4,7 +4,6 @@
             [ring.middleware.resource :as rmr]
             [ring.middleware.defaults :as rmd]
             [hiccup.core :refer [html]]
-            [site.data :refer [strings]]
             [org.httpkit.server :as srv]
             [site.index :refer [index]]
             [site.products :refer [products]]

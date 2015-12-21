@@ -73,7 +73,7 @@
      [:div.container
       (block-header "/projects" :projects)
       (for [p (data :projects)]
-        [:a.list-item.row
+        [:a.list-item.row {:href (str "/projects#" (:id p))}
          [:h3 (:title p)]
          [:p  (:desc p)]])]]))
 

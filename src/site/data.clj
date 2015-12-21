@@ -1,5 +1,6 @@
 (ns site.data
-  (:require [site.formats :refer [yaml] :as fmt]))
+  (:require [me.raynes.fs :as fs]
+            [site.formats :refer [yaml] :as fmt]))
 
 
 (def strings
@@ -9,31 +10,21 @@
    :services  (:ru (yaml "services.yaml"))
    :trainings (:ru (yaml "trainings.yaml"))
    :products  (:ru (yaml "products.yaml"))
-   :projects [{:id "medclient"
-               :title "MedClient EHR"
-               :post "medclient.md"
-               :href "http://choice-hs.com/#ehr"
-               :client {:title "Choice Hospital Systems" :href "http://choice-hs.com"}
-               :tags ["Cloud EHR", "Ruby on Rails" "Amazon EC2" "PostgreSQL"]
-               :desc "Разработка, сертификация и внедрение в 3-х американских клиниках облачной EHR"}
-              {:id "kainos"
-               :title "Kainos"
-               :tags ["PostgreSQL" "plv8" "consulting"]
-               :desc "Доработка Fhirbase под нужды проекта Kainos"}
-              {:id "netrika"
-               :title "Netrika"
-               :tags ["PostgreSQL" "plv8" "consulting"]
-               :desc "Консультирование и обучение по HL7 FHIR и внедрение Fhirbase в рамках региональной шины"}
-              {:id "miac"
-               :title "MIAC"
-               :desc "Консультирование и обучение по HL7 FHIR и внедрение Fhirbase в рамках региональной шины"}]
-   })
+   :projects  (:ru (yaml "projects.yaml"))})
+
+(fs/glob "resources/*.yaml")
+
+(defn load []
+  (reduce
+   (fn [acc fl]
+     (assoc acc (keyword (fs/base-name fl ".yaml"))  (:ru (fmt/from-yaml (slurp fl)))))
+   {}
+   (fs/glob "resources/*.yaml")))
+
 
 (defn data [& ks]
-  (get-in strings ks))
+  (get-in (load) ks))
 
 (defn find-by-id [id & ks]
-  (first (filter #(= id (:id %)) (get-in strings ks))))
-
-(:contacts strings)
+  (first (filter #(= id (:id %)) (apply data ks))))
 
