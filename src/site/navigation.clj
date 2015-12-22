@@ -36,6 +36,7 @@
               :color (get-in palette [:em :color])
               :padding "9px 20px"
               :border "1px solid transparent"}
+          (s/&text :bold)
           (undecorate)
           [:&:hover {:color (get-in palette [:em :color])
                      :border-color (get-in palette [:em :color])}]]]]])
