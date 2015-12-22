@@ -15,7 +15,7 @@
      (style
       [:#splash
        (palette :text)
-       (&pbox 8 0 8 0)
+       (&pbox 5 0 6 0)
 
        [:.splash-header
         (typescale :h1)
@@ -32,6 +32,7 @@
      [:div#splash
       [:div.container-fluid
        [:h1.splash-header    (:title opts)]
+       [:br]
        [:p.splash-sub-header (:moto opts)]]]]))
 
 (defn paralax [height layer-1 layer-2]

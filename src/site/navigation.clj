@@ -2,8 +2,7 @@
   (:require [site.data :refer [data i idata]]
             [site.styles :refer [s-var style vh undecorate pbox mbox] :as s]
             [site.widgets :refer [grid]]
-            [site.font :refer [icon]]
-            [garden.units :refer [px px*]]))
+            [site.font :refer [icon]]))
 
 
 (defn navigation [opts]
@@ -14,35 +13,26 @@
       [:#navigation
        (:em palette)
        [:span.brand
-        [:a (merge (s-var :color :inverse :em)
-                {:text-align "center"
-                 :width "80px"
-                 :height "72px"
-                 :display "inline-block"})
-         [:i (merge (s-var :color :inverse :em)
-                    {:padding-top "15px"
-                     :text-align "center"
-                     :text-decoration "none"
-                     :font-size (px* 2 vh)
-                     :line-height "1em"
-                     :margin {:left "auto" :right "auto"}})]]]
-       [:ul {:margin-top (px* vh) 
-             :display "inline-block"
-             :height (px* 2 vh)
-             :margin-bottom 0
-             :float "right"}
-        [:li {:display "inline-block"}
-         [:a {:display "inline-block"
-              :color (get-in palette [:em :color])
-              :padding "9px 20px"
-              :border "1px solid transparent"}
-          (s/&text :bold)
+        [:a (s-var :color :inverse :em)
+         (s/&inline)
+         (s/&text :center)
+         (s/&padding 0 0.7)
+         (s/&unstyle-links)
+         [:i (merge (s-var :color :inverse :em))
+          (s/&font-scale 1.8 4)
+          (s/&center-block)]]]
+       [:ul {:margin-bottom 0 :float "right"}
+        (s/&inline)
+        [:li (s/&inline)
+         [:a {:color (get-in palette [:em :color])}
+          (s/&font-scale 1 3)
+          (s/&padding 0.5 1)
+          (s/&inline)
           (undecorate)
           [:&:hover {:color (get-in palette [:em :color])
                      :border-color (get-in palette [:em :color])}]]]]])
      [:div.container
-      [:span.brand
-       [:a {:href "/"} [:i.hs-icon.icon-samurai]]]
+      [:span.brand [:a {:href "/"} (icon :samurai)]]
       [:ul.list-inline
        (for [x (data :menu)]
          [:li [:a {:href (:href x)} (i x :title)]])]]]))

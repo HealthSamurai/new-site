@@ -24,6 +24,7 @@
                         :em   {:color "#a23835"}}
            :inverse    {:text {:color "white"
                                :background-color "#a23835"}
+                        :muted {:background-color "#a23835"}
                         :em   {:color "white"
                                :background-color "#a23835"}}
            :inverse-ex {:text {:color "white"
@@ -94,11 +95,11 @@
 (defn &text [& ks]
   [:& (reduce (fn [acc k] (merge acc (k text-keys))) {} ks)])
 
-(defn &center-block [width]
-  [:& {:margin "0 auto" :max-width width}])
 
 (defn &center-text [] [:& {:text-align "center"}])
 (defn &middle [] [:& {:vertical-align "middle"}])
+
+(defn &inline [] [:& {:dislay "inline-block"}])
 
 (defn vh* [num] (px* vh num))
 
@@ -107,3 +108,17 @@
        :color "inherit"}
    [:&:hover {:text-decoration "none"
               :color "inherit"}]])
+
+(defn color [k]
+  (s-var :color :main k :color))
+
+(defn typescale [k]
+  (s-var :typescale :medium k))
+
+(defn &center-block
+  ([] [:& {:margin {:left "auto" :right "auto"}}])
+  ([width] [:& {:margin "0 auto" :max-width width}]))
+
+
+(defn &font-scale [font-size line-height]
+  [:& {:font-size (vh* font-size) :line-height (vh* line-height)}])

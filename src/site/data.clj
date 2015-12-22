@@ -3,7 +3,7 @@
             [site.formats :refer [yaml] :as fmt]))
 
 
-(def ^:dynamic *lang* :en)
+(def ^:dynamic *lang* :ru)
 
 (defmacro with-lang [lang & body]
   `(binding [*lang* ~lang]
