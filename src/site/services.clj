@@ -24,7 +24,7 @@
       [:.list-desc {:margin-left (s/vh* 3.1)
                     :padding-top (s/vh* 0.5)}]]])
    [:a.header {:id (str "#" (:id service))}
-    [:h1 (w/fa-icon (:icon service)) "&nbsp;" (i service :title)]]
+    [:h3 (i service :title)]]
    [:br]
    [:p (i service :post)]
    [:br]

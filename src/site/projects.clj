@@ -1,6 +1,6 @@
 (ns site.projects
   (:require [site.navigation :refer [navigation]]
-            [site.data :refer [data find-by-id]]
+            [site.data :refer [data find-by-id idata i]]
             [site.formats :refer [load-text]]
             [garden.units :refer [px px*]]
             [site.styles :refer [style pbox s-var vh] :as s]
@@ -10,21 +10,23 @@
 (defn project-view [project]
   [:div.project
    (style
-    [:.images {:width  (px 200)
-               :height (px 200)}
-     [:.image {:display "inline-block"
-               :background-color "#eee"
-               :cursor "pointer"
-               :margin (px 2)
-               :width (px 96)
-               :height (px 96)}
-      [:&:hover (s-var :color :main :selection)]]])
+    [:.project
+     (s/&margin 2 nil)
+     (s/&padding 2 nil)
+     [:.images {:width  (px 200)
+                :height (px 200)}
+      [:.image {:display "inline-block"
+                :background-color "#eee"
+                :cursor "pointer"
+                :margin (px 2)
+                :width (px 96)
+                :height (px 96)}
+       [:&:hover (s-var :color :main :selection)]]]])
    [:div.container
     [:div.row
      [:div.col-md-9
-      [:a {:href (str "/projects/" (:id project))}
-       [:h3 (:title project)]]
-      [:p (:desc project)]]
+      [:h3 (i project :title)]
+      [:p (i project :desc)]]
      [:div.col-md-3
       [:div.images
        [:div.image]
@@ -34,16 +36,10 @@
 
 (defn projects [req]
   [:div#projects
-   (style
-    [:#projects
-     [:.project (s/&border :bottom) (s/&padding 2 nil 4 nil)]])
-   (paralax 28
-            [:div
-             (navigation {:color :inverse})
-             (splash {:title (data :text :projects)
-                      :moto (data :text :projects-subtitle)})]
-
-            (map project-view (data :projects)))])
+   (navigation {:color :inverse})
+   (splash {:title (idata :text :projects)
+            :moto (idata :text :projects-subtitle)})
+   [:div.container (interpose [:hr] (map project-view (data :projects)))]])
 
 
 (defn project [{{id :id} :params :as req}]

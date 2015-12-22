@@ -93,10 +93,13 @@
   {:right {:text-align "right"}
    :center {:text-align "center"}
    :left {:text-align "left"}
+   600 {:font-weight 600}
+   300 {:font-weight 300}
+   500 {:font-weight 500}
    :bold {:font-weight "bold"}})
 
 (defn &text [& ks]
-  [:& (reduce (fn [acc k] (merge acc (k text-keys))) {} ks)])
+  [:& (reduce (fn [acc k] (merge acc (get text-keys k))) {} ks)])
 
 
 (defn &center-text [] [:& {:text-align "center"}])
