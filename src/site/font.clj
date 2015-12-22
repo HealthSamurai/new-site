@@ -26,12 +26,9 @@
                     :speak "none"
                     :display "inline-block"
                     :text-decoration "inherit"
-                    :margin-right "0.2em"
                     :text-align "center"
                     :font-variant "normal"
                     :text-transform "none"
-                    :line-height "1em"
-                    :margin-left "0.2em"
                     :-webkit-font-smoothing "antialiased"
                     :-moz-osx-font-smoothing "grayscale"}]
         (for [[k v] fontello] [(keyword (str "&." (fontello-icon-name k)))

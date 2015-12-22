@@ -8,6 +8,8 @@
 
 (def vh 18)
 
+(defn vh* [num] (px* vh num))
+
 (def style-vars
   {:color {:main       {:text      {:color "#333356"}
                         :muted     {:color "#ddd"}
@@ -31,13 +33,13 @@
                                :background-color "rgba(46,48,58,0.96)"}
                         :em   {:color "white"
                                :background-color "rgba(46,48,58,0.96)"}}}
-   :typescale {:large {:h1 {:font-size "41px"  :font-weight "600"  :line-height (px* vh 3)}
+   :typescale {:large {:h1 {:font-size "41px"  :font-weight "300"  :line-height (vh* 3)}
                        :h2 {:font-size "24px"  :font-weight "bold" :line-height "1.5em"}
                        :h3 {:font-size  "21px" :font-weight "300"  :line-height "1.5em"}
-                       :h4 {:font-size  "21px" :font-weight "600" :line-height (px* 1.5 vh)}
+                       :h4 {:font-size  "21px" :font-weight "600" :line-height (vh* 1.5)}
                        :p  {:font-size "18px"  :line-height (px* vh 1.5)}
                        :small {:font-size "16px"}}
-               :medium {:h1 {:font-size "41px"  :line-height "1.3em" :font-weight "normal"}
+               :medium {:h1 {:font-size "41px"  :line-height (vh* 3) :font-weight "300"}
                         :h2 {:font-size "24px"  :font-weight "bold"  :line-height "1.5em"}
                         :h3 {:font-size  "18px" :font-weight "bold"  :line-height "1.5em"}
                         :h4 {:font-size  "18px"}
@@ -90,6 +92,7 @@
 (def text-keys
   {:right {:text-align "right"}
    :center {:text-align "center"}
+   :left {:text-align "left"}
    :bold {:font-weight "bold"}})
 
 (defn &text [& ks]
@@ -99,9 +102,8 @@
 (defn &center-text [] [:& {:text-align "center"}])
 (defn &middle [] [:& {:vertical-align "middle"}])
 
-(defn &inline [] [:& {:dislay "inline-block"}])
+(defn &inline [] [:& {:display "inline-block"}])
 
-(defn vh* [num] (px* vh num))
 
 (defn &unstyle-links []
   [:& {:text-decoration "none"

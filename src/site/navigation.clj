@@ -13,11 +13,13 @@
       [:#navigation
        (:em palette)
        [:a.brand (s-var :color :inverse :em)
+        (s/&unstyle-links)
         (s/&inline)
         (s/&text :center)
         (s/&padding 0 0.7)
-        (s/&unstyle-links)
-        [:i (merge (s-var :color :inverse :em))
+        [:i
+         (s/&inline)
+         (s-var :color :inverse :em)
          (s/&font-scale 1.8 4)
          (s/&center-block)]]
        [:ul {:margin-bottom 0 :float "right"}

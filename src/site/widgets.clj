@@ -15,7 +15,7 @@
      (style
       [:#splash
        (palette :text)
-       (&pbox 5 0 6 0)
+       (s/&padding 5 0 6 0)
 
        [:.splash-header
         (typescale :h1)
@@ -25,7 +25,7 @@
 
        [:.splash-sub-header
         (typescale :h4)
-        (&pbox 0.5 nil nil nil)
+        (s/&padding 0.5 nil nil nil)
         (&center-block "40em")
         (&center-text)]])
 
@@ -50,20 +50,20 @@
   [:div.tags
    (style
     [:.tag
-     {:font-weight "300"
-      :border-radius ".25em"
+     {:border-radius ".25em"
       :display "inline-block"
-      :line-height (s/vh* 0.5)
-      :font-size (s/vh* 0.5)
-      :padding (s/vh* 0.5)
-      :margin-bottom (s/vh* 0.25)
-      :margin-right "4px"
-      :text-align "center"
+      :line-height (s/vh* 0.75)
+      :font-size (s/vh* 0.75)
       :vertical-align "baseline"
-      :white-space "nowrap"}
+      :white-space "nowrap"
+      :font-weight "300"
+      :color "#888"
+      :background-color "#fafafa"}
+     (s/&text :center)
+     (s/&margin 0 0.25 0.25 0)
+     (s/&padding 0.5)
+     (s/&inline)
      (s/&text :right)
-     [:& (s-var :typescale :medium :small)]
-     [:& (s-var :color :main :muted-selection)]
      (s/&border)])
    (interpose [:br] (for [label tags] [:div.tag label]))])
 

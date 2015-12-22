@@ -1,3 +1,29 @@
+- id: fhirbase
+  logo: fhirbase
+  title: Fhirbase
+  type: opensource
+  motto:
+    ru: Реляционное хранилище медицинских данных на основе стандарта HL7 FHIR.
+    en: ?????
+  description: >-
+    Fhirbase - это реляционное хранилище с встроенной моделью данных,
+    соответствующей международному стандарту HL7 FHIR. Fhirbase подходит для
+    построения медицинских информационных системы разных классов: электронные
+    карты (EHR), интеграционные ”шины”, репозитории медицинских данных
+    (реестры), госпитальные системы (HIS), порталы для пациентов и
+    телемедицины.
+  features:
+    - Построен на PostgreSQL с использованием языка plv8
+    - Реализует модель данных соответствующую стандарту HL7 FHIR
+    - Имеет простой REST-like API для обращения к данным
+  links:
+    direct: http://fhirbase.github.io/
+    github: https://github.com/fhirbase
+    chat: https://groups.google.com/forum/#!forum/fhirbase
+  tags:
+    - PostgreSQL
+    - plv8
+    - HL7 FHIR
 - id: aidbox
   logo: aidbox
   title: Aidbox
@@ -25,32 +51,6 @@
     - Fhirbase
     - Clojure
     - AngularJS
-- id: fhirbase
-  logo: fhirbase
-  title: Fhirbase
-  type: opensource
-  motto:
-    ru: Реляционное хранилище медицинских данных на основе стандарта HL7 FHIR.
-    en: ?????
-  description: >-
-    Fhirbase - это реляционное хранилище с встроенной моделью данных,
-    соответствующей международному стандарту HL7 FHIR. Fhirbase подходит для
-    построения медицинских информационных системы разных классов: электронные
-    карты (EHR), интеграционные ”шины”, репозитории медицинских данных
-    (реестры), госпитальные системы (HIS), порталы для пациентов и
-    телемедицины.
-  features:
-    - Построен на PostgreSQL с использованием языка plv8
-    - Реализует модель данных соответствующую стандарту HL7 FHIR
-    - Имеет простой REST-like API для обращения к данным
-  links:
-    direct: http://fhirbase.github.io/
-    github: https://github.com/fhirbase
-    chat: https://groups.google.com/forum/#!forum/fhirbase
-  tags:
-    - PostgreSQL
-    - plv8
-    - HL7 FHIR
 - id: formstamp
   logo: formstamp
   title: FormStamp

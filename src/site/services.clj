@@ -8,9 +8,9 @@
             [site.font :as font]))
 
 (defn service-view [service]
-  [:div.service.container
+  [:div.service
    (style
-    [:.service (&margin 1 nil) (&padding 1 nil 3 nil)
+    [:.service (&margin 3 nil) (&padding 1 nil 3 nil)
      [:.header (s/&unstyle-links) (&margin 0.5 nil)
       [:.fa {:color (s/s-var :color :main :selection :color)}]]
      [:.list-row {:position "relative"
@@ -29,7 +29,6 @@
    [:p (i service :post)]
    [:br]
    [:h4 (i service :steps-statement)]
-   [:br]
    (for [[num step] (map (fn [x y] [x y]) (range 1 10) (i service :steps))]
      [:div.list-row
       [:div.list-item num]
@@ -39,14 +38,11 @@
 
 (defn services [req]
   [:div
-   (paralax
-    28
-    [:div
-     (navigation {:color :inverse})
-     (splash {:title (idata :text :partnership)
-              :moto  (idata :text :partnership-subtitle)})]
-    [:div
-     (interpose [:hr] (map service-view (data :services)))
-     (splash {:title (idata :text :partnership-target)
-              :moto  (idata :text :partnership-subtitle)})])])
+   (navigation {:color :inverse})
+   (splash {:title (idata :text :partnership)
+            :moto  (idata :text :partnership-subtitle)})
+   [:div.container
+    (interpose [:hr] (map service-view (data :services)))]
+   (splash {:title (idata :text :partnership-target)
+            :moto  (idata :text :partnership-subtitle)})])
 

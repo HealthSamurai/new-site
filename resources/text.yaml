@@ -46,3 +46,9 @@ partnership-target:
 partnership-subtitle:
   ru: "Консалтинг и разработка"
   en: Consulting & Development
+features:
+  ru: Особенности 
+  en: Features
+product-link:
+  ru: Сайт продукта 
+  en: Product Site

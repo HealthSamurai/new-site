@@ -27,10 +27,11 @@
        :left "-41px"
        :list-style-type "square"}
       (s/&margin nil nil 1 nil)]])
-   [:h4 (i product :title)]
+   [:h4 (idata :text :features)]
    [:ul.features
     (for [f (i product :features)]
       [:li f])]])
+
 
 (defn links-list [product]
   [:div.links-list
@@ -47,7 +48,8 @@
 
    (for [[key link] (:links product)]
      (case key
-       :direct       [:a.btn.btn-default.direct-link {:href link :target "_blank"} (pr-str "TODO" link)]
+       :direct       [:a.btn.btn-default.direct-link {:href link :target "_blank"}
+                      (idata :text :product-link)]
        :github       (fa-link link :github)
        :chat         (fa-link link :comments-o)))])
 
@@ -55,29 +57,30 @@
   [:div.product.row
    (style
     [:.product
-     [:.header (s/undecorate)]
+     [:.header (s/&unstyle-links)]
+     (s/&margin 4 0 5 0)
      [:.hs-icon {:font-size (s/vh* 8)
+                 :line-height (s/vh* 10)
                  :color (s/color :text)
-                 :display "block"
-                 :margin-left 0}
-      (s/&margin 1.5 nil 1 nil)]
+                 :display "block"}
+      (s/&text :left)]
 
      [:.left {:position "relative" :overflow "hidden"}
       (s/&padding 2 nil)]
      [:h1 (s/&text :center)]])
 
-   [:div.col-md-2.left
+   [:div.col-md-3.left
     (font/icon (:logo product))
     (w/tags (product :tags))]
 
-   [:div.col-md-8.column
+   [:div.col-md-9.column
     [:a.header {:id (:id product) :href (str "#" (:id product))}
-     [:h2 (str (i product :title) " ")
-      [:small (i product :type)]]]
+     [:h3 (str (i product :title) " ") [:small (i product :type)]]]
     [:p (i product :motto)]
     [:br]
     [:p (i product :description)]
     (features-list product)
+    [:br]
     (links-list product)]])
 
 (defn products [req]
@@ -86,6 +89,6 @@
    (splash {:title  (idata :text :products)
             :moto   (idata :text :products-subtitle)})
    [:div#products
-    [:div.container (map product-view (data :products))]
+    [:div.container (interpose [:hr] (map product-view (data :products)))]
     (splash {:title (idata :text :products-target) 
              :moto (idata :text :products-subtarget)})]])
