@@ -12,15 +12,14 @@
      (style
       [:#navigation
        (:em palette)
-       [:span.brand
-        [:a (s-var :color :inverse :em)
-         (s/&inline)
-         (s/&text :center)
-         (s/&padding 0 0.7)
-         (s/&unstyle-links)
-         [:i (merge (s-var :color :inverse :em))
-          (s/&font-scale 1.8 4)
-          (s/&center-block)]]]
+       [:a.brand (s-var :color :inverse :em)
+        (s/&inline)
+        (s/&text :center)
+        (s/&padding 0 0.7)
+        (s/&unstyle-links)
+        [:i (merge (s-var :color :inverse :em))
+         (s/&font-scale 1.8 4)
+         (s/&center-block)]]
        [:ul {:margin-bottom 0 :float "right"}
         (s/&inline)
         [:li (s/&inline)
@@ -32,7 +31,7 @@
           [:&:hover {:color (get-in palette [:em :color])
                      :border-color (get-in palette [:em :color])}]]]]])
      [:div.container
-      [:span.brand [:a {:href "/"} (icon :samurai)]]
+      [:a.brand {:href "/"} (icon :samurai)]
       [:ul.list-inline
        (for [x (data :menu)]
          [:li [:a {:href (:href x)} (i x :title)]])]]]))
@@ -62,7 +61,6 @@
         (for [x (data :services)]
           [:li [:a {:href (:href x)} (i x :title)]])]]
 
-      
       [[:a {:href "/trainings"} [:h4 (idata :text  :education)]]
        [:ul.list-unstyled
         (for [x (data :trainings)]

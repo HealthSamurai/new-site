@@ -3,7 +3,7 @@
             [site.styles :refer [s-var style vh &pbox &center-block &center-text &mbox] :as s]))
 
 (defn grid [& columns]
-  (let [cnt (/ 12 (count columns))]
+  (let [cnt (/ 12 (or (count columns) 4))]
     (into [:div.row]
           (for [c columns] (into [:div {:class (str "col-md-" cnt)}] c)))))
 
