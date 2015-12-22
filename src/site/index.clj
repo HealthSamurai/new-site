@@ -173,13 +173,12 @@
       {:opacity 0.88}
       (s/&padding 1 nil)
       (s/&font-scale 1.1 2)
-      (s/&center-block "40em")
+      (s/&center-block "35em")
       (s/&text :center 600)]])
    [:div#promo
     [:div.container-fluid
-     [:h1.promo-header [:span (fmt/markdown "Мы *знаем как* создавать медицинские информационные системы будущего")]]
-     [:p.promo-sub-header
-      [:span "Эксперты в Health IT. Разрабатываем для клиентов на основе наших технологичных продуктов и стандарта HL7 FHIR."]]]]])
+     [:h1.promo-header [:span (fmt/markdown (idata :text :promo) )]]
+     [:p.promo-sub-header [:span (idata :text :promo-subtitle)]]]]])
 
 (defn index [req]
   [:div#index
