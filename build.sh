@@ -19,7 +19,7 @@ git config user.email "niquola@gmail.com"
 
 # The first and only commit to this new Git repo contains all the
 # files present with the commit message "Deploy to GitHub Pages".
-git co -b gh-pages
+git checkout -b gh-pages
 git add .
 git commit -m "Deploy to GitHub Pages"
 
