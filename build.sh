@@ -1,12 +1,12 @@
 #!/bin/bash
 # set -e # exit with nonzero exit code if anything fails
 
-# # clear and re-create the out directory
-# rm -rf dist || exit 0;
-# mkdir dist;
+# clear and re-create the out directory
+rm -rf dist || exit 0;
+mkdir dist;
 
-# # run our compile script, discussed above
-# lein generate
+# run our compile script, discussed above
+lein generate
 
 # go to the out directory and create a *new* Git repo
 cd dist
@@ -29,8 +29,8 @@ git commit -m "Deploy to GitHub Pages"
 # /dev/null to hide any sensitive credential data that might otherwise be exposed.
 
 eval $(ssh-agent)
-ls -lah ../
-ssh-add ../key
+ls -lah .
+ssh-add key
 
 echo 'Add origin'
 git remote add origin git@github.com:HealthSamurai/new-site.git
