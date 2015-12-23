@@ -14,7 +14,7 @@
    (fn [acc fl]
      (assoc acc (keyword (fs/base-name fl ".yaml"))  (fmt/from-yaml (slurp fl))))
    {}
-   (fs/glob "resources/*.yaml")))
+   (fs/glob "resources\\*.yaml")))
 
 
 (defn data [& ks] (get-in (reload) ks))
@@ -29,7 +29,7 @@
   (apply i (reload) ks))
 
 
-(data :text :services)
+
 
 (defn find-by-id [id & ks]
   (first (filter #(= id (:id %)) (apply data ks))))

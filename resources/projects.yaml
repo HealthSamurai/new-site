@@ -23,7 +23,7 @@
   client: {title: Нетрика, href: 'http://netrika.ru/'}  
   tags: [PostgreSQL, plv8, consulting]
   desc:
-    ru: Самураи провели обучение команды Netrika по межународным стандартам: HL7 v2, HL7 v3, HL7 FHIR. Помогли в проектировании архитектуры регионального сервиса для обмена лабораторными данными и модели данных на основе HL7 FHIR.
+    ru: "Самураи провели обучение команды Netrika по межународным стандартам: HL7 v2, HL7 v3, HL7 FHIR. Помогли в проектировании архитектуры регионального сервиса для обмена лабораторными данными и модели данных на основе HL7 FHIR."
     en: Health Samurai Team gave educational trainings to the Netrika team about international standards HL7 v2, HL7 v3, HL7 FHIR. Samurai gave consultations in the project designing of regional service of laboratory data exchange and data model on the base of HL7 FHIR.
 - id: miac_loinc
   title: МИАЦ.СЛТ
