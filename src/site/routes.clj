@@ -1,8 +1,9 @@
 (ns site.routes
   (:require [clojure.string :as str]))
 
+(println "SITE_URL" (System/getenv "SITE_URL"))
 (defn url [& parts]
-  (let [root (or "/" (System/getenv "SITE_URL"))
+  (let [root (or (System/getenv "SITE_URL") "/")
         last (last parts)
         path (if (map? last) (butlast parts) parts)
         params (if (map? last) last {})
