@@ -3,7 +3,7 @@
             [site.navigation :refer [navigation]]
             [site.widgets :refer [grid  splash paralax tags]]
             [site.data :refer [data find-by-id i idata]]
-            [site.routes :refer [url]]
+            [site.routes :refer [url asset-path]]
             [site.formats :refer [load-text]]
             [garden.units :refer [px px* vh*]]
             [site.font :as font]))
@@ -18,7 +18,7 @@
       [:h1 (&text :center)]])
 
     [:div.col-md-3.left
-     (when-let [img (:img training)] [:img.logo {:src img}])
+     (when-let [img (:img training)] [:img.logo {:src (asset-path img)}])
      (tags (or (training :tags) []))]
     [:div.col-md-8.column
      #_[:a.header {:href (str "/trainings/" (:id training))}]

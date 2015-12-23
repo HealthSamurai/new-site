@@ -2,7 +2,7 @@
   title:
     ru: Основы FHIR
     en: FHIR intro 
-  img: /imgs/fhir-intro.svg
+  img: imgs/fhir-intro.svg
   abstract:
     ru: >
       Восьмичасовой семинар по основным особенностям стандарта
@@ -43,7 +43,7 @@
       такие как настройка производительности, репликация и бэкапы.
     en: >
       ?????
-  img: /imgs/fhirbase.svg
+  img: imgs/fhirbase.svg
   plan: fhirbase.ru.md
   tags:
     - FHIR
@@ -53,7 +53,7 @@
   title:
     ru: Непрерываная поставка
     en: Continuous Delivery
-  img: /imgs/devops.svg
+  img: imgs/devops.svg
   tags:
     - DevOps
     - ContinuousDelivery
