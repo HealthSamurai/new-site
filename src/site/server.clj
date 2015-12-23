@@ -34,7 +34,7 @@
   (merge *routes {[:lang] *routes}))
 
 (defn dispatch [{params :params uri :uri meth :request-method :as req}]
-  (if-let [mtch (rt/match [meth uri] routes)]
+  (if-let [mtch (rt/match [meth (str/replace uri #".html$" "")] routes)]
     (let [req (update req :params merge (:params mtch))
           lang (get-in mtch [:params :lang])]
       (if (contains? #{"ru" "en"} lang)
@@ -52,6 +52,5 @@
 
 (comment
   (stop)
-  (start)
-  )
+  (start))
 

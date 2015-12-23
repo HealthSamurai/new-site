@@ -1,6 +1,9 @@
 # Development
 
 ```
-lein deps
+# dev server
 lein ring server-headless
+
+# generate
+lein generate
 ```

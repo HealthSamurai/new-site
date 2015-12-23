@@ -23,8 +23,7 @@
                     :font-size (s/vh* 3)}]
       [:.list-desc {:margin-left (s/vh* 3.1)
                     :padding-top (s/vh* 0.5)}]]])
-   [:a.header {:id (str "#" (:id service))}
-    [:h3 (i service :title)]]
+   [:a.header {:id (:id service)} [:h3 (i service :title)]]
    [:br]
    [:p (i service :post)]
    [:br]

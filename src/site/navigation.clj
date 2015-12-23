@@ -1,13 +1,16 @@
 (ns site.navigation
-  (:require [site.data :refer [data i idata]]
+  (:require [site.routes :refer [url]]
+            [site.data :refer [data i idata]]
+            [site.font :refer [icon]]
             [site.styles :refer [s-var style vh undecorate pbox mbox] :as s]
-            [site.widgets :refer [grid]]
-            [site.font :refer [icon]]))
+            [site.widgets :refer [grid]]))
 
 
 (defn navigation [opts]
   (let [props (merge {:color :inverse} opts)
+        uri (get-in opts [:request :uri])
         palette (s-var :color (:color props))]
+    (println "URI" uri)
     [:div#navigation
      (style
       [:#navigation
@@ -33,14 +36,14 @@
           [:&:hover {:color (get-in palette [:em :color])
                      :border-color (get-in palette [:em :color])}]]]]])
      [:div.container
-      [:a.brand {:href "/"} (icon :samurai)]
+      [:a.brand {:href (url "index")} (icon :samurai)]
       [:ul.list-inline
        (for [x (data :menu)]
-         [:li [:a {:href (:href x)} (i x :title)]])]]]))
+         [:li [:a {:href (url (:href x))} (i x :title)]])]]]))
 
 
 (defn footer-title [href k]
-  [:a {:href href} [:h4 (idata :text k)]])
+  [:a {:href (url href)} [:h4 (idata :text k)]])
 
 (defn footer []
   [:div#footer
@@ -55,27 +58,28 @@
       (s/&padding 1 0)]])
    [:div.container
     (grid
-     [(footer-title "/products" :products)
+     [(footer-title "products" :products)
       [:ul.list-unstyled
        (for [x (data :products)]
-         [:li [:a {:href (str "/products#" (:id x))} (i x :title)]])]]
+         [:li [:a {:href (url "products" {:# (:id x)})} (i x :title)]])]]
 
-     [(footer-title "/services" :development)
+     [(footer-title "services" :development)
       [:ul.list-unstyled
        (for [x (data :services)]
-         [:li [:a {:href (str "/services#" (:id x))} (i x :title)]])]]
+         [:li [:a {:href (url "services" {:# (:id x)})} (i x :title)]])]]
 
-     [(footer-title "/trainings" :education)
+     [(footer-title "trainings" :education)
       [:ul.list-unstyled
        (for [x (data :trainings)]
-         [:li [:a {:href (str "/trainings#" (:id x))} (i x :title)]])]]
+         [:li [:a {:href (url "trainings" {:# (:id x)})} (i x :title)]])]]
 
-     [(footer-title "/contacts" :contacts)
+     [(footer-title "contacts" :contacts)
       [:ul.list-unstyled
        [:li [:a {:href (str "mailto:" (data :contacts :mailto))}
              (data :contacts :mailto)]]
        (for [x (data :contacts :offices)]
          [:li [:a (i x :country) ": " (i x :phone)]])]])]
+
    [:div.footer-line
     [:div.container-fluid
-     [:b  " © 2015 HealthSamurai" (icon :samurai)]]]])
+     [:span  " © 2015 HealthSamurai " (icon :samurai)]]]])

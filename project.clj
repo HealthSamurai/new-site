@@ -13,6 +13,8 @@
                  [ring/ring-defaults "0.1.5"]
                  [circleci/clj-yaml "0.5.5"]
                  [me.raynes/fs "1.4.6"]]
+
+  :aliases {"generate" ["trampoline" "run" "-m" "site.generator"]}
   :plugins [[lein-ring "0.9.7"]]
   :ring {:handler site.server/app :auto-refresh? true}
   :profiles {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]]}})

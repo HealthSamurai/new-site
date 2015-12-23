@@ -15,23 +15,23 @@
      (s/&padding 2 nil)
      [:h2 {:line-height (s/vh* 2)}]
      [:h4 {:line-height (s/vh* 2) :margin-top (s/vh* 1)}]
-     [:.images {:width  (px 200)
-                :height (px 200)}
+     [:.images {:width  (px 300)
+                :height (px 300)}
       [:.image {:display "inline-block"
                 :background-color "#eee"
                 :cursor "pointer"
                 :margin (px 2)
-                :width (px 96)
-                :height (px 96)}
+                :width (px 146)
+                :height (px 146)}
        [:&:hover (s-var :color :main :selection)]]]])
    [:div.container
     [:div.row
-     [:div.col-md-9
-      [:h2 (i project :title) " " [:small (i project :sub-title)]]
+     [:div.col-md-8
+      [:h2 {:id (:id project)} (i project :title) " " [:small (i project :sub-title)]]
       [:div.post (fmt/markdown (or (i project :post) (i project :desc)))]
       [:h4 (idata :text :used-technologies)]
       (w/tags (:tags project) {:inline true})]
-     [:div.col-md-3
+     [:div.col-md-4
       [:div.images
        [:div.image]
        [:div.image]

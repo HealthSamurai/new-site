@@ -2,6 +2,7 @@
   (:require [site.styles :refer [style vh s-var undecorate] :as s]
             [garden.units :refer [px px*]]
             [site.widgets :refer [splash grid] :as w]
+            [site.routes :refer [url]]
             [site.formats :as fmt]
             [site.data :refer [data i idata]]
             [site.font :as font]
@@ -48,10 +49,10 @@
                (s/&text 500)]]
              [:p.desc (s/&padding 0.5 0.5)]])
      [:div.container
-      (block-header "/products" :products)
+      (block-header (url "products") :products)
       (apply grid
              (for [p (take 3 (data :products))]
-               [[:a.logo {:href (str "/products#" (p :id))}
+               [[:a.logo {:href (url "products" {:# (p :id)})}
                  [:i.hs-icon {:class (font/fontello-icon-name (p :id))}]
                  [:h2 (i p :title)]]
                 [:p.desc  (i p :motto)]]))]]))
@@ -74,9 +75,9 @@
               [:&:hover (:selection palette)
                [:p (:text palette)]]]])
      [:div.container
-      (block-header "/projects" :projects)
+      (block-header (url "projects") :projects)
       (for [p (data :projects)]
-        [:a.list-item.row {:href (str "/projects#" (:id p))}
+        [:a.list-item.row {:href (url "projects" {:# (:id p)})}
          [:h3 (i p :title)]
          [:p  (i p :desc)]])]]))
 
@@ -101,7 +102,7 @@
                           :display "block"
                           :position "absolute"
                           :bottom (s/vh* 1)
-                          :right "-50px"}
+                          :right "-40px"}
                (s/&text :right)]
               [:h2 (merge (:h3 typescale)
                           {:text-align "left"
@@ -112,10 +113,10 @@
                            :line-height (px* 1 vh)})]]
              [:p.desc (s/&margin nil 0.5)]])
      [:div.container
-      (block-header "/trainings" :trainings)
+      (block-header (url "trainings") :trainings)
       (apply grid
              (for [p (take 3 (data :trainings))]
-               [[:a.logo {:href (str "/trainings#" (:id p))}
+               [[:a.logo {:href (url "trainings" {:# (:id p)})}
                  [:i.hs-icon {:class (font/fontello-icon-name :fhirbase)}]
                  [:h2 (i p :title)]]
                 [:p.desc  (i p :abstract)]]))]]))
@@ -148,10 +149,10 @@
               {:display "inline-block"
                :vertical-align "middle"}]]]])
    [:div.container
-    (block-header "/services" :partnership)
+    (block-header (url "services") :partnership)
     [:div.items-list
      (for [x (data :services)]
-       [:a.row.list-item {:href (str "/services#" (:id x))}
+       [:a.row.list-item {:href (url "services" {:# (:id x)})}
         (w/fa-icon (or (:icon x) "rocket"))
         [:div.desc
          [:h4 (i x :title)]
@@ -161,7 +162,7 @@
   [:div
    (style
     [:#promo
-     (s/&padding 8 0 15 0)
+     (s/&padding 9 0 15 0)
 
      [:.promo-header
       (s/&font-scale 2.3 3)
@@ -182,14 +183,11 @@
 
 (defn index [req]
   [:div#index
-   (navigation {:color :main})
+   (navigation {:color :main :request req})
    (style [:#index [:em {:font-style "normal"}]])
    (promo)
    (product-list  {})
    (project-list  {})
    (training-list  {})
    (partnerhsip-list {})
-   [:br]
-   [:br]
-   [:br]
-   [:br]])
+   (repeat 4 [:br])])

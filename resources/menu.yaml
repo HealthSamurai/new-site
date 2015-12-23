@@ -1,20 +1,20 @@
--   href: "/products"
+-   href: products
     title:
       ru: Продукты
       en: Products
--   href: "/services"
+-   href: services
     title:
       ru: Services
       en: Services
--   href: "/trainings"
+-   href: trainings
     title:
       ru: Тренинги
       en: Trainings
--   href: "/projects"
+-   href: projects
     title:
       ru: Проекты
       en: Projects
--   href: "/contacts"
+-   href: contacts
     title:
       ru: Контакты
       en: Contacts

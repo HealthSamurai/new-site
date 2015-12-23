@@ -20,8 +20,8 @@
      (when-let [img (:img training)] [:img.logo {:src img}])
      (tags (or (training :tags) []))]
     [:div.col-md-8.column
-     [:a.header {:href (str "/trainings/" (:id training))}
-      [:h3 (i training :title)]]
+     #_[:a.header {:href (str "/trainings/" (:id training))}]
+     [:h3 {:id (:id training)} (i training :title)]
      [:br]
      [:p (i training :desc)]
      [:br]
