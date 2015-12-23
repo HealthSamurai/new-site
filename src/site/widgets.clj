@@ -39,7 +39,7 @@
    [:div.push]
    [:div.paralaxing layer-2]])
 
-(defn tags [tags]
+(defn tags [tags & [opts]]
   [:div.tags
    (style
     [:.tag
@@ -54,6 +54,6 @@
      (s/&border)])
    (->> tags
         (map (fn [t] [:div.tag t]))
-        (interpose [:br]))])
+        (interpose (if (and opts (:inline opts)) "" [:br])))])
 
 (defn fa-icon [x] [:i.fa {:class (str "fa-" (name (or x "ups")))}])

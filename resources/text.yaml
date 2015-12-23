@@ -61,3 +61,6 @@ promo:
 promo-subtitle:
   ru: Эксперты в Health IT. Разрабатываем для клиентов на основе наших технологичных продуктов и стандарта HL7 FHIR.
   en: Experts in Health IT. We build for your clients on top of our tech products and FHIR
+used-technologies:
+  ru: "Продукты и технологии"
+  en: "Products & Technologies"

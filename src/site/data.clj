@@ -1,5 +1,6 @@
 (ns site.data
-  (:require [me.raynes.fs :as fs]
+  (:require [clojure.java.io :as io]
+            [me.raynes.fs :as fs]
             [site.formats :refer [yaml] :as fmt]))
 
 
@@ -9,12 +10,15 @@
   `(binding [*lang* ~lang]
      ~@body))
 
+(defn fs-join [& parts]
+  (.getPath (apply io/file parts)))
+
 (defn reload []
   (reduce
    (fn [acc fl]
      (assoc acc (keyword (fs/base-name fl ".yaml"))  (fmt/from-yaml (slurp fl))))
    {}
-   (fs/glob "resources\\*.yaml")))
+   (fs/glob (fs-join "resources" "*.yaml"))))
 
 
 (defn data [& ks] (get-in (reload) ks))
@@ -27,8 +31,6 @@
 
 (defn idata [& ks]
   (apply i (reload) ks))
-
-
 
 
 (defn find-by-id [id & ks]

@@ -1,10 +1,10 @@
 (ns site.projects
   (:require [site.navigation :refer [navigation]]
             [site.data :refer [data find-by-id idata i]]
-            [site.formats :refer [load-text]]
+            [site.formats :refer [load-text] :as fmt]
             [garden.units :refer [px px*]]
             [site.styles :refer [style pbox s-var vh] :as s]
-            [site.widgets :refer [grid  splash paralax]]))
+            [site.widgets :refer [grid  splash] :as w]))
 
 
 (defn project-view [project]
@@ -13,6 +13,8 @@
     [:.project
      (s/&margin 2 nil)
      (s/&padding 2 nil)
+     [:h2 {:line-height (s/vh* 2)}]
+     [:h4 {:line-height (s/vh* 2) :margin-top (s/vh* 1)}]
      [:.images {:width  (px 200)
                 :height (px 200)}
       [:.image {:display "inline-block"
@@ -25,8 +27,10 @@
    [:div.container
     [:div.row
      [:div.col-md-9
-      [:h3 (i project :title)]
-      [:p (i project :desc)]]
+      [:h2 (i project :title) " " [:small (i project :sub-title)]]
+      [:div.post (fmt/markdown (or (i project :post) (i project :desc)))]
+      [:h4 (idata :text :used-technologies)]
+      (w/tags (:tags project) {:inline true})]
      [:div.col-md-3
       [:div.images
        [:div.image]
