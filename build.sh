@@ -29,7 +29,8 @@ git commit -m "Deploy to GitHub Pages"
 # /dev/null to hide any sensitive credential data that might otherwise be exposed.
 
 eval $(ssh-agent)
-ssh-add ../secure/key
+ls -lah ../
+ssh-add ../key
 
 echo 'Add origin'
 git remote add origin git@github.com:HealthSamurai/new-site.git
