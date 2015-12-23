@@ -9,18 +9,60 @@
     en: Developmpent, certification ...
 - id: kainos
   title: Kainos
-  tags: [PostgreSQL, plv8, consulting]
+  post: kainos.md
+  href: https://www.kainosevolve.com/solutions/
+  client: {title: Kainos Evolve Platform, href: 'https://www.kainosevolve.com/solutions/'}  
+  tags: [PostgreSQL 9.4+, plv8, HL7 FHIR, Fhirbase, consulting]
   desc:
-    ru: Доработка Fhirbase под нужды проекта Kainos
-    en: Custom dev for fhirbase ....
+    ru: Самураи расширили функциональные возможности Fhirbase под специфику проекта Kainos Evolve. Провели обучение команды Kainos по архитектурным особенностям Fhirbase и разработке на его основе.
+    en: Health Samurai Team extended functionality of Fhirbase specifically for Kainos Evolve project, gave educational trainings to the Kainos team on architectural features of Fhirbase and development on its base.
 - id: netrika
-  title: Netrika
+  title: Нетрика.ДЛИ
+  post: netrika.md
+  href: http://api.netrika.ru/docs.php?article=DLIService
+  client: {title: Нетрика, href: 'http://netrika.ru/'}  
   tags: [PostgreSQL, plv8, consulting]
   desc:
-    ru: Консультирование и обучение по HL7 FHIR и внедрение Fhirbase в рамках региональной шины
-    en: ?????
-- id: miac
-  title: MIAC
+    ru: Самураи провели обучение команды Netrika по межународным стандартам: HL7 v2, HL7 v3, HL7 FHIR. Помогли в проектировании архитектуры регионального сервиса для обмена лабораторными данными и модели данных на основе HL7 FHIR.
+    en: Health Samurai Team gave educational trainings to the Netrika team about international standards HL7 v2, HL7 v3, HL7 FHIR. Samurai gave consultations in the project designing of regional service of laboratory data exchange and data model on the base of HL7 FHIR.
+- id: miac_loinc
+  title: МИАЦ.СЛТ
+  post: miac_loinc.md
+  href: https://loinc.aidbox.io/#/
+  client: {title: СПб ГБУЗ МИАЦ, href: 'http://spbmiac.ru/'}  
+  tags: [Aidbox,  Fhirbase,  HL7 FHIR,  AngularJS,  Clojure (JVM)]
   desc:
-    ru: Консультирование и обучение по HL7 FHIR и внедрение Fhirbase в рамках региональной шины
-    en: ?????
+    ru: Самураи разработали, запустили и осуществляют поддержку web-сервиса для управления справочником лабораторных тестов Санкт-Петербурга. Сервис разработан на базе платформы Aidbox.
+    en: Health Samurai Team developed, implemented and are supporting web-service for managing Saint-Petersburg laboratory tests terminology. The service was developed on the base of Aidbox platform.
+- id: miac_mo
+  title: МИАЦ.МО
+  post: miac_mo.md
+  href: https://mo.aidbox.io/#/
+  client: {title: СПб ГБУЗ МИАЦ, href: 'http://spbmiac.ru/'}  
+  tags: [Aidbox,  Fhirbase,  HL7 FHIR,  AngularJS,  Clojure (JVM)]
+  desc:
+    ru: Самураи разработали, запустили и осуществляют поддержку web-сервиса для управления реестром медицинских организаций Санкт-Петербурга. Сервис разработан на базе платформы Aidbox.
+    en: Health Samurai Team developed, implemented and are supporting web-service for managing Saint-Petersburg medical organizations register. The service was developed on the base of Aidbox platform.    
+- id: holiadvice
+  title: Holiadvice
+  post: holiadvice.md
+  href: https://www.holiadvice.com/
+  tags: [Ruby on Rails, WebRTC, PayPal]
+  desc:
+    ru: Самураи разработали телемедицинский портал для "нетрадиционной" медицины. Владельцы сервиса произвели пилотное внедрение в Израиле и планирует выход на международный рынок.
+    en: Health Samurai Team developed telemedicine portal for complementary medicine. Owners made a pilot implementation of the service in Israel and are planning to enter the international market.
+- id: salemed
+  title: SaleMed
+  post: salemed.md
+  href: https://salemed.info/
+  tags: [Clojure (JVM)]
+  desc:
+    ru: Самураи разработали и провели пилотный запуск электронной торговой площадки для МРТ-центров и страховых компаний в Санкт-Петербурге.
+    en: Health Samurai Team developed and implemented a pilot launch of an electronic trading platform for MRI centers and insurance companies in St. Petersburg.
+- id: vitalsync
+  title: VitalSync
+  post: vitalsync.md
+  tags: [HL7 FHIR,  HL Mapper]
+  desc:
+    ru: Самураи консультируют команду Medtronic по применению стандарта HL7 FHIR и занимаются разработкой интеграционного модуля для преобразования входящего потока данных в формате HL7 v2.x в HL7 FHIR.
+    en: Health Samurai Team provides consultations to the Medtronic team on the use of HL7 FHIR standard, and is engaged in the development of an integrational module for converting the incoming data stream from HL7 v2.x format to HL7 FHIR.
