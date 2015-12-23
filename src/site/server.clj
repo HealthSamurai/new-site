@@ -23,6 +23,7 @@
 (def *routes
   {:GET #'index
    "about"    {:GET  #'index}
+   "index"    {:GET  #'index}
    "products" {:GET #'products}
    "contacts" {:GET #'contacts}
    "services" {:GET #'services}

@@ -3,8 +3,14 @@
             [me.raynes.fs :as fs]
             [site.formats :refer [yaml] :as fmt]))
 
+(def default-lang :en)
+(def ^:dynamic *lang* nil)
 
-(def ^:dynamic *lang* :ru)
+(defn current-lang []
+  (or *lang* default-lang))
+
+(defn next-lang []
+  (get {:en :ru :ru :en} (current-lang)))
 
 (defmacro with-lang [lang & body]
   `(binding [*lang* ~lang]
@@ -26,7 +32,7 @@
 (defn i [data & ks]
   (let [item (get-in data ks)]
     (if (map? item)
-      (or (get item *lang*) item)
+      (or (get item (or *lang* default-lang)) item)
       item)))
 
 (defn idata [& ks]

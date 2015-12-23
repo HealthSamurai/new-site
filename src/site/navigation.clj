@@ -1,6 +1,6 @@
 (ns site.navigation
   (:require [site.routes :refer [url]]
-            [site.data :refer [data i idata]]
+            [site.data :refer [data i idata] :as d]
             [site.font :refer [icon]]
             [site.styles :refer [s-var style vh undecorate pbox mbox] :as s]
             [site.widgets :refer [grid]]))
@@ -14,6 +14,14 @@
     [:div#navigation
      (style
       [:#navigation
+       {:position "relative"}
+       [:.lang {:position :absolute :width "auto"
+                :display "inline-block"
+                :line-height (s/vh* 4)
+                :top 0
+                :right (s/vh* 2)}
+        (s/&unstyle-links)
+        (s/&text :bold :center)]
        (:em palette)
        [:a.brand (s-var :color :inverse :em)
         (s/&unstyle-links)
@@ -39,7 +47,9 @@
       [:a.brand {:href (url "index")} (icon :samurai)]
       [:ul.list-inline
        (for [x (data :menu)]
-         [:li [:a {:href (url (:href x))} (i x :title)]])]]]))
+         [:li [:a {:href (url (:href x))} (i x :title)]])]]
+     [:a.lang {:href (d/with-lang (d/next-lang) (url "index"))} (d/next-lang)]
+     ]))
 
 
 (defn footer-title [href k]
