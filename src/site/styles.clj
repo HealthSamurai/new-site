@@ -93,10 +93,17 @@
   {:right {:text-align "right"}
    :center {:text-align "center"}
    :left {:text-align "left"}
+   :nowrap {:white-space "nowrap"}
    600 {:font-weight 600}
    300 {:font-weight 300}
    500 {:font-weight 500}
-   :bold {:font-weight "bold"}})
+   :bold {:font-weight "bold"}
+   :h1 {:font-size "41px"  :font-weight "300"  :line-height (vh* 3)}
+   :h2 {:font-size "24px"  :font-weight "bold" :line-height (vh* 3)}
+   :h3 {:font-size  "21px" :font-weight "300"  :line-height (vh* 2)}
+   :h4 {:font-size  "21px" :font-weight "300" :line-height (vh* 1.5)}
+   :p  {:font-size "18px"  :line-height (px* vh 1.5)}
+   :small {:font-size "16px"}})
 
 (defn &text [& ks]
   [:& (reduce (fn [acc k] (merge acc (get text-keys k))) {} ks)])

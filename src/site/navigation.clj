@@ -39,42 +39,43 @@
          [:li [:a {:href (:href x)} (i x :title)]])]]]))
 
 
+(defn footer-title [href k]
+  [:a {:href href} [:h4 (idata :text k)]])
+
 (defn footer []
-  (let [palette (s-var :color :inverse-ex)]
+  [:div#footer
+   (style
     [:div#footer
-    (style
-     [:div#footer
-      (:text palette)
-      (s/&padding 4 nil 0 nil)
-      [:a {:color "#ddd"}]
-      [:.footer-line {:background "rgba(46,48,58,1)"}
-       (s/&text :center)
-       (s/&margin 2 0 0 0)
-       (s/&padding 1 0)]])
-    [:div.container
-     (grid
-      [[:a {:href "/products"} [:h4 (idata :text  :products)]]
-       [:ul.list-unstyled
-        (for [x (data :products)]
-          [:li [:a {:href (str "/products#" (:id x))} (i x :title)]])]]
+     (s-var :color :inverse-ex :text)
+     (s/&padding 4 nil 0 nil)
+     [:a {:color "#ddd"}]
+     [:.footer-line {:background "rgba(46,48,58,1)"}
+      (s/&text :center)
+      (s/&margin 2 0 0 0)
+      (s/&padding 1 0)]])
+   [:div.container
+    (grid
+     [(footer-title "/products" :products)
+      [:ul.list-unstyled
+       (for [x (data :products)]
+         [:li [:a {:href (str "/products#" (:id x))} (i x :title)]])]]
 
-      [[:a {:href "/services"} [:h4 (idata :text  :development)]]
-       [:ul.list-unstyled
-        (for [x (data :services)]
-          [:li [:a {:href (:href x)} (i x :title)]])]]
+     [(footer-title "/services" :development)
+      [:ul.list-unstyled
+       (for [x (data :services)]
+         [:li [:a {:href (str "/services#" (:id x))} (i x :title)]])]]
 
-      [[:a {:href "/trainings"} [:h4 (idata :text  :education)]]
-       [:ul.list-unstyled
-        (for [x (data :trainings)]
-          [:li [:a {:href (:href x)} (i x :title)]])]]
+     [(footer-title "/trainings" :education)
+      [:ul.list-unstyled
+       (for [x (data :trainings)]
+         [:li [:a {:href (str "/trainings#" (:id x))} (i x :title)]])]]
 
-      [[:a {:href "/contacts"} [:h4 (idata :text  :contacts)]]
-       [:ul.list-unstyled
-        [:li [:a {:href (str "mailto:" (data :contacts :mailto))}
-              (data :contacts :mailto)]]
-        (for [x (data :contacts :offices)]
-          [:li
-           [:a (i x :country) ": " (i x :phone)]])]])]
-     [:div.footer-line
-      [:div.container-fluid
-       [:b  " © 2015 HealthSamurai" (icon :samurai)]]]]))
+     [(footer-title "/contacts" :contacts)
+      [:ul.list-unstyled
+       [:li [:a {:href (str "mailto:" (data :contacts :mailto))}
+             (data :contacts :mailto)]]
+       (for [x (data :contacts :offices)]
+         [:li [:a (i x :country) ": " (i x :phone)]])]])]
+   [:div.footer-line
+    [:div.container-fluid
+     [:b  " © 2015 HealthSamurai" (icon :samurai)]]]])
