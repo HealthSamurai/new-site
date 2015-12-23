@@ -30,7 +30,7 @@ git commit -m "Deploy to GitHub Pages"
 
 eval $(ssh-agent)
 ls -lah .
-ssh-add key
+ssh-add ../secure/key
 
 echo 'Add origin'
 git remote add origin git@github.com:HealthSamurai/new-site.git
