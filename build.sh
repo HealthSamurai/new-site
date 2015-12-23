@@ -30,6 +30,7 @@ git commit -m "Deploy to GitHub Pages"
 
 eval $(ssh-agent)
 ls -lah .
+chmod 400 ../secure/key
 ssh-add ../secure/key
 
 echo 'Add origin'
