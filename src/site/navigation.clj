@@ -10,7 +10,7 @@
   (let [props (merge {:color :inverse} opts)
         uri (get-in opts [:request :uri])
         palette (s-var :color (:color props))]
-    (println "URI" uri)
+    (println "URI nav" uri)
     [:div#navigation
      (style
       [:#navigation

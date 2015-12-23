@@ -6,5 +6,8 @@
         path (if (map? last) (butlast parts) parts)
         params (if (map? last) last {})
         hash (if (map? last) (:# last) nil)]
-    (str (str/join path) ".html" (when hash (str "#" hash)))))
+    (str "/" (str/join "/" path) ".html" (when hash (str "#" hash)))))
+
+(url "a" "b" {:a 1 :# "ups"})
+
 

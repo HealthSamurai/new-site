@@ -14,15 +14,16 @@
 
 (defn *generate [{path :path params :params} routes]
   (doseq [[k v] routes]
+    (println path k)
     (cond
       (= :GET k) (let [uri (str/join "/" path)
                        res (s/dispatch {:uri uri :request-method k})]
                    (dump path (:body res)))
-      (vector? k) "nop"
-      #_(let [k (first k)
-            gen (get routes k)]
-        (doseq [pv (gen)]
-          (*generate {:path (conj path pv) :params (assoc params k pv)} v)))
+      (vector? k) (let [k (first k)
+                        gen (get routes k)]
+                    (println gen)
+                    (doseq [pv (gen)]
+                      (*generate {:path (conj path pv) :params (assoc params k pv)} v)))
       (keyword? k) "nop"
       :else (*generate {:path (conj path k) :params params} v))))
 
@@ -42,4 +43,5 @@
 (defn -main [] (generate))
 
 (comment
-  (generate))
+  (generate)
+  )

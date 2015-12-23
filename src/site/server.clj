@@ -27,11 +27,14 @@
    "contacts" {:GET #'contacts}
    "services" {:GET #'services}
    "trainings" {:GET #'trainings
+                :id #(map :id (data/data :trainings))
                 [:id] {:GET #'training}}
    "projects" {:GET #'projects
+               :id #(map :id (data/data :projects))
                [:id] {:GET #'project}}})
 (def routes
-  (merge *routes {[:lang] *routes}))
+  (merge *routes {:lang (constantly ["ru" "en"])
+                  [:lang] *routes}))
 
 (defn dispatch [{params :params uri :uri meth :request-method :as req}]
   (if-let [mtch (rt/match [meth (str/replace uri #".html$" "")] routes)]

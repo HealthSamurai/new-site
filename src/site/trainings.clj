@@ -3,6 +3,7 @@
             [site.navigation :refer [navigation]]
             [site.widgets :refer [grid  splash paralax tags]]
             [site.data :refer [data find-by-id i idata]]
+            [site.routes :refer [url]]
             [site.formats :refer [load-text]]
             [garden.units :refer [px px* vh*]]
             [site.font :as font]))
@@ -25,7 +26,7 @@
      [:br]
      [:p (i training :desc)]
      [:br]
-     [:a {:href (str "/trainings/" (:id training))} (idata :text :more-info)]]]])
+     [:a {:href (url "trainings" (:id training))} (idata :text :more-info)]]]])
 
 (defn trainings [req]
   [:div
