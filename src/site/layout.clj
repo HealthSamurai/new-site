@@ -3,6 +3,7 @@
             [hiccup.page :refer [include-css]]
             [garden.stylesheet :refer [at-font-face]]
             [site.font :as font]
+            [site.routes :refer [url asset-path]]
             [site.navigation :refer [navigation footer]]
             [site.styles :refer [style]]))
 
@@ -17,9 +18,9 @@
     [:title (data :title)]
 
     (include-css
-       "/bootstrap.min.css"
-       "https://fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,900italic,500italic,600,600italic,700,700italic,800,800italic,900"
-       "/font-awesome/css/font-awesome.min.css")
+     (asset-path "font-awesome/css/font-awesome.min.css")
+     (asset-path "bootstrap.min.css")
+     "https://fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,900italic,500italic,600,600italic,700,700italic,800,800italic,900")
 
     (style (at-font-face font/font-face))
 
@@ -37,7 +38,7 @@
    [:body
     [:div#main [:div#wrap cnt]]
     (footer)
-    [:script {:type "text/javascript" :src "/jquery.min.js"}]
+    [:script {:type "text/javascript" :src (asset-path "jquery.min.js")}]
     #_[:script {:type "text/javascript" :src "/instant.js"}]]])
 
 

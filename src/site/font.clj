@@ -1,5 +1,6 @@
 (ns site.font
-  (:require [clojure.string :as str]))
+  (:require [clojure.string :as str]
+            [site.routes :refer [asset-path]]))
 
 (def fontello
   {:mapper     "\\e800" 
@@ -12,12 +13,16 @@
 
 (defn fontello-icon-name [k] (str "icon-" (name (or k "ups"))))
 
+(defn font-url [ext & [x]]
+  (str "url('" (asset-path (str "fonts/fontello." ext)) "') format('" (or x ext) "')"))
+
 (def font-face
   {:font-family "fontello"
-   :src (str/join "," ["url('/fonts/fontello.eot') format('embedded-opentype')"
-                       "url('/fonts/fontello.woff') format('woff')"
-                       "url('/fonts/fontello.ttf') format('truetype')"
-                       "url('/fonts/fontello.svg') format('svg')"])})
+   :src (str/join "," [(font-url "woff")
+                       (font-url "eot" "embedded-opentype")
+                       (font-url "woff")
+                       (font-url "svg")
+                       (font-url "ttf" "truetype")])})
 
 (def garden-font
   (into [:.hs-icon {:font-family "fontello"
