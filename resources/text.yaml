@@ -1,15 +1,15 @@
 products:
   en: Products
-  ru: Наши Продукты
+  ru: Наши продукты
 products-subtitle:
-  ru: "Мы разрабатываем технологичные продукты на основе HL7 FHIR"
-  en: We develop highttech products based on HL7 FHIR
+  ru: "Мы разрабатываем технологичные продукты на основе стандарта HL7® FHIR®"
+  en: We develop high-tech products based on HL7® FHIR® standard
 products-target:
   ru: "Готовы к сотрудничеству?"
-  en:  Are your ready for ...
+  en:  Are you ready for collaboration?
 products-subtarget:
-  ru: "Если у вас остались какие либо вопросы, хотите увидеть демо наших решений или обсудить с нами ваш проект - оставьте запрос и мы свяжемся с вами."
-  en: "TODO: have any questions"
+  ru: "Если у вас остались какие-либо вопросы, если вы хотите увидеть демо наших решений или обсудить с нами ваш проект - оставьте запрос, и мы свяжемся с вами."
+  en: "In case if you still have any questions, or if you would like to see the demo of our solutions or discuss your project with us - please leave your request and we will contact you."
 education:
   en: "Courses"
   ru: "Обучение"
@@ -17,8 +17,8 @@ projects:
   ru: "Проекты"
   en: "Projects"
 projects-subtitle:
-  ru: "Вместе с нашими клиентам мы создаем медицинские системы нового поколения, которые используются в разных частях мира."
-  en: "Do it together"
+  ru: "Вместе с нашими клиентам мы создаем медицинские системы нового поколения, которые используются в разных частях мира"
+  en: "Together with our customers, we create medical information systems of new generation that are used in different parts of the world"
 services:
   ru: "Услуги"
   en: Services
@@ -27,7 +27,7 @@ trainings:
   en: Trainings
 trainings-subtitle:
   ru: "Мы проводим консультации и тренинги"
-  en: We provide trainings & consultations
+  en: We provide trainings and consultations
 development:
   ru: "Разработка"
   en: Development
@@ -35,14 +35,14 @@ contacts:
   ru: "Контакты"
   en: Contacts
 contacts-subtitle:
-  ru: "У нас есть представительства в двух странах и мы всегда готовы встретитсья и обсудить ваш проект."
-  en: We have offices in two countries, ....
+  ru: "У нас есть представительства в двух странах и мы всегда готовы встретитьcя и обсудить ваш проект."
+  en: "We have representative offices in two countries, and we are always ready to meet with you and discuss your project."
 partnership:
-  ru: "Cотрудничествo"
-  en: Partnership
+  ru: "Услуги"
+  en: Services
 partnership-target:
   ru: "Готовы к сотрудничеству?"
-  en: Are your ready for ...
+  en: Are you ready for collaboration?
 partnership-subtitle:
   ru: "Консалтинг и разработка"
   en: Consulting & Development
@@ -51,16 +51,16 @@ features:
   en: Features
 product-link:
   ru: Сайт продукта 
-  en: Product Site
+  en: The product website
 more-info:
   ru: Узнать подробнее 
-  en: More information
+  en: Find out more
 promo:
-  ru: Мы *знаем как* создавать медицинские информационные системы будущего
-  en: We *know how* to craft next generation medical information systems
+  ru: Мы *знаем, как* создавать медицинские информационные системы будущего
+  en: We *know how* to create next generation medical information systems
 promo-subtitle:
-  ru: Эксперты в Health IT. Разрабатываем для клиентов на основе наших технологичных продуктов и стандарта HL7 FHIR.
-  en: Experts in Health IT. We build for your clients on top of our tech products and FHIR
+  ru: Эксперты в Health IT. Разрабатываем для клиентов на основе наших технологичных продуктов и стандарта HL7® FHIR®.
+  en: Experts in Health IT. We build for your clients on top of our high-tech products and HL7® FHIR® standard.
 used-technologies:
   ru: "Продукты и технологии"
   en: "Products & Technologies"

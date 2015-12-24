@@ -1,20 +1,20 @@
 - id: fhirbase
   logo: fhirbase
   title: Fhirbase
-  type: opensource
+  type: Open-source
   motto:
-    ru: Реляционное хранилище медицинских данных на основе стандарта HL7 FHIR.
-    en: ?????
+    ru: Реляционное хранилище медицинских данных на основе стандарта HL7® FHIR®.
+    en: Relational healthcare information storage based on the HL7® FHIR® standard ready for use in production.
   description: >-
     Fhirbase - это реляционное хранилище с встроенной моделью данных,
-    соответствующей международному стандарту HL7 FHIR. Fhirbase подходит для
+    соответствующей международному стандарту HL7® FHIR®. Fhirbase подходит для
     построения медицинских информационных системы разных классов: электронные
-    карты (EHR), интеграционные ”шины”, репозитории медицинских данных
+    карты (EHR), интеграционные "шины", репозитории медицинских данных
     (реестры), госпитальные системы (HIS), порталы для пациентов и
     телемедицины.
   features:
     - Построен на PostgreSQL с использованием языка plv8
-    - Реализует модель данных соответствующую стандарту HL7 FHIR
+    - Реализует модель данных соответствующую стандарту HL7® FHIR®
     - Имеет простой REST-like API для обращения к данным
   links:
     direct: http://fhirbase.github.io/
@@ -23,24 +23,24 @@
   tags:
     - PostgreSQL
     - plv8
-    - HL7 FHIR
+    - HL7® FHIR®
 - id: aidbox
   logo: aidbox
   title: Aidbox
-  type: commercial
+  type: Commercial
   motto:
-    ru: Облачная платформа для создания медицинских систем на основе HL7 FHIR.
+    ru: Облачная платформа для создания медицинских систем на основе HL7® FHIR®.
     en: Cloud platform
   description: >-
     Aidbox - это платформа «как сервис» (PaaS) для разработки медицинских
-    решений на основе HL7 FHIR.
+    решений на основе HL7® FHIR®.
     Aidbox подходит для построения мобильных и web-решений оперирующих
     медицинскими данными: электронные карты (EHR), интеграционные ”шины”,
     репозитории медицинских данных (реестры), госпитальные системы (HIS),
     порталы для пациентов и телемедицины.
   features: 
     - Использует Fhirbase для хранения данных
-    - Реализует REST API на основе стандарта HL7 FHIR
+    - Реализует REST API на основе стандарта HL7® FHIR®
     - Решает вопросы Security с использование OAuth
     - Предоставляет хостинг для базы и несложных одностраничных приложений (SPA)
     - Предоставляет SDK и возможность интегрироваться с решениями на ваших технологиях (Java, .Net и т.д.)
@@ -54,10 +54,10 @@
 - id: formstamp
   logo: formstamp
   title: FormStamp
-  type: opensource
+  type: Open-source
   motto:
     ru: FormStamp - это библиотека виджетов на AngularJS для разработки веб-приложений с «богатым» клиентом.
-    en: ????
+    en: FormStamp is a library of widgets written on AngularJS for development of web-applications with rich client.
   description: >-
     FormStamp - набор директив AngularJS для быстрого описания и связывания
     форм с данными приложения. Упрощает прототипирование, стилизацию,
@@ -77,10 +77,10 @@
 - id: fhir-js
   logo: 
   title: FHIR.js
-  type: opensource
+  type: Open-source
   motto:
-    ru: JavaScript клиент для HL7 FHIR.
-    en: ?????
+    ru: JavaScript клиент для HL7® FHIR®.
+    en: JavaScript client for HL7® FHIR®.
   description: >-
     Упрощает получение FHIR данных в JavaScript приложениях, написанных на
     Node.js, AngularJS, jQuery или YUI. Реализует привычный синтаксис и
@@ -88,7 +88,7 @@
     получения данных FHIR сервера.
   features:
     - Простой и выразительный синтаксис запросов
-    - Поддерживает CRUD операции по стандарту HL7 FHIR
+    - Поддерживает CRUD операции по стандарту HL7® FHIR®
     - Поддерживает базовую HTTP авторизацию
     - Поддерживает OAuth2 авторизацию
   links:
@@ -102,7 +102,7 @@
 - id: fhir-schema
   logo: 
   title: FHIR-schema
-  type: opensource
+  type: Open-source
   motto: 
   description: >-
     Библиотека для описания StructureDefinition FHIR ресурсов с помощь JSON
@@ -115,11 +115,11 @@
   tags:
     - JavaScript
     - JSON
-    - HL7 FHIR
+    - HL7® FHIR®
 - id: foodtaster
   logo: foodtaster
   title: Foodtaster
-  type: opensource
+  type: Open-source
   motto: Библиотека для тестирования Chef конфигурации с помощью RSpec
   description: >-
     Foodtaster позволяет разрабатывать сложную серверную инфраструктуру в
