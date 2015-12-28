@@ -1,14 +1,14 @@
 - id: fhir-intro
   title:
-    ru: Основы FHIR
-    en: FHIR intro 
+    ru: Основы HL7® FHIR®
+    en: HL7® FHIR® overview 
   img: imgs/fhir-intro.svg
   abstract:
     ru: >
       Восьмичасовой семинар по основным особенностям стандарта
-      HL7 FHIR и экосистеме вокруг стандарта.
+      HL7® FHIR® и экосистеме вокруг стандарта.
     en: >
-      8 hour training about HL7 FHIR standard in Russian
+      8-hour training about principal features of HL7® FHIR® standard and its ecosystem.
   desc:
     ru: >
       Многие разработчики, приходя в Health IT, часто недооценивают сложность предметной области
@@ -34,7 +34,8 @@
       Тренинг по архитектуре и использованию открытой медицинской базы данных FHIRbase в разработке
       решений для здравоохранения
     en: >
-      Training about the architecture and usage of an open-source healthcare database FHIRbase in development of healthcare solutions
+      Training on the architecture and usage of an open-source healthcare database FHIRbase in development 
+      of healthcare solutions
   desc:
     ru: >
       FHIRbase - это база данных, созданная на основе стандарта HL7® FHIR® и открытой реляционной базы данных
@@ -70,15 +71,26 @@
     - LEAN
   abstract:
     ru: Двухдневный тренинг по подходам и инструментам построения непрерывного цикла поставки
-    en: Two days training about Continuous Delivery....
-  desc: >
-    Современный софт стремительно превращается из коробочного продукта в
-    сервис. Пользователи хотят получать доступ к новым функциям
-    как можно быстрее. Цикл поставки у лидеров рынка сократился до дней
-    или даже часов. Поэтому, чтобы выжить, мы должны пересмотреть и перестроить
-    процесс производства информационных систем коренным образом, и это непростой
-    вызов. Двухдневный тренинг от HealthSamurai возможно станет первым шагом в этом
-    направлении. Мы познакомимся с движением DevOps и философией бережливого производства (LEAN).
-    Попробуем хорошие практики и инструменты позволяющие выстроить эффективную
-    и надежную линию непрерывного производства (Continuous Delivery Pipeline)
-  plan: devops.ru.md
+    en: Two-day training on tools and approaches for building continuous delivery
+  desc: 
+    ru: >
+      Современный софт стремительно превращается из коробочного продукта в
+      сервис. Пользователи хотят получать доступ к новым функциям
+      как можно быстрее. Цикл поставки у лидеров рынка сократился до дней
+      или даже часов. Поэтому, чтобы выжить, мы должны пересмотреть и перестроить
+      процесс производства информационных систем коренным образом, и это непростой
+      вызов. Двухдневный тренинг от HealthSamurai, возможно, станет первым шагом в этом
+      направлении. Мы познакомимся с движением DevOps и философией бережливого производства (LEAN).
+      Попробуем хорошие практики и инструменты позволяющие выстроить эффективную
+      и надежную линию непрерывного производства (Continuous Delivery Pipeline).
+    en: >
+      Contemporary software headily turns from a boxed product into a service. 
+      Users want to get new functionality as soon as possible. 
+      Delivery cycle of market leadears reduced to days and even hours. Therefore, in order to 
+      survive, we should revise and rebuild production process of informaion systems radically, 
+      and this is a challenge. Two-day training from HealthSamurai possible will become the first 
+      step in this direction. We will introduce the  DevOps движением and the philosophy of lean 
+      production. We will try best practices and tools allowing to build effective and reliable 
+      continuous delivery pipeline.     
+  plan: 
+      devops.ru.md

@@ -15,17 +15,16 @@
 
       #### О проекте MedClient
 
-      Облачная медицинская информационная система MedClient EHR  предназначена для информационного сопроваждения клинических и административных процессов скорой помощи и стационаров в США. Реализует врачебный и медсестринский документооборот, систему помощи в принятии клинических решений, аналитические инструменты для врачей и т.д.
+      Облачная медицинская информационная система MedClient EHR  предназначена для информационного сопровождения клинических и административных процессов скорой помощи и стационаров в США. Реализует врачебный и медсестринский документооборот, систему помощи в принятии клинических решений, аналитические инструменты для врачей и т. д.
       Система сертифицирована по программе [ONC Stage 1 и подготовлена к Stage 2](https://www.healthit.gov/providers-professionals/meaningful-use-definition-objectives).
       "
     en: "
-      Самураи разработали, сертифицировали и внедрили в трех клиниках США,
-      медицинскую информационную систему для госпиталей (EHR).
+      HealthSamurai developed  EHR, certified it and apply in 3 USA hospitals.
 
-      #### О проекте MedClient
+      #### About the project MedClient
 
-      Облачная медицинская информационная система MedClient EHR  предназначена для информационного сопроваждения клинических и административных процессов скорой помощи и стационаров в США. Реализует врачебный и медсестринский документооборот, систему помощи в принятии клинических решений, аналитические инструменты для врачей и т.д.
-      Система сертифицирована по программе [ONC Stage 1 и подготовлена к Stage 2](https://www.healthit.gov/providers-professionals/meaningful-use-definition-objectives).
+      MedClient is a cloud-based healthcare information system intended for information support of clinical and administrative processes in ambulance and inpatient settings in the United States. It implements doctor and nurse workflows, clinical decision support system, analytical tools for doctors, etc.
+      The system is certified under the program [ONC Stage 1 and is prepared for Stage 2](https://www.healthit.gov/providers-professionals/meaningful-use-definition-objectives).
       "
 - id: kainos
   title: Kainos

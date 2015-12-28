@@ -35,7 +35,7 @@ contacts:
   ru: "Контакты"
   en: Contacts
 contacts-subtitle:
-  ru: "У нас есть представительства в двух странах и мы всегда готовы встретитьcя и обсудить ваш проект."
+  ru: "У нас есть представительства в двух странах, и мы всегда готовы встретитьcя и обсудить ваш проект."
   en: "We have representative offices in two countries, and we are always ready to meet with you and discuss your project."
 partnership:
   ru: "Услуги"
@@ -51,7 +51,7 @@ features:
   en: Features
 product-link:
   ru: Сайт продукта 
-  en: The product website
+  en: Product website
 more-info:
   ru: Узнать подробнее 
   en: Find out more

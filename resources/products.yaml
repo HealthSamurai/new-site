@@ -4,18 +4,30 @@
   type: Open-source
   motto:
     ru: Реляционное хранилище медицинских данных на основе стандарта HL7® FHIR®.
-    en: Relational healthcare information storage based on the HL7® FHIR® standard ready for use in production.
-  description: >-
-    Fhirbase - это реляционное хранилище с встроенной моделью данных,
-    соответствующей международному стандарту HL7® FHIR®. Fhirbase подходит для
-    построения медицинских информационных системы разных классов: электронные
-    карты (EHR), интеграционные "шины", репозитории медицинских данных
-    (реестры), госпитальные системы (HIS), порталы для пациентов и
-    телемедицины.
+    en: Relational healthcare information storage based on the HL7® FHIR® standard, ready for use in production.
+  description: 
+    ru: >-
+      Fhirbase - это реляционное хранилище со встроенной моделью данных,
+      соответствующей международному стандарту HL7® FHIR®. Fhirbase подходит для
+      построения медицинских информационных системы разных классов: электронные
+      карты (EHR), интеграционные "шины", репозитории медицинских данных
+      (реестры), госпитальные системы (HIS), порталы для пациентов и
+      телемедицины.
+    en: >-
+      Fhirbase is a relational storage with integrated data model comformant with international 
+      HL7® FHIR® standard. 
+      Fhirbase is applicable for building healthcare information systems of different kinds: EHRs, 
+      integrational data buses, healthcare data repositories (registers), hospital information systems 
+      (HIS), patient and telemedicine portals.
   features:
-    - Построен на PostgreSQL с использованием языка plv8
-    - Реализует модель данных соответствующую стандарту HL7® FHIR®
-    - Имеет простой REST-like API для обращения к данным
+    ru:
+      - Построен на PostgreSQL с использованием языка plv8
+      - Реализует модель данных соответствующую стандарту HL7® FHIR®
+      - Имеет простой REST API для обращения к данным
+    en:
+      - Built on PostgreSQL with usage of plv8 language
+      - Fulfils HL7® FHIR® data model
+      - Has simple REST API for the data access
   links:
     direct: http://fhirbase.github.io/
     github: https://github.com/fhirbase
@@ -31,19 +43,31 @@
   motto:
     ru: Облачная платформа для создания медицинских систем на основе HL7® FHIR®.
     en: Cloud platform
-  description: >-
-    Aidbox - это платформа «как сервис» (PaaS) для разработки медицинских
-    решений на основе HL7® FHIR®.
-    Aidbox подходит для построения мобильных и web-решений оперирующих
-    медицинскими данными: электронные карты (EHR), интеграционные ”шины”,
-    репозитории медицинских данных (реестры), госпитальные системы (HIS),
-    порталы для пациентов и телемедицины.
-  features: 
-    - Использует Fhirbase для хранения данных
-    - Реализует REST API на основе стандарта HL7® FHIR®
-    - Решает вопросы Security с использование OAuth
-    - Предоставляет хостинг для базы и несложных одностраничных приложений (SPA)
-    - Предоставляет SDK и возможность интегрироваться с решениями на ваших технологиях (Java, .Net и т.д.)
+  description:
+    ru: >-
+      Aidbox - это платформа, предоставляемая в качестве услуги (PaaS) для разработки медицинских
+      решений на основе HL7® FHIR®.
+      Aidbox подходит для построения мобильных и веб-решений, оперирующих
+      медицинскими данными: электронные персональные медицинские записи (EHR), интеграционные "шины",
+      репозитории медицинских данных (реестры), госпитальные информационные системы (HIS),
+      порталы для пациентов и телемедицины.
+    en: >-
+      Aidbox is a platform as a service (PaaS) for healthcare solutions development on the base of HL7® FHIR® standard.
+      Aidbox is suitable for building mobile and web-applications handling healthcare data: EHS, integrational data buses, 
+      healthcare data repositories (registers), Hospital Informaion Systems (HIS), patient and telemedicine portals.
+  features:
+    ru:
+      - Использует Fhirbase для хранения данных
+      - Реализует REST API на основе стандарта HL7® FHIR®
+      - Решает вопросы безопасности с помощью использования OAuth2
+      - Предоставляет хостинг для базы и несложных одностраничных приложений (SPA)
+      - Предоставляет SDK и возможность интегрироваться с решениями на ваших технологиях (Java, .Net и т. д.)
+    en:
+      - Utilizes  Fhirbase for data storage
+      - Realizes REST API on the base of HL7® FHIR® standard
+      - Solves security questions via usage of OAuth2
+      - Provides hosting for database and single page applications
+      - Provies SDK and the ability of integration with solutions on your technologies (Java, .Net etc.)    
   links: 
     direct: https://aidbox.io/landing.html#/
   tags:
@@ -58,15 +82,24 @@
   motto:
     ru: FormStamp - это библиотека виджетов на AngularJS для разработки веб-приложений с «богатым» клиентом.
     en: FormStamp is a library of widgets written on AngularJS for development of web-applications with rich client.
-  description: >-
-    FormStamp - набор директив AngularJS для быстрого описания и связывания
-    форм с данными приложения. Упрощает прототипирование, стилизацию,
-    валидацию данных и вывод ошибок.
+  description: 
+    ru: >-
+      FormStamp - набор директив AngularJS для быстрого описания и связывания
+      форм с данными приложения. Упрощает прототипирование, стилизацию,
+      валидацию данных и вывод ошибок.
+    en: >-
+      FormStamp is a set of AngularJS directives for quick defining and linking forms with application data. It allows to simplify prototyping, stylization, data validation, and output of errors.   
   features:
-    - Написан на «чистом» AngularJS
-    - Имеет встроенный FormBuilder
-    - Стилизован на Twitter Bootstrap
-    - Имеет минималистичный codebase
+    ru:
+      - Написан на «чистом» AngularJS
+      - Имеет встроенный FormBuilder
+      - Стилизован на Twitter Bootstrap
+      - Имеет минималистичный codebase
+    en:
+      - Written in "pure" AngularJS
+      - Has built-in FormBuilder
+      - Utilizes Twitter Bootstrap style
+      - Has minimalistic codebase  
   links:
     direct: http://formstamp.github.io/
     github: https://github.com/formstamp/formstamp
@@ -81,16 +114,27 @@
   motto:
     ru: JavaScript клиент для HL7® FHIR®.
     en: JavaScript client for HL7® FHIR®.
-  description: >-
-    Упрощает получение FHIR данных в JavaScript приложениях, написанных на
-    Node.js, AngularJS, jQuery или YUI. Реализует привычный синтаксис и
-    архитектуру. FHIR.js - библиотека универсальных JavaScript адаптеров для
-    получения данных FHIR сервера.
+  description: 
+    ru: >-
+      Упрощает получение FHIR-данных в JavaScript-приложениях, написанных на
+      Node.js, AngularJS, jQuery или YUI. Реализует привычный синтаксис и
+      архитектуру. FHIR.js - библиотека универсальных JavaScript-адаптеров для
+      получения данных FHIR-сервера.
+    en: >-
+      Simplifies acquisition of FHIR data in JavaScript applications written in Node.js, 
+      AngularJS, jQuery or YUI. Realizes usual syntax and architecture. FHIR.js is a 
+      library of universal JavaScript adapters for FHIR server data acquisition.      
   features:
-    - Простой и выразительный синтаксис запросов
-    - Поддерживает CRUD операции по стандарту HL7® FHIR®
-    - Поддерживает базовую HTTP авторизацию
-    - Поддерживает OAuth2 авторизацию
+    ru:
+      - Простой и выразительный синтаксис запросов
+      - Поддерживает CRUD операции по стандарту HL7® FHIR®
+      - Поддерживает базовую HTTP авторизацию
+      - Поддерживает OAuth2 авторизацию
+    en:
+      - Simple and expressive query syntax
+      - Supports CRUD operations by HL7® FHIR® standard
+      - Supports base HTTP authorization
+      - Supports OAuth2 authorization
   links:
     github: https://github.com/FHIR/fhir.js
   tags:
@@ -104,10 +148,14 @@
   title: FHIR-schema
   type: Open-source
   motto: 
-  description: >-
-    Библиотека для описания StructureDefinition FHIR ресурсов с помощь JSON
-    Schema. Привносит лучшие практики для описания и валидации структур данных
-    из мира JavaScript в мир FHIR.
+  description: 
+    ru: >-
+      Библиотека для описания профилей (StructureDefinition) FHIR-ресурсов с помощь JSON
+      Schema. Привносит лучшие практики для описания и валидации структур данных
+      из мира JavaScript в мир FHIR.
+    en: >-
+      Library for description of FHIR resources StructureDefinitions by means of JSON
+      Schema. It introduces best practices of data structure description and validation from JavaScript world into the world of FHIR.
   features:
   links:
     github: https://github.com/fhir-js/fhir-schema
@@ -120,16 +168,28 @@
   logo: foodtaster
   title: Foodtaster
   type: Open-source
-  motto: Библиотека для тестирования Chef конфигурации с помощью RSpec
-  description: >-
-    Foodtaster позволяет разрабатывать сложную серверную инфраструктуру в
-    лучших традициях гибких методологий. Помогает системным администраторам и
-    DevOps-специалистам автоматизировать проверки межсерверного
-    взаимодействия. Foodtaster сближает разработчиков и системных
-    администраторов.
+  motto: 
+    ru: Библиотека для тестирования Chef конфигурации с помощью RSpec
+    en: Library for testing Chef configurations using RSpec
+  description: 
+    ru: >-
+      Foodtaster позволяет разрабатывать сложную серверную инфраструктуру в
+      лучших традициях гибких методологий. Помогает системным администраторам и
+      DevOps-специалистам автоматизировать проверки межсерверного
+      взаимодействия. Foodtaster сближает разработчиков и системных
+      администраторов.
+    en: >-
+      Foodtaster allows to develop complex server infrastructure in the best traditions of 
+      agile methodologies. It helps system administrators and DevOps specialists to automate 
+       interserver interactions checking. Foodtaster draws together developers and system 
+      administrators.
   features:
-    - Использует Vagrant и виртуальные машины
-    - Привносит TDD подход в конфигурирование инфраструктуры
+    ru:
+      - Использует Vagrant и виртуальные машины
+      - Привносит TDD-подход в конфигурирование инфраструктуры
+    en:
+      - Utilizes Vagrant and virtual machines
+      - Introduces TDD approach into configuring of infrastructure
   links:
     github: https://github.com/mlapshin/foodtaster
   tags:

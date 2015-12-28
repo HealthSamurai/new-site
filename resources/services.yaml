@@ -6,29 +6,48 @@
   description:
     ru: Развернем наши технологичные продукты и обучим вашу команду для дальнейшей работы.
     en: We will deploy our high-tech products and educate your team for further work.
-  post: >
-    У вас есть новый проект, вы не хотите тянуть с выпуском в свет первой версии,
-    но в тоже время заложить «правильный фундамент» для дальнейшего развития продукта, 
-    используя стандарты и международные наработки и опыт.
+  post: 
+    ru: >
+      У вас есть новый проект, вы не хотите тянуть с выпуском в свет первой версии,
+      но в тоже время заложить «правильный фундамент» для дальнейшего развития продукта, 
+      используя стандарты, международные наработки и опыт.
+    en: >
+      You have a new project, you don't want to delay the release of the first version, but at the same 
+      time you want to lay the "proper foundation" for the further product development, using 
+      international standards, groundwork and experience.    
   steps-statement:
-    ru: Мы поможем вам
-    en: We will help you
+    ru: "Мы поможем вам:"
+    en: "We will help you:"
   steps:
-    - >
-      Вникнем в идею будущего решения, 
-      совместно сформируем Product Vision и очертим границы продукта. 
-      Проведем аналитическую работу и построим стартовую модель данных продукта на базе HL7® FHIR®.
-    - >
-      Развернем и настроим наши технологичные продукты, 
-      которые закроют вопросы хранения информации, 
-      интеграции с другими системами через FHIR REST API и 
-      создадут хороший фундамент для разработки будущего решения.
-    - >
-      Обучим вашу команду FHIR стандарту, 
-      работе с нашими технологичными продуктами и поучаствуем в формировании архитектуры 
-      будущего продукта с учетом специфики.
-
-  
+    ru:
+      - >
+        Вникнем в идею будущего решения, 
+        совместно сформируем Product Vision и очертим границы продукта. 
+        Проведем аналитическую работу и построим стартовую модель данных продукта на базе HL7® FHIR®.
+      - >
+        Развернем и настроим наши технологичные продукты, 
+        которые закроют вопросы хранения информации, 
+        интеграции с другими системами через FHIR REST API и 
+        создадут хороший фундамент для разработки будущего решения.
+      - >
+        Обучим вашу команду FHIR стандарту, 
+        работе с нашими технологичными продуктами и поучаствуем в формировании архитектуры 
+        будущего продукта с учетом специфики.
+    en:
+      - >
+        Вникнем в идею будущего решения, 
+        совместно сформируем Product Vision и очертим границы продукта. 
+        Проведем аналитическую работу и построим стартовую модель данных продукта на базе HL7® FHIR®.
+      - >
+        Развернем и настроим наши технологичные продукты, 
+        которые закроют вопросы хранения информации, 
+        интеграции с другими системами через FHIR REST API и 
+        создадут хороший фундамент для разработки будущего решения.
+      - >
+        Обучим вашу команду FHIR стандарту, 
+        работе с нашими технологичными продуктами и поучаствуем в формировании архитектуры 
+        будущего продукта с учетом специфики.
+        
 - id: development
   icon: rocket
   title:
@@ -36,11 +55,16 @@
     en: Quick project start, and custom development 
   description:
     ru: Реализуем ваш проект на базе наших технологичных продуктов.
-    en: We will realize your project on the basis of our high-tech products
-  post: >
-    У вас есть новый проект, вы не хотите тянуть с выпуском в свет первой версии,
-    но в тоже время заложить «правильный фундамент» для дальнейшего развития продукта, 
-    используя стандарты и международные наработки и опыт.
+    en: We will implement your project on the basis of our high-tech products
+  post:
+    ru: >
+      У вас есть новый проект, вы не хотите тянуть с выпуском в свет первой версии,
+      но в тоже время заложить «правильный фундамент» для дальнейшего развития продукта, 
+      используя стандарты, международные наработки и опыт.
+    en: >
+      You have a new project, you don't want to delay the release of the first version, but at the same 
+      time you want to lay the "proper foundation" for the further product development, using 
+      international standards, groundwork and experience.
   steps-statement:
     ru: "Мы поможем вам:"
     en: "We will help you:"
@@ -82,10 +106,15 @@
   description:
     ru: 'Доработаем FHIRbase под ваши нужды, выделим специалиста для помощи и подпишем вас на обновления.'
     en: We will modify FHIRbase to suit your needs, provide a specialist to help you and sign you up for updates.
-  post: >
+  post: 
+    ru: >
       Вы используете в своем проекте хранилище с открытым кодом FHIRbase, 
-      и у вас появилась потребность доработать этот продукт по специфику проекта. 
+      и у вас появилась потребность доработать этот продукт под специфику проекта. 
       Вы понимаете, что лучше переложить эту работу на плечи идеологов и создателей FHIRbase.
+    en: >
+      You use open-source storage FHIRbase in your project and you have the need to modify 
+      the product in accordance with the specifics of your project.
+      You understand that it is better to pass the job on the shoulders of the ideologists and creators of FHIRbase.      
   steps-statement:
     ru: "Мы поможем вам:"
     en: "We will help you:"
@@ -95,9 +124,9 @@
       - Оценим трудоемкость, согласуем и заключим с вами договор на доработку FHIRbase под специфику вашего проекта.
       - Доработаем FHIRbase и предоставим вам новую версию, дополненную недостающей функциональностью.
     en: 
-      - TODO:Вникнем в ваш проект, обсудим недостающую в FHIRbase функциональность.
-      - TODO:Оценим трудоемкость, согласуем и заключим с вами договор на доработку FHIRbase под специфику вашего проекта.
-      - TODO:Доработаем FHIRbase и предоставим вам новую версию, дополненную недостающей функциональностью.
+      - Drill down into the idea of your future project and discuss deficient functionality of FHIRbase.
+      - Estimate the complexity, coordinate and sign a contract with you to refine FHIRbase under the specifics of your project. 
+      - Refine FHIRbase and provide you with a new version, complete with the missing functionality.  
 
 - id: consulting
   title:
@@ -105,13 +134,18 @@
     en: Consulting & Audit
   icon: binoculars
   description: 'Прочитаем семинары/тренинги по стандарту HL7® FHIR® и нашим продуктам, обучим вашу команду.'
-  post: >
+  post: 
+    ru: >
       Вы очень хотите "правильно", но не знаете как. У вас есть сложная задача,
       но у вас не получается ее решить, вы в поиске экспертов в области,
       которые проконсультируют и скажут как сделать правильно.
+    en: >
+      You really want to do it "properly", but don't know how. You have a complex task,
+      but you didn't manage to find a solution, and you are looking for experts in the domain,
+      who will consult and tell you how to make it right.     
   steps-statement:
-    ru: Мы поможем вам
-    en: We will help you
+    ru: "Мы поможем вам:"
+    en: "We will help you:"
   steps:
     ru:
       - >
@@ -126,12 +160,12 @@
         по улучшениям.
     en:
       - >
-        Поможем сформулировать концепцию решения, выявить требования к вашему продукту
-        и построить модель данных для будущего решения на основе стандарта HL7® FHIR®.
+        Phrase a solution concept, identify the requirements for your product
+        and build a data model for the future solution on the basis of the HL7® FHIR® standard.
       - >
-        Поучаствуем в архитектурных сессиях с вашей командой и поможем выработать 
-        правильное решение: выбрать стандарт, спроектировать архитектуру. 
+        Collaborate in architectural sessions with your team and help to develop
+        the correct solution: choose a standard, design architecture.
       - >
-        Подскажем какие международные наработки использовать.
-        Сделаем процессный и технический аудит вашего проекта и в результате дадим рекомендации 
-        по улучшениям.
+        Suggest which international groundwork to use.
+        Make the process and technical audit of your project and, as a result, give you our 
+        recommendations on improvements.
