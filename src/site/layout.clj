@@ -38,6 +38,7 @@
    [:body
     [:div#main [:div#wrap cnt]]
     (footer)
+
     [:script {:type "text/javascript" :src (asset-path "jquery.min.js")}]
     #_[:script {:type "text/javascript" :src (asset-path "instant.js")}]]])
 
