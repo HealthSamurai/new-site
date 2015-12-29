@@ -14,7 +14,7 @@
       (реестры), госпитальные системы (HIS), порталы для пациентов и
       телемедицины.
     en: >-
-      Fhirbase is a relational storage with integrated data model comformant with international 
+      Fhirbase is a relational storage with integrated data model conformant with international 
       HL7® FHIR® standard. 
       Fhirbase is applicable for building healthcare information systems of different kinds: EHRs, 
       integrational data buses, healthcare data repositories (registers), hospital information systems 
