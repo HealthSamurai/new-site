@@ -12,12 +12,19 @@
     (fs/mkdir dir-path)
     (spit fl-path res)))
 
+(defn safe-dispatch [& args]
+  (try
+    (apply s/dispatch args)
+    (catch Exception e
+      (println "ERROR: " args (.toString e))
+      {:body (str "<pre>" e "</pre>")})))
+
 (defn *generate [{path :path params :params} routes]
   (doseq [[k v] routes]
     (println path k)
     (cond
       (= :GET k) (let [uri (str/join "/" path)
-                       res (s/dispatch {:uri uri :request-method k})]
+                       res (safe-dispatch {:uri uri :request-method k})]
                    (dump path (:body res)))
       (vector? k) (let [k (first k)
                         gen (get routes k)]
