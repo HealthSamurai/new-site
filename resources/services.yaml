@@ -34,19 +34,19 @@
         работе с нашими технологичными продуктами и поучаствуем в формировании архитектуры 
         будущего продукта с учетом специфики.
     en:
+      - >        
+        We will drill down into the idea of a future solution, 
+        generate Product Vision and outline the boundaries of the product together.
+        We will carry out the analytical work and build a starting data model of the product on the base of HL7® FHIR® standard.
       - >
-        Вникнем в идею будущего решения, 
-        совместно сформируем Product Vision и очертим границы продукта. 
-        Проведем аналитическую работу и построим стартовую модель данных продукта на базе HL7® FHIR®.
+        We will deploy and configure our high-tech products
+        which are designed to close questions with storage of information,
+        integration with other systems through the HL7® FHIR® REST API, and
+        create a good foundation for the future solutions development.
       - >
-        Развернем и настроим наши технологичные продукты, 
-        которые закроют вопросы хранения информации, 
-        интеграции с другими системами через FHIR REST API и 
-        создадут хороший фундамент для разработки будущего решения.
-      - >
-        Обучим вашу команду FHIR стандарту, 
-        работе с нашими технологичными продуктами и поучаствуем в формировании архитектуры 
-        будущего продукта с учетом специфики.
+        We will educate your team on HL7® FHIR® standard, 
+        on how to work with our high-tech products, and participate
+        in the formation of architecture of the future product taking into account its specificity.
         
 - id: development
   icon: rocket
@@ -73,7 +73,7 @@
       - >
         Вникнем в идею будущего решения, 
         совместно сформируем Product Vision и очертим границы продукта. 
-        Проведем аналитическую работу и построим стартовую модель данных продукта на базе HL7® FHIR®.
+        Проведем аналитическую работу и построим стартовую модель данных продукта на базе HL7® FHIR®.        
       - >
         Развернем и настроим наши технологичные продукты, 
         которые закроют вопросы хранения информации, 
@@ -86,7 +86,7 @@
     en:
       - >
         We will drill down into the idea of a future solution, generate Product Vision and outline the boundaries of the product together.
-        We will carry out the analytical works and build a starting data model of the product based on the HL7® FHIR®.
+        We will carry out the analytical work and build a starting data model of the product on the base of HL7® FHIR® standard.
       - >
         We will deploy and configure our high-tech products
         which are designed to close questions with storage of information,
