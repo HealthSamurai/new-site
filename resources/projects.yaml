@@ -33,22 +33,22 @@
   client: {title: Kainos Evolve Platform, href: 'https://www.kainosevolve.com/solutions/'}  
   tags: [PostgreSQL 9.4+, plv8, HL7® FHIR®, Fhirbase, consulting]
   desc:
-    ru: Самураи расширили функциональные возможности Fhirbase под специфику проекта Kainos Evolve. Провели обучение команды Kainos по архитектурным особенностям Fhirbase и разработке на его основе.
-    en: Health Samurai Team extended functionality of Fhirbase specifically for Kainos Evolve project, gave educational trainings to the Kainos team on architectural features of Fhirbase and development on its base.
+    ru: Самураи расширили функциональные возможности Fhirbase под специфику проекта Kainos Evolve.
+    en: Health Samurai Team extended functionality of Fhirbase specifically for Kainos Evolve project.
   post:
     ru: "
-      Самураи расширили функциональные возможности Fhirbase под специфику проекта Kainos Evolve. Провели обучение команды Kainos по архитектурным особенностям Fhirbase и разработке на его основе.    
+      Самураи расширили функциональные возможности Fhirbase под специфику проекта Kainos Evolve.   
       
       #### О проекте Kainos
       
-      Kainos разрабатывает платформу [Kainos Evolve Platform](https://www.kainosevolve.com/solutions/)  для создания мобильных и web- приложений для здравоохранения в Великобритании. В основе платформы используется Fhirbase.
+      Kainos разрабатывает платформу [Kainos Evolve Platform](https://www.kainosevolve.com/solutions/)  для создания мобильных и web- приложений для здравоохранения в Великобритании.
     "
     en: "
-      Health Samurai Team extended functionality of Fhirbase specifically for Kainos Evolve project, gave educational trainings to the Kainos team on architectural features of Fhirbase and development on its base.
+      Health Samurai Team extended functionality of Fhirbase specifically for Kainos Evolve project.
       
       #### About the project Kainos
       
-      Kainos is developing [Kainos Evolve Platform](https://www.kainosevolve.com/solutions/) for mobile and web healthcare applications in Great Britain. Fhirbase is used as the basis of the platform.
+      Kainos is developing [Kainos Evolve Platform](https://www.kainosevolve.com/solutions/) for mobile and web healthcare applications in Great Britain.
     "
 - id: netrika
   title: Нетрика.ДЛИ
@@ -159,23 +159,23 @@
       #### About the project SaleMed
       
       Electronic trading platform Salemed is intended for intended for the sale of services with discounts between MRI centers and insurance companies."
-- id: vitalsync
-  title: VitalSync
-  tags: [HL7® FHIR®,  HL Mapper]
-  desc:
-    ru: Самураи консультируют команду Medtronic по применению стандарта HL7® FHIR® и занимаются разработкой интеграционного модуля для преобразования входящего потока данных в формате HL7 v2.x в HL7® FHIR®.
-    en: Health Samurai Team provides consultations to the Medtronic team on the use of HL7® FHIR® standard, and is engaged in the development of an integrational module for converting the incoming data stream from HL7 v2.x format to HL7® FHIR®.
-  post:
-    ru: "
-      Самураи консультируют команду Medtronic по применению стандарта HL7® FHIR® и занимаются разработкой интеграционного модуля для преобразования входящего потока данных в формате HL7 v2.x в HL7® FHIR®.
+# - id: vitalsync
+#   title: VitalSync
+#   tags: [HL7® FHIR®,  HL Mapper]
+#   desc:
+#     ru: Самураи консультируют команду Medtronic по применению стандарта HL7® FHIR® и занимаются разработкой интеграционного модуля для преобразования входящего потока данных в формате HL7 v2.x в HL7® FHIR®.
+#     en: Health Samurai Team provides consultations to the Medtronic team on the use of HL7® FHIR® standard, and is engaged in the development of an integrational module for converting the incoming data stream from HL7 v2.x format to HL7® FHIR®.
+#   post:
+#     ru: "
+#       Самураи консультируют команду Medtronic по применению стандарта HL7® FHIR® и занимаются разработкой интеграционного модуля для преобразования входящего потока данных в формате HL7 v2.x в HL7® FHIR®.
       
-      #### О проекте Medtronic
+#       #### О проекте Medtronic
       
-      Компания Medtronic разрабатывает информационную систему для мониторинга и сопровождения больных раком легких в США на базе существующей системы VitalSync. Для интеграции VitalSync с другими госпитальными системами используется HL7 Mapper."
-    en: "
-      Health Samurai Team provides consultations to the Medtronic team on the use of HL7® FHIR® standard, and is engaged in the development of an integrational module for converting the incoming data stream from HL7 v2.x format to HL7® FHIR®.
+#       Компания Medtronic разрабатывает информационную систему для мониторинга и сопровождения больных раком легких в США на базе существующей системы VitalSync. Для интеграции VitalSync с другими госпитальными системами используется HL7 Mapper."
+#     en: "
+#       Health Samurai Team provides consultations to the Medtronic team on the use of HL7® FHIR® standard, and is engaged in the development of an integrational module for converting the incoming data stream from HL7 v2.x format to HL7® FHIR®.
       
-      #### About the project Medtronic
+#       #### About the project Medtronic
       
-      Medtronic company is developing an information system for monitoring and tracking of lung cancer patients in the United States on the basis of the existing system VitalSync. For integration with other hospital systems VitalSync uses HL7 Mapper.
-      "
+#       Medtronic company is developing an information system for monitoring and tracking of lung cancer patients in the United States on the basis of the existing system VitalSync. For integration with other hospital systems VitalSync uses HL7 Mapper.
+#       "
