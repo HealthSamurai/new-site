@@ -18,7 +18,7 @@
       [:h1 (&text :center)]])
 
     [:div.col-md-3.left
-     (when-let [img (:img training)] [:img.logo {:src (asset-path img)}])
+     (when-let [img (:icon training)] [:div.logo (s/svg img)])
      (tags (or (training :tags) []))]
     [:div.col-md-8.column
      #_[:a.header {:href (str "/trainings/" (:id training))}]
@@ -26,7 +26,7 @@
      [:br]
      [:p (i training :desc)]
      [:br]
-     [:a {:href (url "trainings" (:id training))} (idata :text :more-info)]]]])
+     #_[:a {:href (url "trainings" (:id training))} (idata :text :more-info)]]]])
 
 (defn trainings [req]
   [:div
