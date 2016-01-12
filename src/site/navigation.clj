@@ -61,7 +61,8 @@
      [:.footer-line {:background "rgba(46,48,58,1)"}
       (s/&text :center)
       (s/&margin 2 0 0 0)
-      (s/&padding 1 0)]])
+      (s/&padding 1 0)]
+     [:li (s/&margin 0.5 0)]])
    [:div.container
     (grid
      [(footer-title "products" :products)
