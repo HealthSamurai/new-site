@@ -2,18 +2,18 @@
     title:
       ru: Продукты
       en: Products
--   href: services
-    title:
-      ru: Услуги
-      en: Services
--   href: trainings
-    title:
-      ru: Тренинги
-      en: Trainings
 -   href: projects
     title:
       ru: Проекты
       en: Projects
+-   href: trainings
+    title:
+      ru: Тренинги
+      en: Trainings
+-   href: services
+    title:
+      ru: Услуги
+      en: Services
 -   href: contacts
     title:
       ru: Контакты

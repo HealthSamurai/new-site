@@ -1,7 +1,7 @@
 (ns site.trainings
   (:require [site.styles :refer [s-var vh style undecorate &margin &padding &border &text &middle] :as s]
             [site.navigation :refer [navigation]]
-            [site.widgets :refer [grid  splash paralax tags]]
+            [site.widgets :refer [grid  splash paralax tags] :as w]
             [site.data :refer [data find-by-id i idata]]
             [site.routes :refer [url asset-path]]
             [site.formats :refer [load-text]]
@@ -33,7 +33,10 @@
    (navigation {:color :inverse})
    (splash {:title (idata :text :trainings)
             :moto  (idata :text :trainings-subtitle)})
-   [:div.container (interpose [:hr] (map training-view (data :trainings)))]])
+   [:div.container (interpose [:hr] (map training-view (data :trainings)))]
+   (w/call-to-action
+    {:title (idata :text :products-target)
+     :moto (idata :text :products-subtarget)})])
 
 (defn training [{{id :id} :params :as req}]
   (let [training (find-by-id id :trainings)]

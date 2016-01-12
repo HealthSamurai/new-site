@@ -64,3 +64,12 @@ promo-subtitle:
 used-technologies:
   ru: "Продукты и технологии"
   en: "Products & Technologies"
+all:
+  ru: Все
+  en: All
+send-form:
+  ru: "Послать"
+  en: "Send"
+blog:
+  ru: "Блог"
+  en: "Publications"

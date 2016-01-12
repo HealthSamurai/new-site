@@ -1,8 +1,10 @@
 - id: fhirbase
   logo: fhirbase
   title: Fhirbase
+  icon: fhirbase
+  icon-type: hs
   type: Open-source
-  motto:
+  abstract:
     ru: Реляционное хранилище медицинских данных на основе стандарта HL7® FHIR®.
     en: Relational healthcare information storage based on the HL7® FHIR® standard, ready for use in production.
   description: 
@@ -39,10 +41,12 @@
 - id: aidbox
   logo: aidbox
   title: Aidbox
+  icon: aidbox
+  icon-type: hs
   type: Commercial
-  motto:
+  abstract:
     ru: Облачная платформа для создания медицинских систем на основе HL7® FHIR®.
-    en: Cloud platform
+    en: Cloud platform for rapid development of next-generation healthcare apps based on HL7® FHIR®.
   description:
     ru: >-
       Aidbox - это платформа, предоставляемая в качестве услуги (PaaS) для разработки медицинских
@@ -77,9 +81,11 @@
     - AngularJS
 - id: formstamp
   logo: formstamp
+  icon: formstamp
+  icon-type: hs
   title: FormStamp
   type: Open-source
-  motto:
+  abstract:
     ru: FormStamp - это библиотека виджетов на AngularJS для разработки веб-приложений с «богатым» клиентом.
     en: FormStamp is a library of widgets written on AngularJS for development of web-applications with rich client.
   description: 
@@ -108,10 +114,11 @@
     - JavaScript
     - AngularJS
 - id: fhir-js
-  logo: 
+  icon: fhirjs
+  icon-type: hs
   title: FHIR.js
   type: Open-source
-  motto:
+  abstract:
     ru: JavaScript клиент для HL7® FHIR®.
     en: JavaScript client for HL7® FHIR®.
   description: 
@@ -147,7 +154,7 @@
   logo: 
   title: FHIR-schema
   type: Open-source
-  motto: 
+  abstract: 
   description: 
     ru: >-
       Библиотека для описания профилей (StructureDefinition) FHIR-ресурсов с помощь JSON
@@ -168,7 +175,7 @@
   logo: foodtaster
   title: Foodtaster
   type: Open-source
-  motto: 
+  abstract: 
     ru: Библиотека для тестирования Chef конфигурации с помощью RSpec
     en: Library for testing Chef configurations using RSpec
   description: 

@@ -90,5 +90,6 @@
             :moto   (idata :text :products-subtitle)})
    [:div#products
     [:div.container (interpose [:hr] (map product-view (data :products)))]
-    (splash {:title (idata :text :products-target) 
-             :moto (idata :text :products-subtarget)})]])
+    (w/call-to-action
+     {:title (idata :text :products-target)
+      :moto (idata :text :products-subtarget)})]])

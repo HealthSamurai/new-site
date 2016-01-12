@@ -42,6 +42,7 @@
             :moto  (idata :text :partnership-subtitle)})
    [:div.container
     (interpose [:hr] (map service-view (data :services)))]
-   (splash {:title (idata :text :partnership-target)
-            :moto  (idata :text :partnership-subtitle)})])
+   (w/call-to-action
+    {:title (idata :text :partnership-target)
+     :moto  (idata :text :partnership-subtitle)})])
 

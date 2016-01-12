@@ -134,3 +134,6 @@
 
 (defn &font-scale [font-size line-height]
   [:& {:font-size (vh* font-size) :line-height (vh* line-height)}])
+
+(defn svg [path]
+  (slurp (str  "resources/public/imgs/" (name path) ".svg")))

@@ -8,31 +8,53 @@
             [site.font :as font]
             [site.navigation :refer [navigation]]))
 
-(defn block-header [href key]
-  [:div.row.block-header
-   (style [:.block-header (s/&margin 4 nil 2 nil)
-           [:a (s/&unstyle-links)]])
-   [:a {:href href} [:h3 (idata :text key) "..."]]])
 
-(defn product-list [opts]
+
+(defn block-header [href key & [cnt]]
+  [:div.row.block-header
+   (style [:.block-header (s/&margin 4 nil 1 nil)
+           [:a (s/&unstyle-links)]
+           [:.btn {:vertical-align "middle"
+                   :margin-left (s/vh* 1)}]])
+
+   [:a {:href href} [:h3 (idata :text key) " "
+                     (when cnt
+                       [:button.btn.btn-default (str  (idata :text :all) " " cnt)])]]])
+
+
+(defn long-title? [title]
+  (> (count title) 15))
+
+
+
+(defn cards-list [opts]
   (let [defaults {:color :inverse :typescale :medium}
         props (merge defaults opts)
         palette (s-var :color :main)
+        items-type (:items opts)
+        items (data items-type)
         typescale (s-var :typescale (:typescale props))]
-    [:div#product-list
-     (style [:#product-list
-             (s/&border :top)
+    [:div#card-list
+     (style [:#card-list
              [:h1 (:h1 typescale)]
              [:.logo {:display "block"
                       :position "relative"
                       :overflow "hidden"
-                      :padding (s/vh* 1) 
+                      :padding (s/vh* 1)
                       :height (s/vh* 12)
                       :margin   {:right (px 10) :bottom (s/vh* 1)}
                       :color    (s-var :color :main :muted :color)
                       :border   "1px solid #ddd"}
               (undecorate)
-              [:&:hover (:selection palette)]
+              [:&:hover
+               (merge (:selection palette) {:background "transparent"})
+               [:.svg [:path {:fill (s/s-var :color :main :selection :color)}]]]
+              [:.svg {:height (s/vh* 10)
+                      :width (s/vh* 10)
+                      :display "block"
+                      :position "absolute"
+                      :bottom (s/vh* 1)
+                      :right "-50px"}]
               [:.hs-icon {:display "block"
                           :position "absolute"
                           :bottom (s/vh* 1)
@@ -46,16 +68,35 @@
                            :bottom (s/vh* 1)
                            :color    (s/color :selection)
                            :line-height (s/vh* 1)})
-               (s/&text 500)]]
-             [:p.desc (s/&padding 0.5 0.5)]])
+               (s/&text 500)]
+              [:h3 (merge (:h3 typescale)
+                          {:text-align "left"
+                           :position "absolute"
+                           :bottom (s/vh* 0.5)
+                           :left (s/vh* 1)
+                           :color (s-var :color :main :selection :color)
+                           :line-height (px* 1 vh)})]]
+             [:p.desc (s/&padding 0.5 1)]])
      [:div.container
-      (block-header (url "products") :products)
+      (block-header (url (str items-type)) items-type (count items))
       (apply grid
-             (for [p (take 3 (data :products))]
-               [[:a.logo {:href (url "products" {:# (p :id)})}
-                 [:i.hs-icon {:class (font/fontello-icon-name (p :id))}]
-                 [:h2 (i p :title)]]
-                [:p.desc  (i p :motto)]]))]]))
+             (for [p (take 3 items)]
+               [[:a.logo {:href (url (str (name items-type)) {:# (p :id)})}
+                 (cond
+                   (= (:icon-type p) "hs") [:i.hs-icon {:class (font/fontello-icon-name (p :id))}]
+                   (= (:icon-type p) "fa") [:i.fa-icon {:class (str "fa-" (p :icon))}]
+                   (= (:icon-type p) "img") [:img.img {:src (str  "/" (p :icon))}]
+                   (= (:icon-type p) "svg") [:div.svg (s/svg (:icon p))])
+
+                 (let [title (i p :title)]
+                   (if (long-title? title)
+                     [:h3 title]
+                     [:h2 title]))]
+                [:p.desc  (i p :abstract)]]))]]))
+
+
+(defn product-list [opts]
+  (cards-list (merge opts {:items :products})))
 
 
 (defn project-list [opts]
@@ -75,51 +116,14 @@
               [:&:hover (:selection palette)
                [:p (:text palette)]]]])
      [:div.container
-      (block-header (url "projects") :projects)
-      (for [p (data :projects)]
+      (block-header (url "projects") :projects (count (data :projects)))
+      (for [p (take 3 (data :projects))]
         [:a.list-item.row {:href (url "projects" {:# (:id p)})}
          [:h3 (i p :title)]
          [:p  (i p :desc)]])]]))
 
 (defn training-list [opts]
-  (let [defaults {:color :inverse :typescale :medium}
-        props (merge defaults opts)
-        palette (s-var :color :main)
-        typescale (s-var :typescale (:typescale props))]
-    [:div#training-list
-     (style [:#training-list
-             [:h1 (:h1 typescale)]
-             [:.logo {:display "block"
-                      :position "relative"
-                      :overflow "hidden"
-                      :min-height (s/vh* 12)
-                      :color    (s-var :color :main :muted :color)}
-              (s/&border)
-              (s/&margin nil 1 1 nil)
-              (undecorate)
-              [:&:hover (:selection palette)]
-              [:.hs-icon {:font-size (s/vh* 8)
-                          :display "block"
-                          :position "absolute"
-                          :bottom (s/vh* 1)
-                          :right "-40px"}
-               (s/&text :right)]
-              [:h2 (merge (:h3 typescale)
-                          {:text-align "left"
-                           :position "absolute"
-                           :bottom (s/vh* 0.5)
-                           :left (s/vh* 1)
-                           :color (s-var :color :main :selection :color)
-                           :line-height (px* 1 vh)})]]
-             [:p.desc (s/&margin nil 0.5)]])
-     [:div.container
-      (block-header (url "trainings") :trainings)
-      (apply grid
-             (for [p (take 3 (data :trainings))]
-               [[:a.logo {:href (url "trainings" {:# (:id p)})}
-                 [:i.hs-icon {:class (font/fontello-icon-name :fhirbase)}]
-                 [:h2 (i p :title)]]
-                [:p.desc  (i p :abstract)]]))]]))
+  (cards-list (merge opts {:items :trainings})))
 
 
 (defn partnerhsip-list [opts]
@@ -139,7 +143,7 @@
               [:.fa {:color (s-var :color :main :selection :color)}]]
              [:.fa {:float "left"
                     :display "inline-block"
-                    :color "#888" 
+                    :color "#888"
                     :width "auto"
                     :vertical-align "middle"
                     :line-height (s/vh* 4)
@@ -149,7 +153,7 @@
               {:display "inline-block"
                :vertical-align "middle"}]]]])
    [:div.container
-    (block-header (url "services") :partnership)
+    (block-header (url "services") :partnership (count (data :services)))
     [:div.items-list
      (for [x (data :services)]
        [:a.row.list-item {:href (url "services" {:# (:id x)})}
@@ -162,7 +166,7 @@
   [:div
    (style
     [:#promo
-     (s/&padding 9 0 15 0)
+     (s/&padding 9 0 5 0)
 
      [:.promo-header
       (s/&font-scale 2.3 3)
@@ -177,9 +181,43 @@
       (s/&center-block "35em")
       (s/&text :center 600)]])
    [:div#promo
-    [:div.container-fluid
+    [:div.container
      [:h1.promo-header [:span (fmt/markdown (idata :text :promo) )]]
-     [:p.promo-sub-header [:span (idata :text :promo-subtitle)]]]]])
+     [:p.promo-sub-header [:span (idata :text :promo-subtitle)]]
+     (s/svg "bg")]]])
+
+(defn blog-frame [url]
+  [:iframe.blogframe
+   {:src url
+    :allowtransparency "true"
+    :frameborder "0"
+    :title "Embedded story"
+    :width "400"
+    :height "377"}])
+
+(defn blog-block [opts]
+  [:div.container-fluid.posts
+   (block-header (url "#") :blog )
+   (s/style
+    [:.posts
+     {:text-align "center"}
+     (s/&margin 2 0 4 0)
+     [:.post
+      {:display "inline-block"
+       :width "430px"}
+      (s/&padding 1)
+      [:.blogframe
+       {:display "block"
+        :max-width "100%"
+        :min-width "220px"
+        :padding 0
+        :position "static"
+        :visibility "visible"
+        :border-radius "5px"
+        :border "1px solid #ddd"
+        :box-shadow "rgba(0, 0, 0, 0.15) 0px 1px 3px"}]]])
+   (for [post (data :blog)]
+     [:div.post (blog-frame (:url post))])])
 
 (defn index [req]
   [:div#index
@@ -190,4 +228,7 @@
    (project-list  {})
    (training-list  {})
    (partnerhsip-list {})
-   (repeat 4 [:br])])
+   (repeat 4 [:br])
+   (w/call-to-action {:title (idata :text :partnership-target) :moto ""})
+   (blog-block {})
+   ])

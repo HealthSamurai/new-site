@@ -1,10 +1,13 @@
 (ns site.contacts
   (:require [site.styles :refer [s-var vh style undecorate mbox pbox] :as s]
             [site.navigation :refer [navigation]]
-            [site.widgets :refer [grid  splash paralax]]
+            [site.widgets :refer [grid  splash paralax] :as w]
             [site.data :refer [data i idata]]
             [garden.units :refer [px px*]]
             [site.font :as font]))
+
+
+
 
 (defn contacts [req]
   [:div
@@ -34,5 +37,7 @@
                         :src (:gmap office)
                         :allowfullscreen true}]
               [:br]
-              [:p (i office :country) ": " (i office :address)]
-              ]))]])
+              [:p (i office :country) ": " (i office :address)]]))]
+   (w/call-to-action
+    {:title (idata :text :products-target)
+     :moto (idata :text :products-subtarget)})])

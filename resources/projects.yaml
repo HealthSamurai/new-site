@@ -48,7 +48,7 @@
       
       #### About the project Kainos
       
-      Kainos is developing [Kainos Evolve Platform](https://www.kainosevolve.com/solutions/) for mobile and web healthcare applications in Great Britain.
+      Kainos is developing [Kainos Evolve Platform](https://www.kainosevolve.com/solutions/) for mobile and web healthcare applications in Great Britain
     "
 - id: netrika
   title: Нетрика.ДЛИ
@@ -56,8 +56,8 @@
   client: {title: Нетрика, href: 'http://netrika.ru/'}  
   tags: [PostgreSQL, plv8, consulting]
   desc:
-    ru: "Самураи провели обучение команды Netrika по межународным стандартам: HL7 v2, HL7 v3, HL7® FHIR®. Помогли в проектировании архитектуры регионального сервиса для обмена лабораторными данными и модели данных на основе HL7® FHIR®."
-    en: Health Samurai Team carried out educational trainings for the Netrika team about international standards HL7 v2, HL7 v3, HL7® FHIR®. Samurai gave consultations on the project design of regional service of laboratory data exchange and data model on the base of HL7® FHIR® standard.
+    ru: Консультация и обучение по стандартy HL7® FHIR® и использованию fhirbase.
+    en: Consulting and education about international standard HL7® FHIR® and fhirbase.
   post:
     ru: "
     Самураи провели обучение команды Netrika по межународным стандартам: HL7 v2, HL7 v3, HL7® FHIR®. Помогли в проектировании архитектуры регионального сервиса для обмена лабораторными данными и модели данных на основе HL7® FHIR®.

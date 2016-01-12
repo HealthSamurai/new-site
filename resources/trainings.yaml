@@ -2,7 +2,8 @@
   title:
     ru: Основы HL7® FHIR®
     en: HL7® FHIR® overview 
-  img: imgs/fhir-intro.svg
+  icon-type: svg
+  icon: fhir-intro
   abstract:
     ru: >
       Восьмичасовой семинар по основным особенностям стандарта
@@ -26,6 +27,8 @@
     - HL7®
     - HL7® standards
 - id: fhirbase
+  icon-type: svg
+  icon: fhirbase
   title:
     en: FHIRbase anatomy
     ru: Анатомия FHIRbase
@@ -54,7 +57,7 @@
       its structure will allow you to make use of PostgreSQL and extend FHIRbase effectively under your specific needs. Also, 
       we will touch upon a subject of practical usage of FHIRbase in production, such as performance configuration, replicaton
       and backups.
-    img: imgs/fhirbase.svg
+    icon: imgs/fhirbase.svg
     plan: fhirbase.ru.md
   tags:
     - FHIR
@@ -64,7 +67,8 @@
   title:
     ru: Непрерывная поставка
     en: Continuous Delivery
-  img: imgs/devops.svg
+  icon-type: svg
+  icon: devops
   tags:
     - DevOps
     - ContinuousDelivery

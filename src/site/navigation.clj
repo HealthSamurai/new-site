@@ -15,11 +15,7 @@
      (style
       [:#navigation
        {:position "relative"}
-       [:.lang {:position :absolute :width "auto"
-                :display "inline-block"
-                :line-height (s/vh* 4)
-                :top 0
-                :right (s/vh* 2)}
+       [:.lang {:line-height (s/vh* 4)}
         (s/&unstyle-links)
         (s/&text :bold :center)]
        (:em palette)
@@ -47,9 +43,9 @@
       [:a.brand {:href (url "index")} (icon :samurai)]
       [:ul.list-inline
        (for [x (data :menu)]
-         [:li [:a {:href (url (:href x))} (i x :title)]])]]
-     [:a.lang {:href (d/with-lang (d/next-lang) (url "index"))} (d/next-lang)]
-     ]))
+         [:li [:a {:href (url (:href x))} (i x :title)]])
+       " | "
+       [:li [:a.lang {:href (d/with-lang (d/next-lang) (url "index"))} (d/next-lang)]]]]]))
 
 
 (defn footer-title [href k]
