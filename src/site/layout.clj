@@ -24,7 +24,7 @@
     [:meta {:charset "utf-8"}]
     [:meta {:http-equiv "X-UA-Compatible" :content "IE=edge"}]
     [:title "Health Samurai"]
-    [:link :rel "shortcut icon" :href "/imgs/health-samurai-icon.ico" :type "image/x-icon"]
+    [:link {:rel "shortcut icon" :href "/imgs/health-samurai-icon.ico" :type "image/x-icon"}]
     [:meta {:name "desription" :content ""}]
     [:meta {:name "viewport" :content "width=device-width, initial-scale=1.0"}]
     [:title (data :title)]
