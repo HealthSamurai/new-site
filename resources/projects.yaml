@@ -23,7 +23,7 @@
 
       #### About the project MedClient
 
-      MedClient is a cloud-based healthcare information system intended for information support of clinical and administrative processes in ambulance and inpatient settings in the United States. It implements doctor and nurse workflows, clinical decision support system, analytical tools for doctors, etc.
+      MedClient is a cloud-based healthcare information system intended for information support of clinical and administrative processes in emergency and inpatient settings in the United States. It implements doctor and nurse workflows, clinical decision support system, analytical tools for doctors, etc.
       The system is certified under the program [ONC Stage 1](https://www.healthit.gov/providers-professionals/meaningful-use-definition-objectives) and is prepared for Stage 2.
       "
 - id: kainos
