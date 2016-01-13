@@ -86,7 +86,7 @@
               [:h3 (:h3 typescale)]]
              [:p.desc {:position "relative"} (s/&padding 0.5 1)]])
      [:div.container
-      (block-header (url (str items-type)) items-type (count items))
+      (block-header (url (name items-type)) items-type (count items))
       (apply grid
              (for [p (take 3 items)]
                [[:div.card
