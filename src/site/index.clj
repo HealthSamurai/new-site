@@ -15,7 +15,16 @@
    (style [:.block-header (s/&margin 4 nil 1 nil)
            [:a (s/&unstyle-links)]
            [:.btn {:vertical-align "middle"
-                   :margin-left (s/vh* 1)}]])
+                   :border-width "3px"
+                   :border-color (s/clr :blue)
+                   :color (s/clr :blue)
+                   :font-weight 600
+                   :padding "0 1em"
+                   :line-height (s/vh* 1.5)
+                   :border-radius "50px"
+                   :margin-left (s/vh* 1)}
+            [:&:hover {:background (s/clr :blue)
+                       :color "white"}]]])
 
    [:a {:href href} [:h3 (idata :text key) " "
                      (when cnt
@@ -36,63 +45,63 @@
         typescale (s-var :typescale (:typescale props))]
     [:div#card-list
      (style [:#card-list
+             {:padding-bottom (s/vh* 5)
+              :background-color "#f1f1f1"}
              [:h1 (:h1 typescale)]
+             [:.card {:margin-right (s/vh* 0.5)
+                      :position "relative"
+                      ;; :padding-right (s/vh* 0.5)
+                      }]
              [:.logo {:display "block"
                       :position "relative"
-                      :overflow "hidden"
+                      :color (s/clr :black)
                       :padding (s/vh* 1)
-                      :height (s/vh* 12)
+                      :height (s/vh* 10)
                       :margin   {:right (px 10) :bottom (s/vh* 1)}
-                      :color    (s-var :color :main :muted :color)
-                      :border   "1px solid #ddd"}
+                      :border-radius "4px"}
               (undecorate)
               [:&:hover
-               (merge (:selection palette) {:background "transparent"})
-               [:.svg [:path {:fill (s/s-var :color :main :selection :color)}]]]
-              [:.svg {:height (s/vh* 10)
-                      :width (s/vh* 10)
-                      :display "block"
-                      :position "absolute"
-                      :bottom (s/vh* 1)
-                      :right "-50px"}]
-              [:.hs-icon {:display "block"
-                          :position "absolute"
-                          :bottom (s/vh* 1)
-                          :right "-50px"}
+               [:.hs-icon :.svg :h2 :h3
+                {:opacity 1 :color (s/clr :blue)}]]
+              [:.svg :.hs-icon
+               {:display "block"
+                :position "absolute"
+                :right 0
+                :top (s/vh* 1)
+                :color (s/clr :gray)}]
+              [:.svg {:height (s/vh* 16)
+                      :width (s/vh* 16)}
+               [:path {:stroke "#e5e5e5"
+                       :stroke-width 3 
+                       :fill "none"}]]
+              [:.hs-icon {}
                (s/&text :right)
                (s/&font-scale 10 10)]
-              [:h2 (merge (:h1 typescale)
-                          {:text-align "left"
-                           :position "absolute"
-                           :left (s/vh* 1)
-                           :bottom (s/vh* 1)
-                           :color    (s/color :selection)
-                           :line-height (s/vh* 1)})
-               (s/&text 500)]
-              [:h3 (merge (:h3 typescale)
-                          {:text-align "left"
-                           :position "absolute"
-                           :bottom (s/vh* 0.5)
-                           :left (s/vh* 1)
-                           :color (s-var :color :main :selection :color)
-                           :line-height (px* 1 vh)})]]
-             [:p.desc (s/&padding 0.5 1)]])
+              [:h2 :h3 {:text-align "left"
+                        :position "absolute"
+                        :left (s/vh* 1)
+                        :bottom (s/vh* 0.5)
+                        :line-height (s/vh* 1)}]
+              [:h2 (:h1 typescale) (s/&text 500)]
+              [:h3 (:h3 typescale)]]
+             [:p.desc {:position "relative"} (s/&padding 0.5 1)]])
      [:div.container
       (block-header (url (str items-type)) items-type (count items))
       (apply grid
              (for [p (take 3 items)]
-               [[:a.logo {:href (url (str (name items-type)) {:# (p :id)})}
-                 (cond
-                   (= (:icon-type p) "hs") [:i.hs-icon {:class (font/fontello-icon-name (p :id))}]
-                   (= (:icon-type p) "fa") [:i.fa-icon {:class (str "fa-" (p :icon))}]
-                   (= (:icon-type p) "img") [:img.img {:src (str  "/" (p :icon))}]
-                   (= (:icon-type p) "svg") [:div.svg (s/svg (:icon p))])
-
-                 (let [title (i p :title)]
-                   (if (long-title? title)
-                     [:h3 title]
-                     [:h2 title]))]
-                [:p.desc  (i p :abstract)]]))]]))
+               [[:div.card
+                 [:a.logo {:href (url (str (name items-type)) {:# (p :id)})}
+                  #_(cond
+                    (= (:icon-type p) "hs") [:i.hs-icon {:class (font/fontello-icon-name (p :id))}]
+                    (= (:icon-type p) "fa") [:i.fa-icon {:class (str "fa-" (p :icon))}]
+                    (= (:icon-type p) "img") [:img.img {:src (str  "/" (p :icon))}]
+                    (= (:icon-type p) "svg") [:div.svg (s/svg (:icon p))])
+                  [:div.svg (s/svg "fhirbase")]
+                  (let [title (i p :title)]
+                    (if (long-title? title)
+                      [:h3 title]
+                      [:h2 title]))]
+                 [:p.desc  (i p :abstract)]]]))]]))
 
 
 (defn product-list [opts]
@@ -106,6 +115,7 @@
         typescale (s-var :typescale (:typescale props))]
     [:div#project-list
      (style [:#project-list
+             {:padding-bottom (s/vh* 5)}
              [:h1 (:h1 typescale)]
              [:.list-item (merge (:text palette)
                                  {:display "block"
@@ -173,6 +183,18 @@
       (s/&text :center 600)
       (s/&center-block "20em")
       [:em {:color (s/color :selection)}]]
+     [:svg {:fill "none"
+            :stroke "#A23836"
+            :stroke-miterlimit 10}
+      [:#line-4 [:g {:stroke "#ddd"}]]
+      [:#line-3 [:g {:stroke "#aaa"}]]
+      [:#line-2 [:g {:stroke "#888"}]]
+      [:#line-1 [:g {:stroke "#555"}]]
+      [:.lines
+       {:fill "none"
+        :stroke "#D2D2D2"
+        :stroke-miterlimit 10
+        :stroke-dasharray 3.3}]]
 
      [:.promo-sub-header
       {:opacity 0.88}
@@ -204,7 +226,7 @@
      (s/&margin 2 0 4 0)
      [:.post
       {:display "inline-block"
-       :width "430px"}
+       :width "420px"}
       (s/&padding 1)
       [:.blogframe
        {:display "block"

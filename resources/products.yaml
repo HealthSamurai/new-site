@@ -2,7 +2,7 @@
   logo: fhirbase
   title: Fhirbase
   icon: fhirbase
-  icon-type: hs
+  icon-type: svg
   type: Open-source
   abstract:
     ru: Реляционное хранилище медицинских данных на основе стандарта HL7® FHIR®.

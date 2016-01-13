@@ -10,6 +10,29 @@
 
 (defn vh* [num] (px* vh num))
 
+(def colors
+  {:dark-blue "#194A6F"
+   :gray "#ddd"
+   :red "#a23835"
+   :violet "#B93369"
+   :light-blue "#E2F1FC"
+   :blue "#42A3EE"
+   :dark-red "#551513"
+   :black "#333356"
+   :dark-green "#0B5524"
+   :alter-green "#64AE68"
+   :green "#35A25A"
+   :orange "#D56530"})
+
+(defn clr [key]
+  (get colors key))
+
+(defn random-clr []
+  (nth 
+   (vals colors)
+   (rand-int
+    (count colors))))
+
 (def style-vars
   {:color {:main       {:text      {:color "#333356"}
                         :muted     {:color "#ddd"}

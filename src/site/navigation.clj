@@ -62,7 +62,8 @@
        (for [x (data :menu)]
          [:li [:a {:href (url (:href x))} (i x :title)]])
        " | "
-       [:li [:a.lang {:href (d/with-lang (d/next-lang) (url "index"))} (d/next-lang)]]]]]))
+       [:li [:a.lang {:href (d/with-lang (d/next-lang) (url "index"))}
+             (.toUpperCase (name (d/next-lang)))]]]]]))
 
 
 (defn footer-title [href k]

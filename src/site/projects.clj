@@ -15,7 +15,8 @@
      (s/&padding 2 nil)
      [:h2 {:line-height (s/vh* 2)}]
      [:h4 {:line-height (s/vh* 2) :margin-top (s/vh* 1)}]
-     [:.images {:width  (px 300)
+     [:.images {:margin-top (s/vh* 4)
+                :width  (px 300)
                 :height (px 300)}
       [:.image {:display "inline-block"
                 :background-color "#eee"

@@ -13,9 +13,22 @@
   [:div#splash
    (style
     [:#splash
-     (s/s-var :color :inverse :text)
-     (s/&padding 5 0 4 0)
+     ;;(s/s-var :color :inverse :text)
+     {:color "white"
+      :overflow "hidden"
+      :position "relative"
+      :background-color (s/clr :red)}
 
+     (s/&padding 6 0 6 0)
+
+     [:svg {:fill "none"
+            :position "absolute"
+            :top 0
+            :stroke "#922323"
+            :stroke-width 1.5
+            :stroke-miterlimit 10}]
+
+     [:.splash-body {:position "relative"}]
      [:.splash-header
       (s/&text :center :h1 300)
       (s/&center-block "20em")]
@@ -40,8 +53,10 @@
       (s/&center-block "40em")]])
 
    [:div.container-fluid
-    [:h1.splash-header    (:title opts)]
-    [:div.splash-sub-header (:moto opts)]]])
+    (s/svg "bg-2")
+    [:div.splash-body
+     [:h1.splash-header    (:title opts)]
+     [:div.splash-sub-header (:moto opts)]]]])
 
 (defn form [form-id]
   [:form.back-form
