@@ -48,61 +48,44 @@
              {:padding-bottom (s/vh* 5)
               :background-color "#f1f1f1"}
              [:h1 (:h1 typescale)]
-             [:.card {:margin-right (s/vh* 0.5)
+             [:.card {:margin-right (s/vh* 1)
                       :position "relative"
-                      ;; :padding-right (s/vh* 0.5)
-                      }]
-             [:.logo {:display "block"
-                      :position "relative"
+                      :display "block"
                       :color (s/clr :black)
-                      :padding (s/vh* 1)
-                      :height (s/vh* 10)
-                      :margin   {:right (px 10) :bottom (s/vh* 1)}
-                      :border-radius "4px"}
+                      :border-radius "4px"
+                      ;;:border "2px solid #ddd"
+                      :box-shadow (str  "0px 0px 2px 2px " (s/clr :gray))
+                      :padding (s/vh* 1)}
               (undecorate)
+              [:.svg {:height (s/vh* 15) :width (s/vh* 15) :margin "0 auto"}
+               [:path {:stroke "#e5e5e5" :stroke-width 3 :fill "none"}]]
+              [:&.major
+               {:background-color (s/clr :dark-gray) :color "white"}
+               [:.svg [:path {:stroke "#666"}]]
+               [:&:hover
+                {:box-shadow (str  "0px 0px 2px 2px " (s/clr :orange))}
+                [:.svg [:path {:stroke (s/clr :orange)}]]]]
               [:&:hover
-               [:.hs-icon :.svg :h2 :h3
-                {:opacity 1 :color (s/clr :blue)}]]
-              [:.svg :.hs-icon
-               {:display "block"
-                :position "absolute"
-                :right 0
-                :top (s/vh* 1)
-                :color (s/clr :gray)}]
-              [:.svg {:height (s/vh* 16)
-                      :width (s/vh* 16)}
-               [:path {:stroke "#e5e5e5"
-                       :stroke-width 3 
-                       :fill "none"}]]
-              [:.hs-icon {}
-               (s/&text :right)
-               (s/&font-scale 10 10)]
-              [:h2 :h3 {:text-align "left"
-                        :position "absolute"
-                        :left (s/vh* 1)
-                        :bottom (s/vh* 0.5)
-                        :line-height (s/vh* 1)}]
+               {:box-shadow (str  "0px 0px 2px 2px " (s/clr :blue))}
+               [:.svg [:path {:stroke (s/clr :blue)}]]]
+              [:h2 :h3 {:text-align "center" :line-height (s/vh* 1) :margin {:top 0 :bottom (s/vh* 2)}}]
               [:h2 (:h1 typescale) (s/&text 500)]
-              [:h3 (:h3 typescale)]]
-             [:p.desc {:position "relative"} (s/&padding 0.5 1)]])
+              [:h3 (:h3 typescale)]
+              [:p.desc {:min-height (s/vh* 10)} (s/&padding 1)]]])
      [:div.container
       (block-header (url (name items-type)) items-type (count items))
       (apply grid
              (for [p (take 3 items)]
-               [[:div.card
-                 [:a.logo {:href (url (str (name items-type)) {:# (p :id)})}
-                  #_(cond
-                    (= (:icon-type p) "hs") [:i.hs-icon {:class (font/fontello-icon-name (p :id))}]
-                    (= (:icon-type p) "fa") [:i.fa-icon {:class (str "fa-" (p :icon))}]
-                    (= (:icon-type p) "img") [:img.img {:src (str  "/" (p :icon))}]
-                    (= (:icon-type p) "svg") [:div.svg (s/svg (:icon p))])
-                  [:div.svg (s/svg "fhirbase")]
-                  (let [title (i p :title)]
-                    (if (long-title? title)
-                      [:h3 title]
-                      [:h2 title]))]
+               [[:a.card {:class (when (:major p) "major")
+                          :href (url (str (name items-type)) {:# (p :id)})}
+                 (let [title (i p :title)] [(if (long-title? title) :h3 :h2) title])
+                 [:div.svg (s/svg "fhirbase")]
                  [:p.desc  (i p :abstract)]]]))]]))
-
+#_(cond
+    (= (:icon-type p) "hs") [:i.hs-icon {:class (font/fontello-icon-name (p :id))}]
+    (= (:icon-type p) "fa") [:i.fa-icon {:class (str "fa-" (p :icon))}]
+    (= (:icon-type p) "img") [:img.img {:src (str  "/" (p :icon))}]
+    (= (:icon-type p) "svg") [:div.svg (s/svg (:icon p))])
 
 (defn product-list [opts]
   (cards-list (merge opts {:items :products})))
@@ -189,7 +172,7 @@
       [:#line-4 [:g {:stroke "#ddd"}]]
       [:#line-3 [:g {:stroke "#aaa"}]]
       [:#line-2 [:g {:stroke "#888"}]]
-      [:#line-1 [:g {:stroke "#555"}]]
+      [:#line-1 [:g {:stroke "#888" :stroke-width 2}]]
       [:.lines
        {:fill "none"
         :stroke "#D2D2D2"

@@ -69,6 +69,7 @@
     en: Continuous Delivery
   icon-type: svg
   icon: devops
+  major: true
   tags:
     - DevOps
     - ContinuousDelivery

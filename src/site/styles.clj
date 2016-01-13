@@ -19,6 +19,7 @@
    :blue "#42A3EE"
    :dark-red "#551513"
    :black "#333356"
+   :dark-gray "rgba(46,48,58,0.96)"
    :dark-green "#0B5524"
    :alter-green "#64AE68"
    :green "#35A25A"

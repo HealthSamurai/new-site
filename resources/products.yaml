@@ -44,6 +44,7 @@
   icon: aidbox
   icon-type: hs
   type: Commercial
+  major: true
   abstract:
     ru: Облачная платформа для создания медицинских систем на основе HL7® FHIR®.
     en: Cloud platform for rapid development of next-generation healthcare apps based on HL7® FHIR®.
