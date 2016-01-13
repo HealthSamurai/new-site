@@ -17,6 +17,8 @@
                   :overflow "hidden"
                   :width "30em"}
       [:.list-item {:float "left"
+                    :position "relative"
+                    :top "6px"
                     :width (s/vh* 3)
                     :color (s/s-var :color :main :muted :color)
                     :line-height (s/vh* 3)
