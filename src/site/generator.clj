@@ -39,6 +39,7 @@
   (println "Generating into dist:")
   (fs/delete-dir "dist")
   (fs/mkdir "dist")
+  (fs/copy "CNAME" "dist/CNAME")
   (doseq [f (fs/glob "resources/public/*")]
     (println "assets: " (fs/base-name f))
     ((if (fs/directory? f) fs/copy-dir fs/copy)
