@@ -6,7 +6,8 @@ rm -rf dist || exit 0;
 mkdir dist;
 
 # run our compile script, discussed above
-env SITE_URL='/new-site/' lein generate
+#env SITE_URL='/new-site/' lein generate
+lein generate
 
 # go to the out directory and create a *new* Git repo
 cd dist
