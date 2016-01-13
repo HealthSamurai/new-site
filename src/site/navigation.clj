@@ -9,7 +9,9 @@
 (defn navigation [opts]
   (let [props (merge {:color :inverse} opts)
         uri (get-in opts [:request :uri])
-        palette (s-var :color (:color props))]
+        palette (s-var :color (:color props))
+        bg-color (get-in palette [:em :background-color])
+        color (get-in palette [:em :color])]
     (println "URI nav" uri)
     [:div#navigation
      (style
@@ -19,14 +21,27 @@
         (s/&unstyle-links)
         (s/&text :bold :center)]
        (:em palette)
-       [:a.brand (s-var :color :inverse :em)
+       [:a.brand {:position "relative"
+                  :color bg-color
+                  :background-color color}
         (s/&unstyle-links)
         (s/&inline)
         (s/&text :center)
-        (s/&padding 0 0.7)
+        (s/&padding 0 0.7 1 0.7)
+        [:.triangle
+         {:position "absolute"
+          :border-style "solid"
+          :right 0
+          :left 0
+          :bottom 0
+          :border {:top {:width (s/vh* 1)
+                         :color color}
+                   :bottom {:width 0}
+                   :left {:width "37px" :color bg-color} 
+                   :right {:width "37px" :color bg-color}}}]
         [:i
+         {:color bg-color}
          (s/&inline)
-         (s-var :color :inverse :em)
          (s/&font-scale 1.8 4)
          (s/&center-block)]]
        [:ul {:margin-bottom 0 :float "right"}
@@ -40,7 +55,9 @@
           [:&:hover {:color (get-in palette [:em :color])
                      :border-color (get-in palette [:em :color])}]]]]])
      [:div.container
-      [:a.brand {:href (url "index")} (icon :samurai)]
+      [:a.brand {:href (url "index")}
+       (icon :samurai)
+       [:div.triangle]]
       [:ul.list-inline
        (for [x (data :menu)]
          [:li [:a {:href (url (:href x))} (i x :title)]])

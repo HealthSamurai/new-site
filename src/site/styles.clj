@@ -23,7 +23,8 @@
                                           :border-color "#a23835"
                                           :cursor "pointer"
                                           :background-color "#f5f5f5"}
-                        :em   {:color "#a23835"}}
+                        :em   {:color "#a23835"
+                               :background-color "white"}}
            :inverse    {:text {:color "white"
                                :background-color "#a23835"}
                         :muted {:background-color "#a23835"}
