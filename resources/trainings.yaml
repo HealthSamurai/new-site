@@ -3,7 +3,7 @@
     ru: Основы HL7® FHIR®
     en: HL7® FHIR® overview 
   icon-type: svg
-  icon: fhir-intro
+  icon: fhir-training
   abstract:
     ru: >
       Восьмичасовой семинар по основным особенностям стандарта
@@ -68,7 +68,7 @@
     ru: Непрерывная поставка
     en: Continuous Delivery
   icon-type: svg
-  icon: devops
+  icon: continious-delivery
   major: true
   tags:
     - DevOps

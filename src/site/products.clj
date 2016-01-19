@@ -57,6 +57,8 @@
   [:div.product.row
    (style
     [:.product
+     [:.svg {:margin-right (s/vh* 1) :margin-bottom (s/vh* 2)}
+      [:path {:stroke "#333356" :opacity 0.6 :stroke-width 3 :fill "none"}]]
      [:.header (s/&unstyle-links)]
      (s/&margin 4 0 5 0)
      [:.hs-icon {:font-size (s/vh* 8)
@@ -70,7 +72,7 @@
      [:h1 (s/&text :center)]])
 
    [:div.col-md-3.left
-    (font/icon (:logo product))
+    [:div.svg (s/svg (:icon product))]
     (w/tags (product :tags))]
 
    [:div.col-md-9.column

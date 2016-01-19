@@ -79,7 +79,7 @@
                [[:a.card {:class (when (:major p) "major")
                           :href (url (str (name items-type)) {:# (p :id)})}
                  (let [title (i p :title)] [(if (long-title? title) :h3 :h2) title])
-                 [:div.svg (s/svg "fhirbase")]
+                 [:div.svg (s/svg (:icon p))]
                  [:p.desc  (i p :abstract)]]]))]]))
 #_(cond
     (= (:icon-type p) "hs") [:i.hs-icon {:class (font/fontello-icon-name (p :id))}]

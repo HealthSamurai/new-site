@@ -80,6 +80,43 @@
     - Fhirbase
     - Clojure
     - AngularJS
+- id: fhir-js
+  icon: fhir-js
+  icon-type: hs
+  title: FHIR.js
+  type: Open-source
+  abstract:
+    ru: Референсная реализация FHIR клиента на JavaScript. Эта библиотека разработана совместно с SMART Platform.
+    en: Reference implementation of FHIR client in JavaScript. This library is created and used by aidbox and SMART Platform. 
+  description: 
+    ru: >-
+      Упрощает получение FHIR-данных в JavaScript-приложениях, написанных на
+      Node.js, AngularJS, jQuery или YUI. Реализует привычный синтаксис и
+      архитектуру. FHIR.js - библиотека универсальных JavaScript-адаптеров для
+      получения данных FHIR-сервера.
+    en: >-
+      Simplifies acquisition of FHIR data in JavaScript applications written in Node.js, 
+      AngularJS, jQuery or YUI. Realizes usual syntax and architecture. FHIR.js is a 
+      library of universal JavaScript adapters for FHIR server data acquisition.      
+  features:
+    ru:
+      - Простой и выразительный синтаксис запросов
+      - Поддерживает CRUD операции по стандарту HL7® FHIR®
+      - Поддерживает базовую HTTP авторизацию
+      - Поддерживает OAuth2 авторизацию
+    en:
+      - Simple and expressive query syntax
+      - Supports CRUD operations by HL7® FHIR® standard
+      - Supports base HTTP authorization
+      - Supports OAuth2 authorization
+  links:
+    github: https://github.com/FHIR/fhir.js
+  tags:
+    - JavaScript
+    - Node.js
+    - YUI
+    - jQuery
+    - AngularJS
 - id: formstamp
   logo: formstamp
   icon: formstamp
@@ -114,47 +151,11 @@
   tags:
     - JavaScript
     - AngularJS
-- id: fhir-js
-  icon: fhirjs
-  icon-type: hs
-  title: FHIR.js
-  type: Open-source
-  abstract:
-    ru: JavaScript клиент для HL7® FHIR®.
-    en: JavaScript client for HL7® FHIR®.
-  description: 
-    ru: >-
-      Упрощает получение FHIR-данных в JavaScript-приложениях, написанных на
-      Node.js, AngularJS, jQuery или YUI. Реализует привычный синтаксис и
-      архитектуру. FHIR.js - библиотека универсальных JavaScript-адаптеров для
-      получения данных FHIR-сервера.
-    en: >-
-      Simplifies acquisition of FHIR data in JavaScript applications written in Node.js, 
-      AngularJS, jQuery or YUI. Realizes usual syntax and architecture. FHIR.js is a 
-      library of universal JavaScript adapters for FHIR server data acquisition.      
-  features:
-    ru:
-      - Простой и выразительный синтаксис запросов
-      - Поддерживает CRUD операции по стандарту HL7® FHIR®
-      - Поддерживает базовую HTTP авторизацию
-      - Поддерживает OAuth2 авторизацию
-    en:
-      - Simple and expressive query syntax
-      - Supports CRUD operations by HL7® FHIR® standard
-      - Supports base HTTP authorization
-      - Supports OAuth2 authorization
-  links:
-    github: https://github.com/FHIR/fhir.js
-  tags:
-    - JavaScript
-    - Node.js
-    - YUI
-    - jQuery
-    - AngularJS
 - id: fhir-schema
   logo: 
   title: FHIR-schema
   type: Open-source
+  icon: fhir-schema
   abstract: 
   description: 
     ru: >-
@@ -176,6 +177,7 @@
   logo: foodtaster
   title: Foodtaster
   type: Open-source
+  icon: foodtaster
   abstract: 
     ru: Библиотека для тестирования Chef конфигурации с помощью RSpec
     en: Library for testing Chef configurations using RSpec
