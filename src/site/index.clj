@@ -169,15 +169,16 @@
      [:svg {:fill "none"
             :stroke "#A23836"
             :stroke-miterlimit 10}
-      [:#line-4 [:g {:stroke "#ddd"}]]
-      [:#line-3 [:g {:stroke "#aaa"}]]
-      [:#line-2 [:g {:stroke "#888"}]]
-      [:#line-1 [:g {:stroke "#888" :stroke-width 2}]]
+      [:.line4 {:stroke "#ddd" :stroke-width 0.8}]
+      [:.line3 {:stroke "#aaa" :stroke-width 0.9}]
+      [:.line2 {:stroke "#888" :stroke-width 1.1}]
+      [:.line1 {:stroke "#888" :stroke-width 1.3}]
       [:.lines
        {:fill "none"
         :stroke "#D2D2D2"
         :stroke-miterlimit 10
-        :stroke-dasharray 3.3}]]
+       ;; :stroke-dasharray 3.3
+        }]]
 
      [:.promo-sub-header
       {:opacity 0.88}
@@ -190,6 +191,7 @@
      [:h1.promo-header [:span (fmt/markdown (idata :text :promo) )]]
      [:p.promo-sub-header [:span (idata :text :promo-subtitle)]]
      (s/svg "bg")]]])
+
 
 (defn blog-frame [url]
   [:iframe.blogframe
