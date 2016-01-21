@@ -166,6 +166,10 @@
       (s/&text :center 600)
       (s/&center-block "20em")
       [:em {:color (s/color :selection)}]]
+     [:#main-movie {:visibility "hidden"
+                    :opacity 0
+                    :transition "opacity 4s"}
+      [:&.drawsvg-initialized {:visibility "visible" :opacity 1}]]
      [:svg {:fill "none"
             :stroke "#A23836"
             :stroke-miterlimit 10}
