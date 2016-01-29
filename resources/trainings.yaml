@@ -15,13 +15,19 @@
     ru: >
       Многие разработчики, приходя в Health IT, часто недооценивают сложность предметной области
       и не знают, с какой стороны подступиться к большому количеству стандартов и спецификаций.
-      В этом однодневном тренинге команда HealthSamurai, которая имеет 10-летний опыт
+      В этом однодневном тренинге команда Health Samurai, которая имеет 8-летний опыт
       работы в Health IT и является активным участником организации HL7, постарается дать вам правильный старт.
       Мы кратко ознакомим вас с актуальными стандартами обмена медицинской информацией и их историей.
       Основная часть тренинга будет посвящена молодому, но очень перспективному стандарту HL7® FHIR®,
-      который включил в себя основные достижения предшествующих стандартов и исключил многие их недостатки.
+      который включил в себя основные достижения предшествующих стандартов HL7 и исключил многие их недостатки.
     en: >
-      Many developers coming to Health IT often underestimate complexity of the domain and don't know from which side to approach the multiple number of standards and specifications. In this one-day training, the HealthSamurai team which has 10 years of experience in Health IT and is an active member of HL7 International, will endeavour to give you the right starting point. We will briefly familiarize you with actual healthcare information exchange standards and their history. The main part of the training will be devoted to the new but very perspective HL7® FHIR® standard which includes principal achievements of previous standards and excludes many of their demerits.
+      Many developers coming to Health IT often underestimate complexity of the domain and don't know from which 
+      side to approach the multiple number of standards and specifications. In this one-day training, 
+      the HealthSamurai team which has 10 years of experience in Health IT and is an active member of HL7 International, 
+      will endeavour to give you the right starting point. We will briefly familiarize you with actual healthcare 
+      information exchange standards and their history. The main part of the training will be devoted to the new but 
+      very perspective HL7® FHIR® standard which includes principal achievements of previous standards and excludes 
+      many of their demerits.
     plan: fhir-intro.ru.md
   tags:
     - FHIR®
@@ -42,14 +48,14 @@
       of healthcare solutions
   desc:
     ru: >
-      FHIRbase - это база данных, созданная на основе стандарта HL7® FHIR® и открытой реляционной базы данных
-      PostgreSQL для хранения медицинской информации. Двухдневный тренинг от разработчиков этой базы
+      "FHIRbase - это база данных, созданная на основе стандарта HL7® FHIR® и открытой реляционной базы данных
+      PostgreSQL, для хранения медицинской информации. Двухдневный тренинг от разработчиков этой базы
       позволит вам научиться её использовать и разобраться в том, как она устроена. Тренинг не подразумевает
       глубоких познаний в PostgreSQL, основные возможности которого будут объяснены по ходу тренинга.
       Интерфейс FHIRbase прост, но более глубокое понимание её устройства даст
       вам возможность пользоваться всей мощью PostgreSQL и эффективно расширять FHIRbase под ваши
-      конкретные нужды. Также мы затронем вопросы практической эксплуатации FHIRbase в боевых условиях,
-      такие как настройка производительности, репликация и бэкапы.
+      конкретные нужды. Также мы затронем вопросы практической эксплуатации FHIRbase в боевых условиях: 
+      настройка производительности, репликация и бэкапы."
     en: >
       FHIRbase is a database created on the base of HL7® FHIR® standard and open relational database PostgreSQL, for 
       the storage of healthcare information. The two-day training from developers of this database, will give you an ability
@@ -83,12 +89,12 @@
       Современный софт стремительно превращается из коробочного продукта в
       сервис. Пользователи хотят получать доступ к новым функциям
       как можно быстрее. Цикл поставки у лидеров рынка сократился до дней
-      или даже часов. Поэтому, чтобы выжить, мы должны пересмотреть и перестроить
+      и даже часов. Поэтому, чтобы выжить, мы должны пересмотреть и перестроить
       процесс производства информационных систем коренным образом, и это непростой
-      вызов. Двухдневный тренинг от HealthSamurai, возможно, станет первым шагом в этом
-      направлении. Мы познакомимся с движением DevOps и философией бережливого производства (LEAN).
-      Попробуем хорошие практики и инструменты позволяющие выстроить эффективную
-      и надежную линию непрерывного производства (Continuous Delivery Pipeline).
+      вызов. Двухдневный тренинг от Health Samurai, возможно, станет вашим первым шагом в этом
+      направлении. Мы познакомим вас с движением DevOps и философией бережливого производства (LEAN).
+      Попробуем хорошие практики и инструменты, позволяющие выстроить эффективную
+      и надёжную линию непрерывного производства (Continuous Delivery Pipeline).
     en: >
       Contemporary software headily turns from a boxed product into a service. 
       Users want to get new functionality as soon as possible. 
