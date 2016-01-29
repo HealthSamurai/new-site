@@ -38,6 +38,9 @@
 (defn idata [& ks]
   (apply i (reload) ks))
 
+(defn md [path]
+  (fmt/load-text (str path "." (name (current-lang)) ".md")))
+
 
 (defn find-by-id [id & ks]
   (first (filter #(= id (:id %)) (apply data ks))))

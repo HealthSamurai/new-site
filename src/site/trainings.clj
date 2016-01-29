@@ -2,7 +2,7 @@
   (:require [site.styles :refer [s-var vh style undecorate &margin &padding &border &text &middle] :as s]
             [site.navigation :refer [navigation]]
             [site.widgets :refer [grid  splash paralax tags] :as w]
-            [site.data :refer [data find-by-id i idata]]
+            [site.data :refer [data find-by-id i idata md]]
             [site.routes :refer [url asset-path]]
             [site.formats :refer [load-text]]
             [garden.units :refer [px px* vh*]]
@@ -14,11 +14,13 @@
     (style
      [:.training (&margin 3 nil) (&padding 1 nil 2 nil)
       [:.header (s/&unstyle-links)]
-      [:.logo {:width (vh* 20)} (&text :right) (&margin 1 nil)]
+      [:.logo {:width (vh* 20)} (&text :right) (&margin 1 nil)
+       [:.svg {:margin-right (s/vh* 1) :margin-bottom (s/vh* 2)}
+        [:path {:stroke "#333356" :opacity 0.6 :stroke-width 3 :fill "none"}]]]
       [:h1 (&text :center)]])
 
     [:div.col-md-3.left
-     (when-let [img (:icon training)] [:div.logo (s/svg img)])
+     (when-let [img (:icon training)] [:div.logo [:div.svg (s/svg img)]])
      (tags (or (training :tags) []))]
     [:div.col-md-8.column
      #_[:a.header {:href (str "/trainings/" (:id training))}]
@@ -26,7 +28,8 @@
      [:br]
      [:p (i training :desc)]
      [:br]
-     #_[:a {:href (url "trainings" (:id training))} (idata :text :more-info)]]]])
+     (when (:plan training)
+       [:a {:href (url "trainings" (:id training))} (idata :text :more-info)])]]])
 
 (defn trainings [req]
   [:div
@@ -40,12 +43,26 @@
 
 (defn training [{{id :id} :params :as req}]
   (let [training (find-by-id id :trainings)]
-    [:div
+    [:div#training
+     (style
+      [:#training
+       [:.logo {:width (vh* 20)} (&text :right) (&margin 1 nil)
+        [:.svg {:margin-right (s/vh* 1) :margin-bottom (s/vh* 2)}
+         [:path {:stroke "#333356" :opacity 0.6 :stroke-width 3 :fill "none"}]]]])
      (navigation {})
      [:br]
      [:div.container
-      [:h1 (:title training)]
+      [:div.row
+       [:div.col-md-3.left
+        (when-let [img (:icon training)] [:div.logo [:div.svg (s/svg img)]])
+        (tags (or (training :tags) []))]
+       [:div.col-md-8
+        [:h1 (i training :title)]
+        [:br]
+        [:p (i training :desc)]
+        [:hr]
+        (when (:plan training) [:p (md (:plan training))])]]
       [:br]
-      [:p (str "resources/trainings/" (:plan training))]
-      [:p (load-text (str "trainings/" (:plan training)))]
-      [:br][:br][:br]]]))
+      [:br]
+      [:br]
+      ]]))

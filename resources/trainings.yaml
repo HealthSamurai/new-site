@@ -4,6 +4,7 @@
     en: HL7® FHIR® overview 
   icon-type: svg
   icon: fhir-training
+  plan: trainings/fhir-intro
   abstract:
     ru: >
       Восьмичасовой семинар по основным особенностям стандарта
