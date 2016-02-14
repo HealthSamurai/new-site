@@ -38,20 +38,22 @@
   post:
     ru: "
       Самураи расширили функциональные возможности Fhirbase под специфику проекта Kainos Evolve.   
-      
+
       #### О проекте Kainos
-      
+
       Kainos разрабатывает платформу [Kainos Evolve Platform](https://www.kainosevolve.com/solutions/)  для создания мобильных и web- приложений для здравоохранения в Великобритании.
     "
     en: "
       Health Samurai Team extended functionality of Fhirbase specifically for Kainos Evolve project.
-      
+
       #### About the project Kainos
-      
+
       Kainos is developing [Kainos Evolve Platform](https://www.kainosevolve.com/solutions/) for mobile and web healthcare applications in Great Britain
     "
 - id: netrika
-  title: Нетрика.ДЛИ
+  title:
+    ru: Нетрика.ДЛИ
+    en: Netrika.DLI
   href: http://api.netrika.ru/docs.php?article=DLIService
   client: {title: Нетрика, href: 'http://netrika.ru/'}  
   tags: [PostgreSQL, plv8, consulting]
@@ -61,18 +63,20 @@
   post:
     ru: "
     Самураи провели обучение команды Netrika по межународным стандартам: HL7 v2, HL7 v3, HL7® FHIR®. Помогли в проектировании архитектуры регионального сервиса для обмена лабораторными данными и модели данных на основе HL7® FHIR®.
-    
+
     #### О проекте Нетрика.ДЛИ
-    
+
     Нетрика разаботала и внедрила сервис Нетрика.ДЛИ для обмена данными лабораторных исследований в Санкт-Петербурге. Сервис позволяет медицинским учреждениям и лабораториям обмениваться назначениями и результатами лабораторных исследований в электронном виде. Обмен данными производится на основне стандарта HL7® FHIR®. В основе сервиса используется Fhirbase."
     en: "
     Health Samurai Team gave educational trainings to the Netrika team about international standards HL7 v2, HL7 v3, HL7® FHIR®. Samurai gave consultations in the project designing of regional service of laboratory data exchange and data model on the base of HL7® FHIR®.
-    
+
      #### About the project Netrika.DLI
-     
+
      Netrika developed and implemented the Netrika.DLI service for laboratory data exchange in Saint Petersburg. The service allows electronic exchange of medical prescriptions and laboratory results between medical organizations and laboratories. Data exchange is executed on the base of HL7® FHIR® standard. The service is built on the base of Fhirbase."
 - id: miac_loinc
-  title: МИАЦ.СЛТ
+  title:
+    ru: МИАЦ.СЛТ
+    en: MIAC.SLT
   href: https://loinc.aidbox.io/#/
   client: {title: СПб ГБУЗ МИАЦ, href: 'http://spbmiac.ru/'}  
   tags: [Aidbox, Fhirbase,  HL7® FHIR®, AngularJS, Clojure (JVM)]
@@ -82,17 +86,17 @@
   post:
     ru: "
         Самураи разработали, запустили и осуществляют поддержку web-сервиса для управления справочником лабораторных тестов Санкт-Петербурга. Сервис разработан на базе платформы Aidbox.
-        
+
         #### О проекте МИАЦ.СЛТ
-        
+
         Web-сервис МИАЦ.СЛТ используется для актуализации справочника лабораторных тестов, через заявки на изменения от представителей лабораторий и их последующим утверждением представителями СПб МИАЦ.
         Актуальный справочник распространяется через FHIR API и используется для идентификации лабораторных тестов при электронном обмене медицинскими данными между информационными системами медицинских учреждений Санкт-Петербурга.
         "
     en: "
         Health Samurai Team developed, implemented and are supporting web-service for managing Saint Petersburg laboratory tests terminology. The service was developed on the base of the Aidbox platform.
-        
+
         #### About the project MIAC.SLT
-        
+
         Web service MIAC.SLT is intended for laboratory tests terminology actualization through change requests from representatives of laboratories and their further approving by representatives of SPB MIAC.
         Actual terminology is distributed via HL7® FHIR® API and is used for identification of laboratory tests in the electronic healthcare data exchange between medical information systems of healthcare organizations in Saint Petersburg.
         "
@@ -107,16 +111,16 @@
   post:
     ru: >
       Самураи разработали, запустили и осуществляют поддержку web-сервиса для управления реестром медицинских организаций Санкт-Петербурга. Сервис разработан на базе платформы Aidbox.
-      
+
       #### О проекте МИАЦ.СЛТ
-      
+
       Web-сервис МИАЦ.МО используется для актуализации реестра медицинских организаций, через заявки на изменения от представителей медицинских учреждений и их последующим утверждением представителями СПб МИАЦ.
       Актуальный реестр распространяется через FHIR API и используется для идентификации медицинских учреждений Санкт-Петербурга при электронном обмене медицинскими данными между информационными системами медицинских учреждений.
     en: >
       Health Samurai Team developed, implemented and are supporting web-service for managing Saint Petersburg medical organizations registry. The service was developed on the base of Aidbox platform. 
-      
+
       #### About the project MIAC.MO
-      
+
       Web service MIAC.MO is intended for actualization of medical organizations registry through change requests from representatives of healthcare organizations and their further approving by representatives of SPB MIAC.
       Actual registry is distributed via HL7® FHIR® API and is used for identification of Saint Petersburg medical organizations in the electronic healthcare data exchange between medical information systems of healthcare organizations.
 - id: holiadvice
@@ -129,15 +133,15 @@
   post:
     ru: '
     Самураи разработали телемедицинский портал для "нетрадиционной" медицины. Владельцы сервиса произвели пилотное внедрение в Израиле и планирует выход на международный рынок.
-    
+
     #### О проекте Holiadvice
-    
+
     Телемедицинский портал Holiadvice предназначен для проведения он-лайн консультации со специалистами "нетрадиционной" медицины. На данный момент проект принят в программу  StartUp Health.'
     en: '
     Health Samurai Team developed telemedicine portal for complementary medicine. Owners made a pilot implementation of the service in Israel and are planning to enter the international market.
-    
+
     #### About the project Holiadvice
-    
+
     Telemedicine portal Holiadvice is intended for on-line consultations with unconventional medicine specialists. At the moment, the project is adopted by StartUp Health program.'
 - id: salemed
   title: SaleMed
@@ -149,15 +153,15 @@
   post:
     ru: "
       Самураи разработали и провели пилотный запуск электронной торговой площадки для МРТ-центров и страховых компаний в Санкт-Петербурге.
-      
+
       #### О проекте SaleMed
-    
+
       Электронная торговая площадка Salemed  предназначена для реализации услуг со скидками между МРТ-центрами и страховыми компаниями."
     en: "
       Health Samurai Team developed and implemented a pilot launch of an electronic trading platform for MRI centers and insurance companies in St. Petersburg.
-      
+
       #### About the project SaleMed
-      
+
       Electronic trading platform Salemed is intended for intended for the sale of services with discounts between MRI centers and insurance companies."
 # - id: vitalsync
 #   title: VitalSync
@@ -168,14 +172,14 @@
 #   post:
 #     ru: "
 #       Самураи консультируют команду Medtronic по применению стандарта HL7® FHIR® и занимаются разработкой интеграционного модуля для преобразования входящего потока данных в формате HL7 v2.x в HL7® FHIR®.
-      
+
 #       #### О проекте Medtronic
-      
+
 #       Компания Medtronic разрабатывает информационную систему для мониторинга и сопровождения больных раком легких в США на базе существующей системы VitalSync. Для интеграции VitalSync с другими госпитальными системами используется HL7 Mapper."
 #     en: "
 #       Health Samurai Team provides consultations to the Medtronic team on the use of HL7® FHIR® standard, and is engaged in the development of an integrational module for converting the incoming data stream from HL7 v2.x format to HL7® FHIR®.
-      
+
 #       #### About the project Medtronic
-      
+
 #       Medtronic company is developing an information system for monitoring and tracking of lung cancer patients in the United States on the basis of the existing system VitalSync. For integration with other hospital systems VitalSync uses HL7 Mapper.
 #       "

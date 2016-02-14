@@ -47,7 +47,7 @@
         We will educate your team on HL7® FHIR® standard, 
         on how to work with our high-tech products, and participate
         in the formation of architecture of the future product taking into account its specificity.
-        
+
 - id: development
   icon: rocket
   title:
@@ -133,7 +133,13 @@
     ru: Консалтинг и аудит  
     en: Consulting & Audit
   icon: binoculars
-  description: 'Прочитаем семинары/тренинги по стандарту HL7® FHIR® и нашим продуктам, обучим вашу команду.'
+  description:
+    ru:
+      'Прочитаем семинары/тренинги по стандарту HL7® FHIR® и нашим
+      продуктам, обучим вашу команду.'
+    en:
+      We do seminars and trainings on standard HL7® FHIR® and our
+      products, we will train your team.
   post: 
     ru: >
       Вы очень хотите "правильно", но не знаете как. У вас есть сложная задача,
