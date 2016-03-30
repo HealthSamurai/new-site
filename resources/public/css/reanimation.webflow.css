@@ -715,3 +715,82 @@ p {
   display: none;
 }
 
+.use-case-content {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+.use-case-content-container {
+  display: block;
+  width: 1020px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.use-case-heading {
+  display: block;
+  width: 900px;
+  margin: auto;
+  font-family: Bitter, serif;
+  font-size: 30px;
+  line-height: 32px;
+  text-align: center;
+}
+
+.use-case-heading.inhospital {
+  width: 460px;
+}
+
+.use-case-heading.immunization {
+  width: 367px;
+}
+
+.use-case-paragraph {
+  display: block;
+  width: 900px;
+  margin-top: 32px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 23px;
+  font-weight: 400;
+}
+
+.use-case-scheme-description {
+  display: block;
+  width: 484px;
+  margin-top: 7px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 3px;
+  border-top: 1px solid #000;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+}
+
+.use-case-scheme {
+  display: block;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.use-case-scheme.immunization {
+  margin-left: -13px;
+}
+
+.use-case-list {
+  display: block;
+  width: 900px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  list-style-type: disc;
+}
+
+.use-case-list-item {
+  margin-top: 32px;
+}
+
