@@ -91,7 +91,8 @@
      [(footer-title "services" :development)
       [:ul.list-unstyled
        (for [x (data :services)]
-         [:li [:a {:href (url "services" {:# (:id x)})} (i x :title)]])]]
+         [:li [:a {:href (url "services" {:# (:id x)})} (i x :title)]])
+       [:li [:a {:href (url "integration" )} "Integration"]]]]
 
      [(footer-title "trainings" :education)
       [:ul.list-unstyled
