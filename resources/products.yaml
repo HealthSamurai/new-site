@@ -27,7 +27,7 @@
       - Реализует модель данных соответствующую стандарту HL7® FHIR®
       - Имеет простой REST API для обращения к данным
     en:
-      - Built on PostgreSQL with usage of plv8 language
+      - Built on PostgreSQL with use of plv8 language
       - Fulfils HL7® FHIR® data model
       - Has simple REST API for the data access
   links:
