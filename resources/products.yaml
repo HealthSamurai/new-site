@@ -58,7 +58,7 @@
       порталы для пациентов и телемедицины.
     en: >-
       Aidbox is a platform as a service (PaaS) for healthcare solutions development on the base of HL7® FHIR® standard.
-      Aidbox is suitable for building mobile and web-applications handling healthcare data: EHS, integrational data buses, 
+      Aidbox is suitable for building mobile and web-applications handling healthcare data: EHR, integrational data buses, 
       healthcare data repositories (registers), Hospital Informaion Systems (HIS), patient and telemedicine portals.
   features:
     ru:
@@ -74,7 +74,7 @@
       - Provides hosting for database and single page applications
       - Provies SDK and the ability of integration with solutions on your technologies (Java, .Net etc.)    
   links: 
-    direct: https://aidbox.io/landing.html#/
+    direct: https://aidbox.io/
   tags:
     - Amazon AWS
     - Fhirbase
@@ -106,7 +106,7 @@
       - Поддерживает OAuth2 авторизацию
     en:
       - Simple and expressive query syntax
-      - Supports CRUD operations by HL7® FHIR® standard
+      - Supports CRUD operations from HL7® FHIR® standard
       - Supports base HTTP authorization
       - Supports OAuth2 authorization
   links:
