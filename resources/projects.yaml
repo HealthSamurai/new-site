@@ -151,12 +151,14 @@
 
     #### About Holiadvice
 
-    Holiadvice telemedicine platform is piloted in Israel and prepared for launch in the United States. Holiadvice has been accepted into StartUp Health program.
+    Holiadvice telemedicine platform is piloted in Israel and prepared for launch in the United States. Holiadvice has been accepted into StartUp Health program.<br><br>
 
-    Key components of the Holiadvice telemedicine platform:
-    *online scheduling system
-    *telemedicine module
-    *billing module
+    Key components of the Holiadvice telemedicine platform:<br>
+    <ul>
+    <li>online scheduling system</li>
+    <li>telemedicine module</li>
+    <li>billing module</li>
+    </ul>
     '
 - id: salemed
   title: SaleMed
