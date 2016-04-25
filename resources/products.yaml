@@ -68,11 +68,17 @@
       - Предоставляет хостинг для базы и несложных одностраничных приложений (SPA)
       - Предоставляет SDK и возможность интегрироваться с решениями на ваших технологиях (Java, .Net и т. д.)
     en:
-      - Utilizes  Fhirbase for data storage
-      - Realizes REST API on the base of HL7® FHIR® standard
-      - Solves security questions via usage of OAuth2
-      - Provides hosting for database and single page applications
-      - Provies SDK and the ability of integration with solutions on your technologies (Java, .Net etc.)    
+      - Based on the FHIR (Fast Healthcare Interoperability Resources) standard for external & internal data information model, aidbox implements generic FHIR server specification (tested in project Argonaut and featured in one of HSPC HIMSS 2016 demonstrations)
+      - Aidbox provides relational storage for FHIR resources with use of open source fhirbase project (that gives scalability and power of rich SQL language)
+      - Data aggregation by widespread legacy HL7 v2 messaging, CDA/CCD documents, FHIR REST API and custom processable data channels
+      - Aidbox ensures security: OAuth 2.0 provider, policy­based Access Control, complete audit of any events in system
+      - SDK for all features, based on reference FHIR clients for popular platforms (Java, .NET, JavaScript, Objective­C, Ruby, Python and iOS)
+      - Implements FHIR terminology server specification and provide LOINC, Snomed, RxNorm, ICD­10, CPT, FHIR terminologies out of the box
+      - Implements FHIR terminology server specification and provide LOINC, Snomed, RxNorm, ICD­10, CPT, FHIR terminologies out of the box
+      - Compatible with SMART on FHIR interface and could host SPA web applications (JavaScript, HTML5, CSS3)
+      - Aidbox provides analytics tools based on PostgreSQL, Elasticsearch and Druid OLAP
+      - Automated cloud infrastructure: could be hosted in public and private clouds, with automatic failover, backups and updates
+      - Aidbox provides foundation for workflow support with use of queues, customizable providers and consumers
   links: 
     direct: https://aidbox.io/
   tags:
