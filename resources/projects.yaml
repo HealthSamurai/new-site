@@ -19,15 +19,15 @@
       Система сертифицирована по программе [ONC Stage 1](https://www.healthit.gov/providers-professionals/meaningful-use-definition-objectives) и подготовлена к Stage 2.
       "
     en: "
-      Health Samurai has developed and implemented a cloud inpatient EHR in three California hospitals. The EHR was certified with ONC and the hospital received payments from the Medicare and Medicaid incentive programs (Meaningful Use). 
+      Health Samurai has developed and implemented a cloud inpatient EHR in three California hospitals. The EHR was certified with ONC and the hospitals received payments from the Medicare and Medicaid incentive programs (Meaningful Use). 
 
       #### About MedClient EHR
 
       We fully automated ER, inpatient physicians and nurses, respiratory therapists and had automated workflows for nutritional specialists, wound care, hospitalists, medical records, pharmacists, quality and risk managers, OR, PT, stroke telemedicine and hospital management. In addition to that we've connected all the hospital ancillary systems together.<br><br>
 
-      Initial implementation was completed in the Verdugo Hills Hospital. Weekly no downtime updates allowed to bring new functionality to the users without disrupting of the hospital work. Later the system has been implemented in two other facilities in California - Good Samaritan Hospital in Bakersfield and Tahoe Forest Medical Center. Implementation of the EHR in the 2nd facility took less than 30 days including initial deploy, connecting to all ancillary systems (such as registration, LIS, RIS, pharmacy, dictation service etc) and bringing provider staff up to speed.<br><br>
+      Initial implementation of the EHR was completed in the Verdugo Hills Hospital. Weekly no downtime updates allowed to bring new functionality to the users without disrupting of the hospital work. Later the system has been implemented in two more facilities in California - Good Samaritan Hospital in Bakersfield and Tahoe Forest Medical Center. Implementation of the EHR in the 2nd facility took less than 30 days including initial deploy, connecting to all ancillary systems (such as registration, LIS, RIS, pharmacy, dictation service etc) and bringing provider staff up to speed.<br><br>
 
-      Here are the core principles we utilized while developing the EHR:<br>
+      Here are the core principles we utilized when developing the EHR:<br>
       -Single code base core automates most common hospital processes (80/20)<br>
       -Utilizes available standards to maximum<br>
       -Fast deployment of the core product (automated when possible)<br>
