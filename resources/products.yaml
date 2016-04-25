@@ -1,43 +1,3 @@
-- id: fhirbase
-  logo: fhirbase
-  title: Fhirbase
-  icon: fhirbase
-  icon-type: svg
-  type: Open-source
-  abstract:
-    ru: Реляционное хранилище медицинских данных на основе стандарта HL7® FHIR®.
-    en: Relational healthcare information storage based on the HL7® FHIR® standard, ready for use in production.
-  description: 
-    ru: >-
-      Fhirbase - это реляционное хранилище со встроенной моделью данных,
-      соответствующей международному стандарту HL7® FHIR®. Fhirbase подходит для
-      построения медицинских информационных системы разных классов: электронные
-      карты (EHR), интеграционные "шины", репозитории медицинских данных
-      (реестры), госпитальные системы (HIS), порталы для пациентов и
-      телемедицины.
-    en: >-
-      Fhirbase is a relational storage with integrated data model conformant with international 
-      HL7® FHIR® standard. 
-      Fhirbase is applicable for building healthcare information systems of different kinds: EHRs, 
-      integrational data buses, healthcare data repositories (registers), hospital information systems 
-      (HIS), patient and telemedicine portals.
-  features:
-    ru:
-      - Построен на PostgreSQL с использованием языка plv8
-      - Реализует модель данных соответствующую стандарту HL7® FHIR®
-      - Имеет простой REST API для обращения к данным
-    en:
-      - Built on PostgreSQL with use of plv8 language
-      - Fulfils HL7® FHIR® data model
-      - Has simple REST API for data access
-  links:
-    direct: http://fhirbase.github.io/
-    github: https://github.com/fhirbase
-    chat: https://groups.google.com/forum/#!forum/fhirbase
-  tags:
-    - PostgreSQL
-    - plv8
-    - HL7® FHIR®
 - id: aidbox
   logo: aidbox
   title: Aidbox
@@ -86,6 +46,46 @@
     - Fhirbase
     - Clojure
     - AngularJS
+- id: fhirbase
+  logo: fhirbase
+  title: Fhirbase
+  icon: fhirbase
+  icon-type: svg
+  type: Open-source
+  abstract:
+    ru: Реляционное хранилище медицинских данных на основе стандарта HL7® FHIR®.
+    en: Relational healthcare information storage based on the HL7® FHIR® standard, ready for use in production.
+  description: 
+    ru: >-
+      Fhirbase - это реляционное хранилище со встроенной моделью данных,
+      соответствующей международному стандарту HL7® FHIR®. Fhirbase подходит для
+      построения медицинских информационных системы разных классов: электронные
+      карты (EHR), интеграционные "шины", репозитории медицинских данных
+      (реестры), госпитальные системы (HIS), порталы для пациентов и
+      телемедицины.
+    en: >-
+      Fhirbase is a relational storage with integrated data model conformant with international 
+      HL7® FHIR® standard. 
+      Fhirbase is applicable for building healthcare information systems of different kinds: EHRs, 
+      integrational data buses, healthcare data repositories (registers), hospital information systems 
+      (HIS), patient and telemedicine portals.
+  features:
+    ru:
+      - Построен на PostgreSQL с использованием языка plv8
+      - Реализует модель данных соответствующую стандарту HL7® FHIR®
+      - Имеет простой REST API для обращения к данным
+    en:
+      - Built on PostgreSQL with use of plv8 language
+      - Fulfils HL7® FHIR® data model
+      - Has simple REST API for data access
+  links:
+    direct: http://fhirbase.github.io/
+    github: https://github.com/fhirbase
+    chat: https://groups.google.com/forum/#!forum/fhirbase
+  tags:
+    - PostgreSQL
+    - plv8
+    - HL7® FHIR®
 - id: fhir-js
   icon: fhir-js
   icon-type: hs
