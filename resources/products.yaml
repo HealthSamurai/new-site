@@ -17,9 +17,14 @@
       репозитории медицинских данных (реестры), госпитальные информационные системы (HIS),
       порталы для пациентов и телемедицины.
     en: >-
-      Aidbox is a platform as a service (PaaS) for healthcare solutions development on the base of HL7® FHIR® standard.
-      Aidbox is suitable for building mobile and web-applications handling healthcare data: EHR, integrational data buses, 
-      healthcare data repositories (registers), Hospital Informaion Systems (HIS), patient and telemedicine portals.
+      Aidbox is a platform for modern web and mobile healthcare applications biult on top of a centralized FHIR server.
+      Business applications of Aidbox:
+      - Aidbox as a Back­end. Aidbox can dramatically decrease "time to market" for new health IT products by providing "out of the box" backbone features and continuous delivery pipeline.
+      - Aidbox as a Clinical Data Repository. Aidbox can aggregate and normalize data (FHIR Information Model) from different sources and provides powerful tools like PostgreSQL, ElasticSearch, druid.io for Data Analytic & Decision Support services.
+      - Aidbox as an API Facade. Aidbox could be connected to existing systems (EHR, EMR, LIS, RIS etc) and provides standard FHIR REST & WebSocket API for development and hosting of portable Single Page and Smart on FHIR Applications (ONC certified API that satisfies MU Stage 3 requirements).
+      - Aidbox as an Integration Bus. Aidbox can help to connect systems by flexible connectors for popular protocols (HL7v2, CDA/CCD, FHIR, custom) and REST, Messaging and Publish/Subscribe communication patterns.
+
+      Anyone can register at aidbox.io and make their own testing/evaluation of aidbox platform absolutely free. Aidbox can be deployed into any infrastructure of customer's choice (linux servers in the cloud or private data center).
   features:
     ru:
       - Использует Fhirbase для хранения данных
