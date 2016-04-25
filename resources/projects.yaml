@@ -53,7 +53,7 @@
       Kainos разрабатывает платформу [Kainos Evolve Platform](https://www.kainosevolve.com/solutions/)  для создания мобильных и web- приложений для здравоохранения в Великобритании.
     "
     en: "
-      Health Samurai Team extended functionality of Fhirbase specifically for Kainos Evolve project.
+      Health Samurai has extended Fhirbase functionality for Kainos Evolve.
 
       #### About the project for Kainos Evolve
 
@@ -147,11 +147,17 @@
 
     Телемедицинский портал Holiadvice предназначен для проведения он-лайн консультации со специалистами "нетрадиционной" медицины. На данный момент проект принят в программу  StartUp Health.'
     en: '
-    Health Samurai Team developed telemedicine portal for complementary medicine. Owners made a pilot implementation of the service in Israel and are planning to enter the international market.
+    Health Samurai has developed a telemedicine platform for holistic medicine.
 
     #### About Holiadvice
 
-    Telemedicine portal Holiadvice is intended for on-line consultations with unconventional medicine specialists. At the moment, the project is adopted by StartUp Health program.'
+    Holiadvice telemedicine platform is piloted in Israel and prepared for launch in the United States. Holiadvice has been accepted into StartUp Health program.
+
+    Key components of the Holiadvice telemedicine platform:
+    *online scheduling system
+    *telemedicine module
+    *billing module
+    '
 - id: salemed
   title: SaleMed
   href: https://salemed.info/
