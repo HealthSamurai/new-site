@@ -43,7 +43,7 @@
   tags: [PostgreSQL 9.4+, plv8, HL7® FHIR®, Fhirbase, consulting]
   desc:
     ru: Самураи расширили функциональные возможности Fhirbase под специфику проекта Kainos Evolve.
-    en: Health Samurai Team extended functionality of Fhirbase specifically for Kainos Evolve project.
+    en: Health Samurai has extended Fhirbase functionality for Kainos Evolve.
   post:
     ru: "
       Самураи расширили функциональные возможности Fhirbase под специфику проекта Kainos Evolve.   
@@ -55,9 +55,9 @@
     en: "
       Health Samurai Team extended functionality of Fhirbase specifically for Kainos Evolve project.
 
-      #### About the project Kainos
+      #### About the project for Kainos Evolve
 
-      Kainos is developing [Kainos Evolve Platform](https://www.kainosevolve.com/solutions/) for mobile and web healthcare applications in Great Britain
+      Kainos is developing [Kainos Evolve Platform](https://www.kainosevolve.com/solutions/) for mobile and web healthcare applications in the UK
     "
 - id: netrika
   title:
@@ -138,7 +138,7 @@
   tags: [Ruby on Rails, WebRTC, PayPal]
   desc:
     ru: 'Самураи разработали телемедицинский портал для "нетрадиционной" медицины. Владельцы сервиса произвели пилотное внедрение в Израиле и планирует выход на международный рынок.'
-    en: 'Health Samurai Team developed telemedicine portal for complementary medicine. Owners made a pilot implementation of the service in Israel and are planning to enter the international market.'
+    en: 'Health Samurai has developed a telemedicine platform for holistic medicine.'
   post:
     ru: '
     Самураи разработали телемедицинский портал для "нетрадиционной" медицины. Владельцы сервиса произвели пилотное внедрение в Израиле и планирует выход на международный рынок.
@@ -149,7 +149,7 @@
     en: '
     Health Samurai Team developed telemedicine portal for complementary medicine. Owners made a pilot implementation of the service in Israel and are planning to enter the international market.
 
-    #### About the project Holiadvice
+    #### About Holiadvice
 
     Telemedicine portal Holiadvice is intended for on-line consultations with unconventional medicine specialists. At the moment, the project is adopted by StartUp Health program.'
 - id: salemed
@@ -174,7 +174,7 @@
       Electronic trading platform Salemed is intended for intended for the sale of services with discounts between MRI centers and insurance companies."
 # - id: vitalsync
 #   title: VitalSync
-#   tags: [HL7® FHIR®,  HL Mapper]
+#   tags: [HL7® FHIR®,  HL7 Mapper]
 #   desc:
 #     ru: Самураи консультируют команду Medtronic по применению стандарта HL7® FHIR® и занимаются разработкой интеграционного модуля для преобразования входящего потока данных в формате HL7 v2.x в HL7® FHIR®.
 #     en: Health Samurai Team provides consultations to the Medtronic team on the use of HL7® FHIR® standard, and is engaged in the development of an integrational module for converting the incoming data stream from HL7 v2.x format to HL7® FHIR®.
