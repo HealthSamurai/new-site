@@ -27,13 +27,15 @@
 
       Initial implementation of the EHR was completed in the Verdugo Hills Hospital. Weekly no downtime updates allowed to bring new functionality to the users without disrupting of the hospital work. Later the system has been implemented in two more facilities in California - Good Samaritan Hospital in Bakersfield and Tahoe Forest Medical Center. Implementation of the EHR in the 2nd facility took less than 30 days including initial deploy, connecting to all ancillary systems (such as registration, LIS, RIS, pharmacy, dictation service etc) and bringing provider staff up to speed.<br><br>
 
-      Here are the core principles we utilized when developing the EHR:<br>
-      -Single code base core automates most common hospital processes (80/20)<br>
-      -Utilizes available standards to maximum<br>
-      -Fast deployment of the core product (automated when possible)<br>
-      -Users learn the system in 15 minutes (minimalistic interface for a user at any specific moment, only what a user needs right now is presented within the UI)<br>
-      -Scalable and efficient: 10 beds to thousands per installation, 100+ installations can be supported by a relatively small team<br>
-      -Hospital specific functionality can be implemented in the form of extensions<br>
+      Here are the core principles we utilized when developing the EHR:
+      <ul>
+      <li>Single code base core automates most common hospital processes (80/20)</li>
+      <li>Utilizes available standards to maximum</li>
+      <li>Fast deployment of the core product (automated when possible)</li>
+      <li>Users learn the system in 15 minutes (minimalistic interface for a user at any specific moment, only what a user needs right now is presented within the UI)</li>
+      <li>Scalable and efficient: 10 beds to thousands per installation, 100+ installations can be supported by a relatively small team</li>
+      <li>Hospital specific functionality can be implemented in the form of extensions</li>
+      </ul>
 "
 - id: kainos
   title: Kainos

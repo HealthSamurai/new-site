@@ -18,12 +18,13 @@
       порталы для пациентов и телемедицины.
     en: >-
       Aidbox is a platform for modern web and mobile healthcare applications biult on top of a centralized FHIR server.<br>
-      Business applications of Aidbox:<br>
-      - Aidbox as a Back­end. Aidbox can dramatically decrease "time to market" for new health IT products by providing "out of the box" backbone features and continuous delivery pipeline.<br>
-      - Aidbox as a Clinical Data Repository. Aidbox can aggregate and normalize data (FHIR Information Model) from different sources and provides powerful tools like PostgreSQL, ElasticSearch, druid.io for Data Analytic & Decision Support services.<br>
-      - Aidbox as an API Facade. Aidbox could be connected to existing systems (EHR, EMR, LIS, RIS etc) and provides standard FHIR REST & WebSocket API for development and hosting of portable Single Page and Smart on FHIR Applications (ONC certified API that satisfies MU Stage 3 requirements).<br>
-      - Aidbox as an Integration Bus. Aidbox can help to connect systems by flexible connectors for popular protocols (HL7v2, CDA/CCD, FHIR, custom) and REST, Messaging and Publish/Subscribe communication patterns.<br><br>
-
+      Business applications of Aidbox:
+      <ul>
+      <li>Aidbox as a Back­end. Aidbox can dramatically decrease "time to market" for new health IT products by providing "out of the box" backbone features and continuous delivery pipeline.</li>
+      <li>Aidbox as a Clinical Data Repository. Aidbox can aggregate and normalize data (FHIR Information Model) from different sources and provides powerful tools like PostgreSQL, ElasticSearch, druid.io for Data Analytic & Decision Support services.</li>
+      <li>Aidbox as an API Facade. Aidbox could be connected to existing systems (EHR, EMR, LIS, RIS etc) and provides standard FHIR REST & WebSocket API for development and hosting of portable Single Page and Smart on FHIR Applications (ONC certified API that satisfies MU Stage 3 requirements).</li>
+      <li>Aidbox as an Integration Bus. Aidbox can help to connect systems by flexible connectors for popular protocols (HL7v2, CDA/CCD, FHIR, custom) and REST, Messaging and Publish/Subscribe communication patterns.</li>
+      </ul><br>
       Anyone can register at aidbox.io and make their own testing/evaluation of aidbox platform absolutely free. Aidbox can be deployed into any infrastructure of customer's choice (linux servers in the cloud or private data center).
   features:
     ru:
