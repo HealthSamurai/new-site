@@ -3,13 +3,13 @@ products:
   ru: Наши продукты
 products-subtitle:
   ru: "Мы разрабатываем технологичные продукты на основе стандарта HL7® FHIR®"
-  en: We develop high-tech products based on HL7® FHIR® standard
+  en: We develop modern digital health products with use ofH L7® FHIR® standard
 products-target:
   ru: "Готовы к сотрудничеству?"
   en:  Are you ready for collaboration?
 products-subtarget:
   ru: "Если у вас остались какие-либо вопросы, если вы хотите увидеть демо наших решений или обсудить с нами ваш проект - оставьте запрос, и мы свяжемся с вами."
-  en: "In case if you still have any questions, or if you would like to see the demo of our solutions or discuss your project with us - please leave your request and we will contact you."
+  en: "If you have questions, want to see a demo of our solutions or discuss your project with us - please fill the form below and we will contact you within 1 business day."
 education:
   en: "Courses"
   ru: "Обучение"
@@ -18,7 +18,7 @@ projects:
   en: "Projects"
 projects-subtitle:
   ru: "Вместе с нашими клиентам мы создаем медицинские системы нового поколения, которые используются в разных частях мира"
-  en: "Together with our customers, we create medical information systems of new generation that are used in different parts of the world"
+  en: "we create modern medical information systems for customers all over the world"
 services:
   ru: "Услуги"
   en: Services
@@ -36,7 +36,7 @@ contacts:
   en: Contacts
 contacts-subtitle:
   ru: "У нас есть представительства в двух странах, и мы всегда готовы встретитьcя и обсудить ваш проект."
-  en: "We have offices in two countries and we are always ready to meet with you and discuss your project."
+  en: "We have offices in two countries and always ready to meet with you to discuss your project."
 partnership:
   ru: "Услуги"
   en: Services
