@@ -7,7 +7,7 @@
   major: true
   abstract:
     ru: Облачная платформа для создания медицинских систем на основе HL7® FHIR®.
-    en: Cloud platform for rapid development of next-generation healthcare apps based on HL7® FHIR®.
+    en: FHIR platform for modern web and mobile healthcare applications.
   description:
     ru: >-
       Aidbox - это платформа, предоставляемая в качестве услуги (PaaS) для разработки медицинских
@@ -17,7 +17,7 @@
       репозитории медицинских данных (реестры), госпитальные информационные системы (HIS),
       порталы для пациентов и телемедицины.
     en: >-
-      Aidbox is a platform for modern web and mobile healthcare applications biult on top of a centralized FHIR server.<br>
+      Aidbox is a platform for modern web and mobile healthcare applications built on top of a centralized FHIR server.<br>
       Business applications of Aidbox:
       <ul>
       <li>Aidbox as a Back­end. Aidbox can dramatically decrease "time to market" for new health IT products by providing "out of the box" backbone features and continuous delivery pipeline.</li>
@@ -60,7 +60,7 @@
   type: Open-source
   abstract:
     ru: Реляционное хранилище медицинских данных на основе стандарта HL7® FHIR®.
-    en: Relational healthcare information storage based on the HL7® FHIR® standard, ready for use in production.
+    en: Enterprise grade relational storage for FHIR resources.
   description: 
     ru: >-
       Fhirbase - это реляционное хранилище со встроенной моделью данных,
@@ -99,7 +99,7 @@
   type: Open-source
   abstract:
     ru: Референсная реализация FHIR клиента на JavaScript. Эта библиотека разработана совместно с SMART Platform.
-    en: Reference implementation of FHIR client in JavaScript. This library is created and used by aidbox and SMART Platform. 
+    en: Reference implementation of the FHIR client in JavaScript. This library is created and used by Aidbox and SMART Platforms. 
   description: 
     ru: >-
       Упрощает получение FHIR-данных в JavaScript-приложениях, написанных на
@@ -137,7 +137,7 @@
   type: Open-source
   abstract:
     ru: FormStamp - это библиотека виджетов на AngularJS для разработки веб-приложений с «богатым» клиентом.
-    en: FormStamp is a library of widgets written on AngularJS for development of web-applications with rich client.
+    en: FormStamp is a library of widgets in AngularJS for development of rich web applications.
   description: 
     ru: >-
       FormStamp - набор директив AngularJS для быстрого описания и связывания
