@@ -44,8 +44,7 @@
       Тренинг по архитектуре и использованию открытой медицинской базы данных FHIRbase в разработке
       решений для здравоохранения
     en: >
-      Training on the architecture and usage of an open-source healthcare database FHIRbase in development 
-      of healthcare solutions
+      Training on the architecture of the healthcare database Fhirbase and its use for healthcare development
   desc:
     ru: >
       "FHIRbase - это база данных, созданная на основе стандарта HL7® FHIR® и открытой реляционной базы данных

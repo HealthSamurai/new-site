@@ -7,7 +7,7 @@
   tags: [Cloud EHR, Ruby on Rails, Amazon EC2, PostgreSQL]
   desc:
     ru: Разработка, сертификация и внедрение в 3-х американских клиниках облачной EHR
-    en: Developmpent, certification and implementation of a cloud-based EHR in 3 USA hospitals
+    en: Development and implementation of a cloud inpatient EHR in three California hospitals
   post:
     ru: "
       Самураи разработали, сертифицировали и внедрили в трех клиниках США,
@@ -70,7 +70,7 @@
   tags: [PostgreSQL, plv8, consulting]
   desc:
     ru: Консультация и обучение по стандартy HL7® FHIR® и использованию fhirbase.
-    en: Consulting and education about international standard HL7® FHIR® and fhirbase.
+    en: HL7® FHIR® and Fhirbase consulting and education.
   post:
     ru: "
     Самураи провели обучение команды Netrika по межународным стандартам: HL7 v2, HL7 v3, HL7® FHIR®. Помогли в проектировании архитектуры регионального сервиса для обмена лабораторными данными и модели данных на основе HL7® FHIR®.
