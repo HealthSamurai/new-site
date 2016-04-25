@@ -29,7 +29,7 @@
     en:
       - Built on PostgreSQL with use of plv8 language
       - Fulfils HL7® FHIR® data model
-      - Has simple REST API for the data access
+      - Has simple REST API for data access
   links:
     direct: http://fhirbase.github.io/
     github: https://github.com/fhirbase
