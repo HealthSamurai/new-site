@@ -72,7 +72,7 @@
     en: >-
       Fhirbase is a relational storage based on the FHIR (Fast Healthcare Interoperability Resources)
       standard for external & internal data information model. It provides scalability, power of rich 
-      SQL language and allows you to use a technology of your choice.<br>
+      SQL language and allows you to use a technology of your choice.<br><br>
       Fhirbase got a significant traction among medical technology companies, provider organizations and pharma.
   features:
     ru:
@@ -101,7 +101,7 @@
   type: Open-source
   abstract:
     ru: Референсная реализация FHIR клиента на JavaScript. Эта библиотека разработана совместно с SMART Platform.
-    en: Reference implementation of the FHIR client in JavaScript. This library is created and used by Aidbox and SMART Platforms. 
+    en: Reference implementation of the FHIR client in JavaScript. This library is used in Aidbox and SMART Platforms. 
   description: 
     ru: >-
       Упрощает получение FHIR-данных в JavaScript-приложениях, написанных на
@@ -109,9 +109,8 @@
       архитектуру. FHIR.js - библиотека универсальных JavaScript-адаптеров для
       получения данных FHIR-сервера.
     en: >-
-      Simplifies acquisition of FHIR data in JavaScript applications written in Node.js, 
-      AngularJS, jQuery or YUI. Realizes usual syntax and architecture. FHIR.js is a 
-      library of universal JavaScript adapters for FHIR server data acquisition.      
+      FHIR.js facilitates working with FHIR servers in JavaScript applications developed with use of Node.js, 
+      AngularJS, jQuery or YUI. It implements familiar syntax and architecture.    
   features:
     ru:
       - Простой и выразительный синтаксис запросов
@@ -119,10 +118,10 @@
       - Поддерживает базовую HTTP авторизацию
       - Поддерживает OAuth2 авторизацию
     en:
-      - Simple and expressive query syntax
-      - Supports CRUD operations from HL7® FHIR® standard
-      - Supports base HTTP authorization
-      - Supports OAuth2 authorization
+      - Support of HL7® FHIR® CRUD (create, read, update and delete) operations
+      - Friendly and expressive query syntax
+      - Support for adapters that provide idiomatic interfaces in AngularJS, jQuery, YUI, etc
+      - Supports HTTP basic and OAuth2 authorization
   links:
     github: https://github.com/FHIR/fhir.js
   tags:
@@ -139,7 +138,7 @@
   type: Open-source
   abstract:
     ru: FormStamp - это библиотека виджетов на AngularJS для разработки веб-приложений с «богатым» клиентом.
-    en: FormStamp is a library of widgets in AngularJS for development of rich web applications.
+    en: FormStamp is an AngularJS library of widgets for development of rich web applications.
   description: 
     ru: >-
       FormStamp - набор директив AngularJS для быстрого описания и связывания
