@@ -120,8 +120,8 @@
     en:
       - Support of HL7® FHIR® CRUD (create, read, update and delete) operations
       - Friendly and expressive query syntax
-      - Support for adapters that provide idiomatic interfaces in AngularJS, jQuery, YUI, etc
-      - Supports HTTP basic and OAuth2 authorization
+      - Support of adapters that provide idiomatic interfaces in AngularJS, jQuery, YUI, etc
+      - Supports of HTTP basic and OAuth2 authorization
   links:
     github: https://github.com/FHIR/fhir.js
   tags:
@@ -145,7 +145,8 @@
       форм с данными приложения. Упрощает прототипирование, стилизацию,
       валидацию данных и вывод ошибок.
     en: >-
-      FormStamp is a set of AngularJS directives for quick defining and linking forms with application data. It allows to simplify prototyping, stylization, data validation, and output of errors.   
+      FormStamp is a set of AngularJS directives for quick defining and linking forms with application data.
+      It allows to simplify prototyping, stylization, data validation, and output of errors.   
   features:
     ru:
       - Написан на «чистом» AngularJS
@@ -177,7 +178,8 @@
       из мира JavaScript в мир FHIR.
     en: >-
       Library for description of FHIR resources StructureDefinitions by means of JSON
-      Schema. It introduces best practices of data structure description and validation from JavaScript world into the world of FHIR.
+      Schema. It introduces best practices of data structure description and validation from
+       JavaScript world into the world of FHIR.
   features:
   links:
     github: https://github.com/fhir-js/fhir-schema
