@@ -70,20 +70,22 @@
       (реестры), госпитальные системы (HIS), порталы для пациентов и
       телемедицины.
     en: >-
-      Fhirbase is a relational storage with integrated data model conformant with international 
-      HL7® FHIR® standard. 
-      Fhirbase is applicable for building healthcare information systems of different kinds: EHRs, 
-      integrational data buses, healthcare data repositories (registers), hospital information systems 
-      (HIS), patient and telemedicine portals.
+      Fhirbase is a relational storage based on the FHIR (Fast Healthcare Interoperability Resources)
+      standard for external & internal data information model. It provides scalability, power of rich 
+      SQL language and allows you to use a technology of your choice.<br>
+      Fhirbase got a significant traction among medical technology companies, provider organizations and pharma.
   features:
     ru:
       - Построен на PostgreSQL с использованием языка plv8
       - Реализует модель данных соответствующую стандарту HL7® FHIR®
       - Имеет простой REST API для обращения к данным
     en:
-      - Built on PostgreSQL with use of plv8 language
-      - Fulfils HL7® FHIR® data model
-      - Has simple REST API for data access
+      - Simple SQL API similar to FHIR REST
+      - CRUD (create, read, update and delete) for FHIR resources
+      - History for FHIR resources
+      - Transactions
+      - Search
+      - Terminology and value sets
   links:
     direct: http://fhirbase.github.io/
     github: https://github.com/fhirbase
