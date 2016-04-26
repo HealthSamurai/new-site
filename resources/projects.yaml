@@ -64,7 +64,7 @@
 - id: netrika
   title:
     ru: Нетрика.ДЛИ
-    en: Netrika.DLI
+    en: Netrika HIE
   href: http://api.netrika.ru/docs.php?article=DLIService
   client: {title: Нетрика, href: 'http://netrika.ru/'}  
   tags: [PostgreSQL, plv8, consulting]
@@ -79,11 +79,16 @@
 
     Нетрика разаботала и внедрила сервис Нетрика.ДЛИ для обмена данными лабораторных исследований в Санкт-Петербурге. Сервис позволяет медицинским учреждениям и лабораториям обмениваться назначениями и результатами лабораторных исследований в электронном виде. Обмен данными производится на основне стандарта HL7® FHIR®. В основе сервиса используется Fhirbase."
     en: "
-    Health Samurai Team gave educational trainings to the Netrika team about international standards HL7 v2, HL7 v3, HL7® FHIR®. Samurai gave consultations in the project designing of regional service of laboratory data exchange and data model on the base of HL7® FHIR®.
+    Health Samurai consulted Netrika's team about international standards HL7 v2, HL7 v3 and HL7® FHIR®.
+    Health Samurai assisted Netrika in designing of regional laboratory data exchange service
+     and data modelling on the base of HL7® FHIR® standard.
 
-     #### About the project Netrika.DLI
+     #### About Netrika HIE
 
-     Netrika developed and implemented the Netrika.DLI service for laboratory data exchange in Saint Petersburg. The service allows electronic exchange of medical prescriptions and laboratory results between medical organizations and laboratories. Data exchange is executed on the base of HL7® FHIR® standard. The service is built on the base of Fhirbase."
+     Netrika developed and implemented an HIE service for laboratory data exchange in Saint Petersburg.
+     The service allowed electronic exchange of medical prescriptions and laboratory results between medical
+     organizations and laboratories. Data exchange is organized with use of HL7® FHIR® standard.
+     The service is built with use of the Fhirbase back-end developed by Health Samurai."
 - id: miac_loinc
   title:
     ru: МИАЦ.СЛТ
