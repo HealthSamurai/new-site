@@ -86,9 +86,8 @@
      #### About Netrika HIE
 
      Netrika developed and implemented an HIE service for laboratory data exchange in Saint Petersburg.
-     The service allowed electronic exchange of medical prescriptions and laboratory results between medical
-     organizations and laboratories. Data exchange is organized with use of HL7® FHIR® standard.
-     The service is built with use of the Fhirbase back-end developed by Health Samurai."
+     The service allowed electronic exchange of medication prescriptions and laboratory results between provider
+     organizations and laboratories. Data exchange was organized with use of HL7® FHIR® standard and Fhirbase back-end developed by Health Samurai."
 - id: miac_loinc
   title:
     ru: МИАЦ.СЛТ
