@@ -5,16 +5,16 @@
     en: Quick project start and education of your team
   description:
     ru: Развернем наши технологичные продукты и обучим вашу команду для дальнейшей работы.
-    en: We will deploy our high-tech products and educate your team for further work.
+    en: We will deploy our high-tech health IT products into infrastructure of your choice and educate your team.
   post: 
     ru: >
       У вас есть новый проект, вы не хотите тянуть с выпуском в свет первой версии,
       но в тоже время заложить «правильный фундамент» для дальнейшего развития продукта, 
       используя стандарты, международные наработки и опыт.
     en: >
-      You have a new project, you don't want to delay the release of the first version, but at the same 
-      time you want to lay the "proper foundation" for the further product development, using 
-      international standards, groundwork and experience.    
+      You have a new project and you don't want to delay the release of its first version but at the same 
+      time you want to lay a "proper foundation" for the further product development with use of 
+      international medical standards, ready-to-use components and experience.    
   steps-statement:
     ru: "Мы поможем вам:"
     en: "We will help you:"
@@ -35,18 +35,17 @@
         будущего продукта с учетом специфики.
     en:
       - >        
-        We will drill down into the idea of a future solution, 
-        generate Product Vision and outline the boundaries of the product together.
-        We will carry out the analytical work and build a starting data model of the product on the base of HL7® FHIR® standard.
+        We will drill down into an idea of your future solution. 
+        We will generate a Product Vision and outline the boundaries of your product together.
+        We will carry out analytical work and build a starting data model for your product on the base of HL7® FHIR® standard.
       - >
-        We will deploy and configure our high-tech products
-        which are designed to close questions with storage of information,
-        integration with other systems through the HL7® FHIR® REST API, and
-        create a good foundation for the future solutions development.
+        We will deploy and configure our high-tech health IT products into infrastructure of your choice.
+        These products are designed to solve issues with storing of medical information and
+        integration of your solution with other medical systems via HL7 v.2, CCD and HL7® FHIR® REST API.
+        Our health IT products provide a great foundation for future development.
       - >
-        We will educate your team on HL7® FHIR® standard, 
-        on how to work with our high-tech products, and participate
-        in the formation of architecture of the future product taking into account its specificity.
+        We will educate your team about HL7® FHIR® standard, our health IT products and participate
+        in design of your project architecture taking into account its specificity.
 
 - id: development
   icon: rocket
@@ -55,16 +54,16 @@
     en: Quick project start, and custom development 
   description:
     ru: Реализуем ваш проект на базе наших технологичных продуктов.
-    en: We will implement your project on the basis of our high-tech products
+    en: We will implement your project with use of our health IT products.
   post:
     ru: >
       У вас есть новый проект, вы не хотите тянуть с выпуском в свет первой версии,
       но в тоже время заложить «правильный фундамент» для дальнейшего развития продукта, 
       используя стандарты, международные наработки и опыт.
     en: >
-      You have a new project, you don't want to delay the release of the first version, but at the same 
-      time you want to lay the "proper foundation" for the further product development, using 
-      international standards, groundwork and experience.
+      You have a new project and you don't want to delay the release of its first version but at the same 
+      time you want to lay a "proper foundation" for the further product development with use of 
+      international medical standards, ready-to-use components and experience.    
   steps-statement:
     ru: "Мы поможем вам:"
     en: "We will help you:"
@@ -85,18 +84,17 @@
         и бережливых подходов к разработке ПО.
     en:
       - >
-        We will drill down into the idea of a future solution, generate Product Vision and outline the boundaries of the product together.
-        We will carry out the analytical work and build a starting data model of the product on the base of HL7® FHIR® standard.
+        We will drill down into an idea of your future solution. 
+        We will generate a Product Vision and outline the boundaries of your product together.
+        We will carry out analytical work and build a starting data model for your product on the base of HL7® FHIR® standard.
       - >
-        We will deploy and configure our high-tech products
-        which are designed to close questions with storage of information,
-        integration with other systems through the HL7® FHIR® REST API, and
-        create a good foundation for the future solutions development.
+        We will deploy and configure our high-tech health IT products into infrastructure of your choice.
+        These products are designed to solve issues with storing of medical information and
+        integration of your solution with other medical systems via HL7 v.2, CCD and HL7® FHIR® REST API.
+        Our health IT products provide a great foundation for future development.
       - >
-        We will undertake the development of your solutions on a turnkey basis 
-        providing for the project a cross-functional team of professionals, and build
-        the process of developing in 2-week iterations in the best tradition of flexible
-        and cost-conscious approaches to the software development.
+        We will dedicate a cross-functional team of engineers to your project and will develop your solution on a turnkey basis with
+        use of iterative development process in the best traditions of flexible and cost-conscious approaches to software development.
 
 - id: fhirbase-support
   icon: life-ring
@@ -105,16 +103,15 @@
     en: FHIRbase commercial support
   description:
     ru: 'Доработаем FHIRbase под ваши нужды, выделим специалиста для помощи и подпишем вас на обновления.'
-    en: We will modify FHIRbase to suit your needs, provide a specialist to help you and sign you up for updates.
+    en: We will modify FHIRbase to suit your needs, dedicate one of our engineers to assist you and sign you up for updates.
   post: 
     ru: >
       Вы используете в своем проекте хранилище с открытым кодом FHIRbase, 
       и у вас появилась потребность доработать этот продукт под специфику проекта. 
       Вы понимаете, что лучше переложить эту работу на плечи идеологов и создателей FHIRbase.
     en: >
-      You use open-source storage FHIRbase in your project and you have the need to modify 
-      the product in accordance with the specifics of your project.
-      You understand that it is better to pass the job on the shoulders of the ideologists and creators of FHIRbase.      
+      You use open-source storage FHIRbase in your project and have a need to modify it in accordance with the specificity of your project.
+      It is better to pass the job to ideologists and creators of FHIRbase.      
   steps-statement:
     ru: "Мы поможем вам:"
     en: "We will help you:"
@@ -124,9 +121,9 @@
       - Оценим трудоемкость, согласуем и заключим с вами договор на доработку FHIRbase под специфику вашего проекта.
       - Доработаем FHIRbase и предоставим вам новую версию, дополненную недостающей функциональностью.
     en: 
-      - Drill down into the idea of your future project and discuss deficient functionality of FHIRbase.
-      - Estimate the complexity, coordinate and sign a contract with you to refine FHIRbase under the specifics of your project. 
-      - Refine FHIRbase and provide you with a new version, complete with the missing functionality.  
+      - We will drill down into an idea of your project and discuss deficient functionality of FHIRbase.
+      - We will estimate complexity and efforts needed to modigy FHIRbase to fully suit needs of your project.
+      - We will modify FHIRbase and provide you with a version complete with functionality that you are missing.  
 
 - id: consulting
   title:
@@ -138,17 +135,17 @@
       'Прочитаем семинары/тренинги по стандарту HL7® FHIR® и нашим
       продуктам, обучим вашу команду.'
     en:
-      We do seminars and trainings on standard HL7® FHIR® and our
-      products, we will train your team.
+      We offer seminars and trainings abour HL7® FHIR® standard and our
+      products. We will train your engineering team.
   post: 
     ru: >
       Вы очень хотите "правильно", но не знаете как. У вас есть сложная задача,
       но у вас не получается ее решить, вы в поиске экспертов в области,
       которые проконсультируют и скажут как сделать правильно.
     en: >
-      You really want to do it "properly", but don't know how. You have a complex task,
-      but you didn't manage to find a solution, and you are looking for experts in the domain,
-      who will consult and tell you how to make it right.     
+      You really want to "make it right", but you don't know how. You have a complex task,
+      but you haven't found a solution. You are looking for experts in the health IT domain,
+      which will consult your team and explain "how to make it right" to you.     
   steps-statement:
     ru: "Мы поможем вам:"
     en: "We will help you:"
@@ -166,12 +163,11 @@
         по улучшениям.
     en:
       - >
-        Phrase a solution concept, identify the requirements for your product
-        and build a data model for the future solution on the basis of the HL7® FHIR® standard.
+        We will describe a concept of your solution. We will identify the requirements of your project
+        and build a data model for your future solution on the basis of HL7® FHIR® standard.
       - >
-        Collaborate in architectural sessions with your team and help to develop
-        the correct solution: choose a standard, design architecture.
+        We will collaborate in architectural design sessions with your team and help you to develop
+        a good quality solution. We will assist you in choosing standards and designing of the architecture.
       - >
-        Suggest which international groundwork to use.
-        Make the process and technical audit of your project and, as a result, give you our 
-        recommendations on improvements.
+        We will suggest which available SDKs and libraries to use.
+        We will make a process and technical audit of your project and provide you with recommendations on improvements.

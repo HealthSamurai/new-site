@@ -21,12 +21,12 @@
       Основная часть тренинга будет посвящена молодому, но очень перспективному стандарту HL7® FHIR®,
       который включил в себя основные достижения предшествующих стандартов HL7 и исключил многие их недостатки.
     en: >
-      Many developers coming to Health IT often underestimate complexity of the domain and don't know from which 
-      side to approach the multiple number of standards and specifications. In this one-day training, 
-      the HealthSamurai team which has 10 years of experience in Health IT and is an active member of HL7 International, 
-      will endeavour to give you the right starting point. We will briefly familiarize you with actual healthcare 
-      information exchange standards and their history. The main part of the training will be devoted to the new but 
-      very perspective HL7® FHIR® standard which includes principal achievements of previous standards and excludes 
+      Many developers that move to Health IT often underestimate the complexity of the domain and don't know from what 
+      side they need to approach a miriad of standards and specifications. Health Samurai has 10+ years of experience in Health IT and
+      is an active member of HL7 International organization. In this one-day training experienced Health Samurai engineers
+      will provide you with the right starting point. We will briefly familiarize you with existing healthcare 
+      information exchange standards and their history. The main part of the training will be dedicated to a modern 
+      HL7® FHIR® standard which includes principal achievements of previous standards and excludes 
       many of their demerits.
     plan: fhir-intro.ru.md
   tags:
@@ -56,12 +56,12 @@
       конкретные нужды. Также мы затронем вопросы практической эксплуатации FHIRbase в боевых условиях: 
       настройка производительности, репликация и бэкапы."
     en: >
-      FHIRbase is a database created on the base of HL7® FHIR® standard and open relational database PostgreSQL, for 
-      the storage of healthcare information. The two-day training from developers of this database, will give you an ability
+      FHIRbase is a database created on the base of HL7® FHIR® standard and open relational database PostgreSQL for 
+      storing of healthcare information. The two-day training from developers of this database, will give you an ability
       to learn how it is organized and how to use it. The training does not imply deep knowledge of PostgreSQL, main 
       features of which will be introduced as the training proceeds. Interface of FHIRbase is simple though keen insight into 
-      its structure will allow you to make use of PostgreSQL and extend FHIRbase effectively under your specific needs. Also, 
-      we will touch upon a subject of practical usage of FHIRbase in production, such as performance configuration, replicaton
+      its structure will allow you to use PostgreSQL and extend FHIRbase efficiently under your specific needs. Also, 
+      we will touch upon a subject of practical use of FHIRbase in production, such as performance configuration, replicaton
       and backups.
     icon: imgs/fhirbase.svg
     plan: fhirbase.ru.md

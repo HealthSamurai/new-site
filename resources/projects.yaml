@@ -97,7 +97,8 @@
   tags: [Aidbox, Fhirbase,  HL7® FHIR®, AngularJS, Clojure (JVM)]
   desc:
     ru: Самураи разработали, запустили и осуществляют поддержку web-сервиса для управления справочником лабораторных тестов Санкт-Петербурга. Сервис разработан на базе платформы Aidbox.
-    en: Health Samurai Team developed, implemented and are supporting web-service for managing Saint Petersburg laboratory tests terminology. The service was developed on the base of Aidbox platform.
+    en: Health Samurai has developed and implemented a web-service for managing laboratory tests terminology (LOINC) for laboratories in Saint Petersburg. 
+    The service was developed with use of Aidbox platform.
   post:
     ru: "
         Самураи разработали, запустили и осуществляют поддержку web-сервиса для управления справочником лабораторных тестов Санкт-Петербурга. Сервис разработан на базе платформы Aidbox.
@@ -108,12 +109,15 @@
         Актуальный справочник распространяется через FHIR API и используется для идентификации лабораторных тестов при электронном обмене медицинскими данными между информационными системами медицинских учреждений Санкт-Петербурга.
         "
     en: "
-        Health Samurai Team developed, implemented and are supporting web-service for managing Saint Petersburg laboratory tests terminology. The service was developed on the base of the Aidbox platform.
+        Health Samurai has developed and implemented a web-service for managing laboratory tests terminology (LOINC) for laboratories in Saint Petersburg. 
+        The service was developed with use of Aidbox platform.
 
-        #### About the project MIAC.SLT
+        #### About MIAC.SLT
 
-        Web service MIAC.SLT is intended for laboratory tests terminology actualization through change requests from representatives of laboratories and their further approving by representatives of SPB MIAC.
-        Actual terminology is distributed via HL7® FHIR® API and is used for identification of laboratory tests in the electronic healthcare data exchange between medical information systems of healthcare organizations in Saint Petersburg.
+        Web service MIAC.SLT is responsible for laboratory test terminology actualization. Representatives of laboratories submit change requests to
+        MIAC.SLT system where representatives of Saint Petersburg Medical Information Analytical Center (MIAC) can approve these change requests.
+        Actual terminology is distributed via HL7® FHIR® API and is used for identification of laboratory tests in the electronic healthcare data exchange between
+         medical information systems of healthcare organizations in Saint Petersburg.
         "
 - id: miac_mo
   title: МИАЦ.МО
@@ -122,7 +126,8 @@
   tags: [Aidbox,  Fhirbase,  HL7® FHIR®,  AngularJS,  Clojure (JVM)]
   desc:
     ru: Самураи разработали, запустили и осуществляют поддержку web-сервиса для управления реестром медицинских организаций Санкт-Петербурга. Сервис разработан на базе платформы Aidbox.
-    en: Health Samurai Team developed, implemented and are supporting web-service for managing Saint Petersburg medical organizations registry. The service was developed on the base of Aidbox platform.    
+    en: Health Samurai has developed and implemented a web-service for managing Saint Petersburg medical organizations registry. 
+        The service was developed with use of Aidbox platform.    
   post:
     ru: >
       Самураи разработали, запустили и осуществляют поддержку web-сервиса для управления реестром медицинских организаций Санкт-Петербурга. Сервис разработан на базе платформы Aidbox.
@@ -132,12 +137,15 @@
       Web-сервис МИАЦ.МО используется для актуализации реестра медицинских организаций, через заявки на изменения от представителей медицинских учреждений и их последующим утверждением представителями СПб МИАЦ.
       Актуальный реестр распространяется через FHIR API и используется для идентификации медицинских учреждений Санкт-Петербурга при электронном обмене медицинскими данными между информационными системами медицинских учреждений.
     en: >
-      Health Samurai Team developed, implemented and are supporting web-service for managing Saint Petersburg medical organizations registry. The service was developed on the base of Aidbox platform. 
+      Health Samurai has developed and implemented a web-service for managing Saint Petersburg medical organizations registry. 
+        The service was developed with use of Aidbox platform.
 
-      #### About the project MIAC.MO
+      #### About MIAC.MO
 
-      Web service MIAC.MO is intended for actualization of medical organizations registry through change requests from representatives of healthcare organizations and their further approving by representatives of SPB MIAC.
-      Actual registry is distributed via HL7® FHIR® API and is used for identification of Saint Petersburg medical organizations in the electronic healthcare data exchange between medical information systems of healthcare organizations.
+      Web service MIAC.MO is responsible for actualization of medical organizations registry. Representatives of healthcare organizations submit change requests to
+        MIAC.SLT system where representatives of Saint Petersburg Medical Information Analytical Center (MIAC) can approve these change requests.
+      Actual registry is distributed via HL7® FHIR® API and is used for identification of Saint Petersburg medical organizations in the electronic healthcare data exchange
+       between medical information systems of healthcare organizations.
 - id: holiadvice
   title: Holiadvice
   href: https://www.holiadvice.com/
@@ -172,7 +180,7 @@
   tags: [Clojure (JVM)]
   desc:
     ru: "Самураи разработали и провели пилотный запуск электронной торговой площадки для МРТ-центров и страховых компаний в Санкт-Петербурге."
-    en: "Health Samurai Team developed and implemented a pilot launch of an electronic trading platform for MRI centers and insurance companies in St. Petersburg."
+    en: "Health Samurai has developed and implemented an electronic marketplace for MRI centers and insurance companies in Saint Petersburg."
   post:
     ru: "
       Самураи разработали и провели пилотный запуск электронной торговой площадки для МРТ-центров и страховых компаний в Санкт-Петербурге.
@@ -181,11 +189,11 @@
 
       Электронная торговая площадка Salemed  предназначена для реализации услуг со скидками между МРТ-центрами и страховыми компаниями."
     en: "
-      Health Samurai Team developed and implemented a pilot launch of an electronic trading platform for MRI centers and insurance companies in St. Petersburg.
+      Health Samurai has developed and implemented an electronic marketplace for MRI centers and insurance companies in Saint Petersburg.
 
-      #### About the project SaleMed
+      #### About Salemed
 
-      Electronic trading platform Salemed is intended for intended for the sale of services with discounts between MRI centers and insurance companies."
+      Salemed ....
 # - id: vitalsync
 #   title: VitalSync
 #   tags: [HL7® FHIR®,  HL7 Mapper]
