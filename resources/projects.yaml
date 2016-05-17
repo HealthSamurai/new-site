@@ -191,8 +191,12 @@
 
       #### About Salemed
 
-      Salemed
-      
+      Salemed is a medical service marketplace. It facilitates interaction between medical insurance companies and diagnostic imaging facilities by means of providing them with
+       a reliable, secure communication channel.
+        
+      Diagnostic imaging facilities fill empty slots, insurance companies save money using discounted offers, and patients get their studies expedited.
+      "
+
 # - id: vitalsync
 #   title: VitalSync
 #   tags: [HL7® FHIR®,  HL7 Mapper]
