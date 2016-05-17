@@ -125,7 +125,7 @@
   tags: [Aidbox,  Fhirbase,  HL7® FHIR®,  AngularJS,  Clojure (JVM)]
   desc:
     ru: Самураи разработали, запустили и осуществляют поддержку web-сервиса для управления реестром медицинских организаций Санкт-Петербурга. Сервис разработан на базе платформы Aidbox.
-    en: Health Samurai has developed and implemented a web-service for managing Saint Petersburg medical organizations registry. The service was developed with use of Aidbox platform.    
+    en: Health Samurai has developed and implemented a web-service for managing Saint Petersburg medical organizations registry.  The service was developed with use of Aidbox platform.    
   post:
     ru: >
       Самураи разработали, запустили и осуществляют поддержку web-сервиса для управления реестром медицинских организаций Санкт-Петербурга. Сервис разработан на базе платформы Aidbox.
@@ -191,7 +191,8 @@
 
       #### About Salemed
 
-      Salemed ....
+      Salemed
+      
 # - id: vitalsync
 #   title: VitalSync
 #   tags: [HL7® FHIR®,  HL7 Mapper]
